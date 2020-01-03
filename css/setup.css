@@ -1,0 +1,59 @@
+@font-face {
+    font-family: NotoSansBold;
+    src: url("../font/NotoSansCJKkr-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: NotoSansDemiLight;
+    src: url("../font/NotoSansCJKkr-DemiLight.otf") format("opentype");
+}
+
+@font-face {
+    font-family: NotoSansMedium;
+    src: url("../font/NotoSansCJKkr-Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: NotoSansRegular;
+    src: url("../font/NotoSansCJKkr-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: gadugi;
+    src: url("../font/gadugib.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: gadugir;
+    src: url("../font/gadugi.ttf") format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: -0.5px;
+}
+
+*:active {
+    outline: none;
+    border: none;
+}
+
+html {
+    font-family: 'NotoSansRegular';
+    font-size: calc(14px + 0.25vw);
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.65;
+}
+
+input, input:focus, input:active {
+    border: none;
+    outline: none;
+}
+
+ul,li {
+    list-style-type: none;
+}

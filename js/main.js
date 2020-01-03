@@ -4,7 +4,7 @@ $(document).ready(function() {
     var close = $('.btn-close');
     var navLink = $('ul li a');
     var content = $('.content');
-
+    
     menuLink.click(function() {
         menu.toggleClass('menu_active');
     });
@@ -20,6 +20,8 @@ $(document).ready(function() {
         $('html, body').animate({scrollTop: top}, 500);
         menu.toggleClass('menu_active');
     });
+
+    
 });
 
 $(window).ready(function(){
@@ -36,6 +38,10 @@ $(window).ready(function(){
 });
 
 var win_h = $(window).height() ;
+
+window.addEventListener('resize', (e) => {
+    console.log(e)
+})
 
 $('.content').each(function(index){
     $(this).attr("data-index", win_h * index);
