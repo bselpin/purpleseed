@@ -49,7 +49,12 @@ html {
     line-height: 1.65;
 }
 
-input, input:focus, input:active {
+input,
+input:focus,
+input:active,
+textarea,
+textarea:focus,
+textarea:active {
     border: none;
     outline: none;
 }

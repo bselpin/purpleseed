@@ -2,6 +2,7 @@
 @import url("setup.css");
 
 $black: #282f39;
+$black2: #1b1e23;
 
 .wrapper-p {
     width: 66%;
@@ -11,7 +12,7 @@ $black: #282f39;
     position: relative;
 
     &.client {
-        padding: 0 1rem;
+        padding: 0 4rem;
     }
 }
 
@@ -161,7 +162,7 @@ h1 {
         font-size: 1rem;
         position: absolute;
         bottom: 5rem;
-        left:calc(17% + 3rem);
+        left: calc(17% + 3rem);
     }
 }
 
@@ -188,7 +189,7 @@ h1 {
         border: 4px solid #000;
         border-radius: 50%;
         width: calc(7.5vw + 2rem);
-        height: calc(7.5vw + 2rem);        
+        height: calc(7.5vw + 2rem);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -212,7 +213,6 @@ h1 {
             text-align: left;
             z-index: 1;
         }
-
     }
 }
 
@@ -401,7 +401,6 @@ h1 {
     }
 
     .swiper-project .swiper-slide {
-
         display: -webkit-box;
         display: -ms-flexbox;
         display: -webkit-flex;
@@ -831,7 +830,6 @@ h1 {
         width: 0%;
         height: 0%;
     }
-
 }
 
 .mission {
@@ -868,11 +866,12 @@ h1 {
 
 .client {
     flex-direction: column;
-    padding-top: 2rem;
+    padding-top: 3rem;
 
     h1 {
         font-size: 1.5rem;
         margin-bottom: 6rem;
+        margin-top: 3rem;
     }
 
     .client-box {
@@ -881,10 +880,30 @@ h1 {
         flex-wrap: wrap;
     }
 
+    .swiper-client-next {
+        background: url('../images/right-arrow.png') 0 0 no-repeat;
+        background-size: contain;
+        margin-top: 0;
+        top: 38%;
+        right: -30px;
+    }
+
+    .swiper-client-prev {
+        background: url('../images/left-arrow.png') 0 0 no-repeat;
+        background-size: contain;
+        margin-top: 0;
+        top: 38%;
+        left: -30px;
+    }
+
+    .swiper-client {
+        overflow: hidden;
+    }
+
     .client-list {
         position: relative;
-        width: 15%;       
-        height: 18rem;
+        width: 16%;
+        height: 17rem;
         margin: 0 2rem;
 
         img {
@@ -916,36 +935,117 @@ h1 {
 .contactus {
     background-color: #1b1e23;
     position: relative;
+    display: block;
 }
 
-.contactus iframe {
-    position: absolute;
-    top: 0;
-}
-
-form {
+iframe #mapDiv {
     position: relative;
-    top: -30%;
-    left: 25%;
-    color: white;
-    width: 30%;
-    height: 30%;
 }
 
-table input {
-    line-height: 20px;
-    color: #666;
-    font-size: 12pt;
+.footer {
+    width: 100%;
+    background: $black2;
+    height: 5rem;
+    position: absolute;
+    bottom: 0;
 }
 
-.memo input {
-    height: 100px;
+.footer-head {
+    position: absolute;
+    display: flex;
+    display: none;
+    padding: 2rem 17%;
+    width: 100%;
+    background: rgba(10,15,25,0.9);   
+
+    .left {
+        color: #fff;
+        width: 57.5%;
+        height: 15rem;
+        position: relative;
+
+        h1 {
+            line-height: 1.4;
+            font-size: 2.15rem;
+            font-family: 'NotoSansRegular', sans-serif;
+        }
+
+        .phone-num {
+            font-size: 1.6rem;
+            font-family: 'gadugi', sans-serif;
+            margin-top: 2.3rem;
+
+            .first {
+                margin-right: 0.5rem;
+            }
+
+            .second {
+                margin-left: 0.5rem;
+            }
+        }
+
+        .footer-head-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-size: 1rem;
+            font-family: 'NotoSansDemiLight', sans-serif;
+
+            .address {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    form {
+        width: 42.5%;
+        height: 15rem;
+        position: relative;
+
+        input, textarea {
+            font-family: 'NotoSansDemiLight', sans-serif;
+            padding: 0.6rem;
+            width: calc(50% - 3px);
+            font-size: 0.75rem;
+
+            &.right {
+                margin-left: 2px;
+            }
+
+            &.bottom {
+                margin-top: 8px;
+            }
+
+            &.submit {
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                background: none;
+                border: 2px solid #fff;
+                font-size: 0.85rem;
+                padding: 0.6rem;
+                transition: 0.3s all;
+                cursor: pointer;
+                color: #fff;
+
+                &:hover {
+                    background: rgba(255,255,255,0.1);
+                }
+            }
+        }
+        textarea {
+            width: 100%;
+            resize: none;
+            height: 5.3rem;
+        }
+        input::placeholder,
+        textarea::placeholder {
+            color: #999;
+        }
+    }
 }
 
-.submit {
-    background-color: #1b1e23;
-    color: white;
-}
 
 .menu {
     width: 27vw;
@@ -960,11 +1060,10 @@ table input {
     left: 0;
     transform: translateX(-100%);
     transition: all 0.4s;
-    
 }
 
 .menu_active {
-    transform: translateX(0%);    
+    transform: translateX(0%);
 }
 
 .menu .btn-close {
@@ -997,7 +1096,7 @@ table input {
     margin: 1.25rem;
     font-size: 1.7rem;
     overflow: visible;
-    position: relative;    
+    position: relative;
 }
 
 .menu ul li a {
@@ -1015,7 +1114,7 @@ table input {
         right: -3.5rem;
         font-size: 0.9rem;
     }
-    
+
     &:after {
         content: '';
         display: block;
@@ -1079,4 +1178,3 @@ table input {
     height: 0%;
     font-size: 0vw;
 }
-

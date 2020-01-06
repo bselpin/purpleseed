@@ -8,7 +8,7 @@
 }
 
 .wrapper-p.client {
-  padding: 0 1rem;
+  padding: 0 4rem;
 }
 
 .wrapper-np {
@@ -823,12 +823,13 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-top: 2rem;
+  padding-top: 3rem;
 }
 
 .client h1 {
   font-size: 1.5rem;
   margin-bottom: 6rem;
+  margin-top: 3rem;
 }
 
 .client .client-box {
@@ -842,10 +843,30 @@ h1 {
       flex-wrap: wrap;
 }
 
+.client .swiper-client-next {
+  background: url("../images/right-arrow.png") 0 0 no-repeat;
+  background-size: contain;
+  margin-top: 0;
+  top: 38%;
+  right: -30px;
+}
+
+.client .swiper-client-prev {
+  background: url("../images/left-arrow.png") 0 0 no-repeat;
+  background-size: contain;
+  margin-top: 0;
+  top: 38%;
+  left: -30px;
+}
+
+.client .swiper-client {
+  overflow: hidden;
+}
+
 .client .client-list {
   position: relative;
-  width: 15%;
-  height: 18rem;
+  width: 16%;
+  height: 17rem;
   margin: 0 2rem;
 }
 
@@ -874,35 +895,135 @@ h1 {
 .contactus {
   background-color: #1b1e23;
   position: relative;
+  display: block;
 }
 
-.contactus iframe {
-  position: absolute;
-  top: 0;
-}
-
-form {
+iframe #mapDiv {
   position: relative;
-  top: -30%;
-  left: 25%;
-  color: white;
-  width: 30%;
-  height: 30%;
 }
 
-table input {
-  line-height: 20px;
-  color: #666;
-  font-size: 12pt;
+.footer {
+  width: 100%;
+  background: #1b1e23;
+  height: 5rem;
+  position: absolute;
+  bottom: 0;
 }
 
-.memo input {
-  height: 100px;
+.footer-head {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: none;
+  padding: 2rem 17%;
+  width: 100%;
+  background: rgba(10, 15, 25, 0.9);
 }
 
-.submit {
-  background-color: #1b1e23;
-  color: white;
+.footer-head .left {
+  color: #fff;
+  width: 57.5%;
+  height: 15rem;
+  position: relative;
+}
+
+.footer-head .left h1 {
+  line-height: 1.4;
+  font-size: 2.15rem;
+  font-family: 'NotoSansRegular', sans-serif;
+}
+
+.footer-head .left .phone-num {
+  font-size: 1.6rem;
+  font-family: 'gadugi', sans-serif;
+  margin-top: 2.3rem;
+}
+
+.footer-head .left .phone-num .first {
+  margin-right: 0.5rem;
+}
+
+.footer-head .left .phone-num .second {
+  margin-left: 0.5rem;
+}
+
+.footer-head .left .footer-head-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 1rem;
+  font-family: 'NotoSansDemiLight', sans-serif;
+}
+
+.footer-head .left .footer-head-text .address {
+  font-size: 0.8rem;
+}
+
+.footer-head form {
+  width: 42.5%;
+  height: 15rem;
+  position: relative;
+}
+
+.footer-head form input, .footer-head form textarea {
+  font-family: 'NotoSansDemiLight', sans-serif;
+  padding: 0.6rem;
+  width: calc(50% - 3px);
+  font-size: 0.75rem;
+}
+
+.footer-head form input.right, .footer-head form textarea.right {
+  margin-left: 2px;
+}
+
+.footer-head form input.bottom, .footer-head form textarea.bottom {
+  margin-top: 8px;
+}
+
+.footer-head form input.submit, .footer-head form textarea.submit {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: none;
+  border: 2px solid #fff;
+  font-size: 0.85rem;
+  padding: 0.6rem;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  cursor: pointer;
+  color: #fff;
+}
+
+.footer-head form input.submit:hover, .footer-head form textarea.submit:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.footer-head form textarea {
+  width: 100%;
+  resize: none;
+  height: 5.3rem;
+}
+
+.footer-head form input::-webkit-input-placeholder,
+.footer-head form textarea::-webkit-input-placeholder {
+  color: #999;
+}
+
+.footer-head form input:-ms-input-placeholder,
+.footer-head form textarea:-ms-input-placeholder {
+  color: #999;
+}
+
+.footer-head form input::-ms-input-placeholder,
+.footer-head form textarea::-ms-input-placeholder {
+  color: #999;
+}
+
+.footer-head form input::placeholder,
+.footer-head form textarea::placeholder {
+  color: #999;
 }
 
 .menu {
