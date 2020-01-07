@@ -704,133 +704,96 @@ h1 {
 
 }
 
+// about
 
 
-@media all and (min-width:768px) {
+// service
 
-    .contacts {
-        background: #fff;
-    }
-
-    .Purpleseed-about {
-        position: absolute;
-        top: 408%;
-        right: 23%;
-        font-family: "gadugi";
-        color: #000;
-        text-align: right;
-        font-size: 4vw;
-        line-height: 4.2vw;
-    }
-
-    .about1 {
-        position: absolute;
-        top: 423%;
-        left: 20%;
-        width: 30vw;
-        height: 30vw;
-        padding-bottom: 30%;
-        overflow: hidden;
-
-    }
-
-    .about1 img {
-        position: absolute;
+.service {
+    .tab-btns {
+        display: flex;
         width: 100%;
-        height: 90%;
+        font-size: 2.5rem;
+        font-family: 'gadugi', sans-serif;
+        justify-content: space-around;
+        color: #dcdcdc;
+        margin: 3rem 0 8rem;
+
+        .tab-btn {
+            cursor: pointer;
+            transition: all 0.3s;
+
+            &:hover,
+            &.active {
+                color: $black;
+            }
+        }
     }
 
-    .about1-1 {
-        position: absolute;
-        top: 423%;
-        left: 20%;
-        width: 30vw;
-        height: 30vw;
-        padding-bottom: 30%;
-        overflow: hidden;
-        z-index: 99;
-
-    }
-
-    .about1-1 img {
-        position: absolute;
+    .tabs {
         width: 100%;
-        height: 90%;
-    }
+        margin-bottom: 4rem;
 
-    .about2 {
-        position: absolute;
-        top: 433%;
-        right: 20%;
-        width: 30vw;
-        height: 30vw;
-        padding-bottom: 30%;
-        overflow: hidden;
-    }
+        ul {
+            display: flex;
+            justify-content: space-between;
 
-    .about2 img {
-        position: absolute;
-        width: 100%;
-        height: 90%;
-    }
+            li {
+                width: 23.5%;
+                position: relative;
+                cursor: pointer;
+                overflow: hidden;
+                transition: all 0.4s;
 
-    .about2-1 {
-        position: absolute;
-        top: 433%;
-        right: 20%;
-        width: 30vw;
-        height: 30vw;
-        padding-bottom: 30%;
-        overflow: hidden;
-        z-index: 99;
-    }
+                img {
+                    width: 100%;
+                    transition: all 0.4s;
+                }
 
-    .about2-1 img {
-        position: absolute;
-        width: 100%;
-        height: 90%;
-    }
+                .title {
+                    width: 100%;
+                    font-family: 'gadugi', sans-serif;
+                    color: #fff;
+                    position: absolute;
+                    top: 10rem;
+                    text-align: center;
+                    transition: all 0.4s;
+                }
 
-    .about1-m {
-        width: 0%;
-        height: 0%;
-    }
+                .text {
+                    width: 100%;
+                    color: #fff;
+                    position: absolute;
+                    top: 12rem;
+                    text-align: center;
+                    font-size: 0.95rem;
+                    transition: all 0.4s;
+                    opacity: 0;
+                }
 
-    .about1-m img {
-        width: 0%;
-        height: 0%;
-    }
+                &:hover {
+                    transform: scale(1.03);
+                    box-shadow: 0px 0px 15px rgba(10, 20, 35, 0.2);
 
-    .about1-1m {
-        width: 0%;
-        height: 0%;
-    }
+                    img {
+                        transform: scale(1.1);
+                    }
 
-    .about1-1m img {
-        width: 0%;
-        height: 0%;
-    }
+                    .title {
+                        transform: translateY(-2rem);
+                    }
 
-    .about2-m {
-        width: 0%;
-        height: 0%;
-    }
-
-    .about2-m img {
-        width: 0%;
-        height: 0%;
-    }
-
-    .about2-1m {
-        width: 0%;
-        height: 0%;
-    }
-
-    .about2-1m img {
-        width: 0%;
-        height: 0%;
+                    .text {
+                        transform: translateY(-2rem);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
     }
 }
+
+// mission
 
 .mission {
     background: url("../images/mission.png");
@@ -863,6 +826,8 @@ h1 {
         font-size: 1.15rem;
     }
 }
+
+// client
 
 .client {
     flex-direction: column;
@@ -932,48 +897,98 @@ h1 {
 }
 
 
+// footer
+
 .contactus {
     background-color: #1b1e23;
     position: relative;
     display: block;
 }
 
-iframe #mapDiv {
-    position: relative;
-}
-
 .footer {
     width: 100%;
     background: $black2;
-    height: 5rem;
     position: absolute;
     bottom: 0;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+
+    .externals {
+        position: absolute;
+        top: 2.25rem;
+        right: 1.5rem;
+
+        ul {
+            display: flex;
+
+            li {
+                width: 3rem;
+
+            }
+        }
+    }
+
+    .company-info {
+        color: #afafaf;
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
+        line-height: 2;
+        margin-top: 1rem;
+
+        .copy {
+            font-size: 0.65rem;
+        }
+
+        .info-block {
+            display: inline-block;
+            margin-left: 2rem;
+
+            &:first-child {
+                margin: 0;
+            }
+
+            span {
+                position: relative;
+                margin-left: 1.5rem;
+
+                &:after {
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    width: 1px;
+                    height: 0.75rem;
+                    background: #afafaf;
+                    top: 4px;
+                    left: -14px;
+                }
+            }
+        }
+    }
 }
 
 .footer-head {
     position: absolute;
     display: flex;
-    display: none;
-    padding: 2rem 17%;
+    padding: 2.25rem calc(17% + 3rem);
     width: 100%;
-    background: rgba(10,15,25,0.9);   
+    background: rgba(10, 15, 25, 0.9);
 
     .left {
         color: #fff;
         width: 57.5%;
-        height: 15rem;
+        height: 14rem;
         position: relative;
 
         h1 {
             line-height: 1.4;
-            font-size: 2.15rem;
+            font-size: 2rem;
             font-family: 'NotoSansRegular', sans-serif;
         }
 
         .phone-num {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-family: 'gadugi', sans-serif;
-            margin-top: 2.3rem;
+            margin-top: 2.5rem;
 
             .first {
                 margin-right: 0.5rem;
@@ -999,10 +1014,11 @@ iframe #mapDiv {
 
     form {
         width: 42.5%;
-        height: 15rem;
+        height: 14rem;
         position: relative;
 
-        input, textarea {
+        input,
+        textarea {
             font-family: 'NotoSansDemiLight', sans-serif;
             padding: 0.6rem;
             width: calc(50% - 3px);
@@ -1030,15 +1046,17 @@ iframe #mapDiv {
                 color: #fff;
 
                 &:hover {
-                    background: rgba(255,255,255,0.1);
+                    background: rgba(255, 255, 255, 0.1);
                 }
             }
         }
+
         textarea {
             width: 100%;
             resize: none;
             height: 5.3rem;
         }
+
         input::placeholder,
         textarea::placeholder {
             color: #999;
@@ -1133,48 +1151,4 @@ iframe #mapDiv {
     &:hover:after {
         transform: scaleX(1);
     }
-}
-
-
-
-#footer {
-    background: #1b1e23;
-    height: 10%;
-}
-
-#footer .f_sec01 {
-    position: absolute;
-    top: 887%;
-    left: 22%;
-    width: 50%;
-}
-
-#footer .f_sec01 p {
-    position: relative;
-    left: 22%;
-    font-weight: 300;
-    color: #fff;
-    line-height: 1.7;
-    font-family: "NotoSansDemiLight";
-    font-size: 0.5rem;
-    left: 0%;
-    margin-top: 13px;
-    margin-bottom: 5px;
-    letter-spacing: 0.07vh;
-
-}
-
-#footer .f_sec01 span {
-    position: relative;
-    margin-top: 10px;
-    font-size: 0.5rem;
-    color: #fff;
-    margin-bottom: 13px;
-    letter-spacing: 0.07vh;
-}
-
-#footer .f_sec02 {
-    width: 0%;
-    height: 0%;
-    font-size: 0vw;
 }
