@@ -1,11 +1,20 @@
 var cardNum = 1
-var tabs = document.getElementsByClassName('tab')
 var btns = document.getElementsByClassName('tab-btn')
+var tabs = document.getElementsByClassName('tab')
 
 for(var i = 0; i < btns.length; i++) {
     btns[i].addEventListener('click', function(e) {
         console.log(e)
     })
+}
+
+
+function liftCard() {
+
+}
+
+function removeCard() {
+
 }
 
 console.log(tabs[0].firstElementChild.children)

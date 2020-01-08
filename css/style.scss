@@ -780,10 +780,31 @@ h1 {
         .tab-btn {
             cursor: pointer;
             transition: all 0.3s;
+            position: relative;
+
+            .service-wrap {
+                height: 2rem;
+                overflow: hidden;
+                position: absolute;
+                top: -1rem;
+                left: 0;
+            }
+
+            .service {
+                font-size: 1.35rem;                
+                transform: translateY(2rem);
+                transition: transform 0.3s;
+            }
 
             &:hover,
             &.active {
-                color: $black;
+                color: $black;                               
+            }
+
+            &.active {
+                .service {
+                    transform: translateY(0);
+                }
             }
         }
     }

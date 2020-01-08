@@ -778,10 +778,34 @@ h1 {
   cursor: pointer;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  position: relative;
+}
+
+.service .tab-btns .tab-btn .service-wrap {
+  height: 2rem;
+  overflow: hidden;
+  position: absolute;
+  top: -1rem;
+  left: 0;
+}
+
+.service .tab-btns .tab-btn .service {
+  font-size: 1.35rem;
+  -webkit-transform: translateY(2rem);
+          transform: translateY(2rem);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .service .tab-btns .tab-btn:hover, .service .tab-btns .tab-btn.active {
   color: #282f39;
+}
+
+.service .tab-btns .tab-btn.active .service {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .service .tab-03 {
