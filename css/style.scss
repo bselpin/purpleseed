@@ -115,7 +115,7 @@ h1 {
 .bg {
     width: 160%;
     height: 160%;
-    background: url("../images/img2.jpeg");
+    background: url("../images/img2.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -145,7 +145,7 @@ h1 {
     width: 100%;
     z-index: 1;
     overflow: hidden;
-    background: url("../images/img1.jpeg");
+    background: url("../images/img1.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -168,8 +168,8 @@ h1 {
 
 .circles {
     position: absolute;
-    width: 45%;
-    right: 14%;
+    width: 43%;
+    right: 16%;
     font-size: 1rem;
     font-family: 'NotoSansMedium', sans-serif;
 
@@ -245,7 +245,7 @@ h1 {
 // ref
 
 .feedback {
-    background: url(../images/ref-bg.png);
+    background: url(../images/ref-bg.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -301,23 +301,23 @@ h1 {
 }
 
 .swiper-reference .photo1 {
-    background-image: url(../images/ref-wingwing.png);
+    background-image: url(../images/ref-wingwing.jpg);
 }
 
 .swiper-reference .photo2 {
-    background-image: url(../images/ref-glowroudi.png);
+    background-image: url(../images/ref-glowroudi.jpg);
 }
 
 .swiper-reference .photo3 {
-    background-image: url(../images/ref-nongrim.png);
+    background-image: url(../images/ref-nongrim.jpg);
 }
 
 .swiper-reference .photo4 {
-    background-image: url(../images/ref-wonderful.png);
+    background-image: url(../images/ref-wonderful.jpg);
 }
 
 .swiper-reference .photo5 {
-    background-image: url(../images/ref-samsung.png);
+    background-image: url(../images/ref-samsung.jpg);
 }
 
 .reftext1 {
@@ -386,148 +386,106 @@ h1 {
 }
 
 
-// maps
+// project
 
-.maps {
+.project {
     background: #1b1e23;
-}
+    display: block;
+    position: relative;
+    color: #fff;
 
-@media all and (min-width:768px) {
+    .title {
+        position: absolute;
+        top: 3rem;
+        left: 3rem;
+        font-size: 4rem;
+    }
+
+    .sub {
+        position: absolute;
+        bottom: 5.5rem;
+        left: calc(17% + 3rem)
+    }
+
+    .swiper-project-title {
+        position: absolute;
+        right: calc(17% + 3rem);
+        text-align: right;
+        top: 4rem;
+        height: 4rem;
+        overflow: hidden;
+
+        .swiper-wrapper {
+            top: 0;
+        }
+
+        .client-name {
+            font-family: 'gadugir', 'NotoSansRegular', sans-serif;
+            font-size: 1rem;
+        }
+
+        .project-name {
+            font-family: 'gadugi', 'NotoSansBold', sans-serif;
+            font-size: 1.7rem;
+            margin-top: -0.3rem;
+        }
+    }
 
     .swiper-project {
-        position: relative;
+        width: 100%;
         height: 90%;
+        position: relative;
+
+        .swiper-wrapper {
+            width: 100%;
+
+            .swiper-slide {
+                display: block;
+                justify-content: center;
+                padding: 0 calc(17% + 3rem);
+                align-items: center;
+            }
+        }
+
+        .project-logo {
+            width: 100%;
+            text-align: right;
+            margin-top: 1.5rem;
+        }
+    }
+
+    .video-wrapper {
+        margin-top: 10rem;
         width: 100%;
-    }
+        position: relative;
+        height: 0;
+        padding-bottom: 48%;
 
-    .swiper-project .swiper-slide {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-        height: 100%;
-        width: 100%;
-    }
-
-    .Project-text {
-        position: absolute;
-        top: 307vh;
-        left: 18%;
-        font-family: "gadugi";
-        color: #fff;
-        font-size: 4vw;
-    }
-
-    #project-title1 {
-        position: absolute;
-        top: 4vh;
-        right: 10%;
-        font-family: "NotoSansRegular";
-        color: #fff;
-        font-size: 1.7vw;
-    }
-
-    #project-title2 {
-        position: absolute;
-        top: 8vh;
-        right: 10%;
-        font-family: "gadugi";
-        color: #fff;
-        font-size: 2.5vw;
-    }
-
-    .maps iframe {
-        position: absolute;
-        top: 17vh;
-    }
-
-    #Project-des {
-        position: absolute;
-        top: 385vh;
-        font-family: "NotoSansRegular";
-        color: #fff;
-        text-align: center;
-        font-size: 1.5vw;
-        line-height: 2vw;
-    }
-
-    .Project-logo1 {
-        position: absolute;
-        width: 15%;
-        height: 15%;
-        top: 69vh;
-        background: url("../images/project-lotte.png");
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .Project-logo2 {
-        position: absolute;
-        width: 10%;
-        height: 10%;
-        top: 71vh;
-        background: url("../images/project-nike.png");
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .Project-logo3 {
-        position: absolute;
-        width: 25%;
-        height: 25%;
-        top: 64vh;
-        background: url("../images/project-glowloudy.png");
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .Project-logo4 {
-        position: absolute;
-        width: 15%;
-        height: 15%;
-        top: 69vh;
-        background: url("../images/project-nongrim.png");
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .Project-logo5 {
-        position: absolute;
-        width: 25%;
-        height: 25%;
-        top: 64vh;
-        background: url("../images/logo.png");
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     }
 
     .swiper-prj-prev {
         background-image: url("../images/left-arrow.png");
         position: absolute;
-        top: 350vh !important;
-        margin-left: 10% !important;
+        margin-left: 15% !important;
     }
 
     .swiper-prj-next {
         background-image: url("../images/right-arrow.png");
         position: absolute;
-        top: 350vh !important;
-        margin-right: 10% !important;
+        margin-right: 15% !important;
     }
 }
+
+
+    
+
 
 @media (min-width:320px) and (max-width:768px) {
     .swiper-project {
@@ -706,10 +664,111 @@ h1 {
 
 // about
 
+.about {
+    h1 {
+        width: 100%;
+        text-align: right;
+        padding-right: 2rem;
+        font-size: 3rem;
+    }
+
+    .about-box {
+        display: flex;
+    }
+
+    .box {
+        width: 50%;
+        height: 60vh;
+        background: #40214b;
+        justify-content: center;
+        overflow: hidden;
+        color: #fff;
+        position: relative;
+        cursor: default;
+
+        &:hover {
+            .hidden {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hidden {
+            width: 100%;
+            height: 100%;
+            background: url('../images/about01.jpg');
+            background-size: cover;
+            position: absolute;
+            z-index: 3;
+            letter-spacing: -2px;
+            opacity: 0;
+            transition: all 0.45s;
+            transform: translateY(2rem);
+        }
+
+        .h-text {
+            width: 100%;
+            text-align: center;
+            margin-top: 6rem;
+            font-size: 0.9rem;
+        }
+
+        .h-title {
+            width: 100%;
+            text-align: center;
+            padding: 0;
+            font-size: 2.3rem;
+            letter-spacing: -4px;
+            margin-top: 1rem;
+        }
+
+        .h-sub-text {
+            width: 100%;
+            text-align: center;
+            font-size: 0.75rem;
+            font-family: 'NotoSansDemiLight', sans-serif;
+            margin-top: 4rem;
+        }
+
+        .purple {
+            font-family: 'gadugir', sans-serif;
+            width: 100%;
+            text-align: center;
+            letter-spacing: 5px;
+            position: absolute;
+            top: 4rem;
+        }
+
+        .title {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 6rem;
+            font-size: 3rem;
+            font-family: 'gadugi', sans-serif;
+        }
+    }
+
+    .box-02 {
+        margin-top: 4.5rem;
+        background: $black2;
+
+        .hidden {
+            background: url('../images/about02.jpg');
+        }
+    }
+}
 
 // service
 
 .service {
+    display: block;
+
+    .wrapper-np {
+        display: block;
+        padding-top: 7rem;
+    }
+
     .tab-btns {
         display: flex;
         width: 100%;
@@ -717,7 +776,6 @@ h1 {
         font-family: 'gadugi', sans-serif;
         justify-content: space-around;
         color: #dcdcdc;
-        margin: 3rem 0 8rem;
 
         .tab-btn {
             cursor: pointer;
@@ -730,9 +788,18 @@ h1 {
         }
     }
 
+    .tab-03 {
+        display: none;
+    }
+
     .tabs {
+        margin-top: 8rem;
+        position: relative;
         width: 100%;
-        margin-bottom: 4rem;
+
+        .tab {
+            position: absolute;
+        }
 
         ul {
             display: flex;
@@ -741,9 +808,17 @@ h1 {
             li {
                 width: 23.5%;
                 position: relative;
-                cursor: pointer;
+                cursor: default;
                 overflow: hidden;
-                transition: all 0.4s;
+                transition: all 0.6s;
+                opacity: 0;
+                transform: translateY(3rem);
+
+                &.active {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
 
                 img {
                     width: 100%;
@@ -769,6 +844,10 @@ h1 {
                     font-size: 0.95rem;
                     transition: all 0.4s;
                     opacity: 0;
+
+                    span {
+                        font-size: 0.5rem;
+                    }
                 }
 
                 &:hover {
@@ -796,7 +875,7 @@ h1 {
 // mission
 
 .mission {
-    background: url("../images/mission.png");
+    background: url("../images/mission.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -910,7 +989,7 @@ h1 {
     background: $black2;
     position: absolute;
     bottom: 0;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
     padding-bottom: 2rem;
 
     .externals {
@@ -930,13 +1009,14 @@ h1 {
 
     .company-info {
         color: #afafaf;
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         letter-spacing: 0.5px;
         line-height: 2;
         margin-top: 1rem;
 
         .copy {
-            font-size: 0.65rem;
+            font-family: 'gadugir', sans-serif;
+            font-size: 0.625rem;
         }
 
         .info-block {
@@ -950,6 +1030,7 @@ h1 {
             span {
                 position: relative;
                 margin-left: 1.5rem;
+                font-family: 'gadugir', 'NosoSansDemiLight', sans-serif;
 
                 &:after {
                     position: absolute;
