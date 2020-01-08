@@ -4,20 +4,50 @@ var tabs = document.getElementsByClassName('tab')
 
 for(var i = 0; i < btns.length; i++) {
     btns[i].addEventListener('click', function(e) {
-        console.log(e)
+        var id = e.target.id
+        var containActive = e.target.classList.contains('active')
+        
+        if(containActive)  {
+            
+        } else {
+            for(var j = 0; j < btns.length; j ++){
+                btns[j].classList.remove("active");
+
+                if(id == j){
+                    console.log(id);
+                    e.target.classList.add('active')   
+                    removeCard() 
+                    liftCard(id)
+                }
+            }
+            
+            
+        }
     })
 }
 
+// btns를 누르면 번호에 따라 같은 번호를 가진 탭의 liftCard를 실행시키고
+// 다른 번호의 탭은 remove카드를 실행한다.
+// 또한 btns 인덱싱에 active클래스를 붙이고 나머지 btns의 active는 삭제한다.
 
-function liftCard() {
+function liftCard(id, elem) {
 
+}
+
+function addClass(elem) {
+    elem.classList.add('active')
+}
+
+function removeClass(elem) {
+    elem.classList.remove('active')
 }
 
 function removeCard() {
-
+    for(var i = 0; i < 4; i++) {
+        // tabs[i].firstChild.children.classList.remove('active')
+        console.log(tabs[i].children[0].children[0]);
+    }
 }
-
-console.log(tabs[0].firstElementChild.children)
 
 
 // var _gfnFindTag = gfnFindTag();
