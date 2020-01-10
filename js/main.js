@@ -39,13 +39,10 @@ $(window).ready(function(){
 
 var win_h = $(window).height() ;
 
-window.addEventListener('resize', (e) => {
-    console.log(e)
-})
-
 $('.content').each(function(index){
     $(this).attr("data-index", win_h * index);
 });
+
 $('.content').on("mousewheel", function(e){
     var sectionPos=parseInt($(this).attr("data-index"));
     if(e.originalEvent.wheelDelta >=0) {

@@ -1,6 +1,28 @@
-var cardNum = 1
+var content = document.getElementsByClassName('content')
 var btns = document.getElementsByClassName('tab-btn')
 var tabs = document.getElementsByClassName('tab')
+var service = document.getElementById('service').offsetTop - 100
+var windowScroll = window.scrollY
+var windowHeight = window.innerHeight
+var arrCards = ["card01", "card02", "card03"]
+var serviceOnce = false
+
+detectService()
+
+function detectService() {
+    windowScroll = window.scrollY
+    if(service => windowScroll && serviceOnce === false) {
+        serviceOnce = true
+        liftCard("card01")
+    } else {
+        // Do nothing
+    }
+}
+
+for (var i = 0; i < content.length; i++) {
+    content[i].addEventListener('wheel', detectService)
+}
+
 
 for(var i = 0; i < btns.length; i++) {
     btns[i].addEventListener('click', function(e) {
@@ -8,87 +30,66 @@ for(var i = 0; i < btns.length; i++) {
         var containActive = e.target.classList.contains('active')
         
         if(containActive)  {
-            
+            // Do nothing
         } else {
-            for(var j = 0; j < btns.length; j ++){
-                btns[j].classList.remove("active");
+            for(var j = 0; j < btns.length; j++){
+               removeControl(j)
 
                 if(id == j){
-                    console.log(id);
-                    e.target.classList.add('active')   
-                    removeCard() 
-                    liftCard(id)
+                    addControl(j)
+                    cardControl(tabs[j].firstElementChild.children)
                 }
             }
-            
-            
         }
     })
 }
 
-// btns를 누르면 번호에 따라 같은 번호를 가진 탭의 liftCard를 실행시키고
-// 다른 번호의 탭은 remove카드를 실행한다.
-// 또한 btns 인덱싱에 active클래스를 붙이고 나머지 btns의 active는 삭제한다.
-
-function liftCard(id, elem) {
-
+function addControl(num) {
+    btns[num].classList.add('active')
+    tabs[num].classList.add('active')
 }
 
-function addClass(elem) {
-    elem.classList.add('active')
+function removeControl(num) {
+    btns[num].classList.remove('active')
+    tabs[num].classList.remove('active')
 }
 
-function removeClass(elem) {
-    elem.classList.remove('active')
-}
-
-function removeCard() {
-    for(var i = 0; i < 4; i++) {
-        // tabs[i].firstChild.children.classList.remove('active')
-        console.log(tabs[i].children[0].children[0]);
+function cardControl(tabNum) {
+    var firstList = tabNum[0].classList
+    var isFirst = firstList.contains('active')
+    if(!isFirst) {
+        for(var i = 0; i < arrCards.length; i ++){
+            if (arrCards[i] == firstList[1]){
+                liftCard(arrCards[i])
+            }else{
+                downCard(arrCards[i])                
+            }
+        }
     }
 }
 
+function liftCard(card) {
+    var cards = document.getElementsByClassName(card);
+    setTimeout(function() {
+        fnUpAndDownTrigger(cards, true, 100)
+    }, 350)    
+}
 
-// var _gfnFindTag = gfnFindTag();
-// function gfnFindTag() {
+function downCard(card) {
+    var cards = document.getElementsByClassName(card);
+    fnUpAndDownTrigger(cards, false, 100)
+}
 
-//     var result = null;
-//     var nCount = 0;
-
-//     var inner_func = function (_target, _sTagName) {
-//         if (_target.nodeType === 1) {
-//             var arrNodes = _target.childNodes;
-//             if (result == null) {
-//                 for (var i = 0; i < arrNodes.length; i++) {
-//                     if (typeof arrNodes[i].tagName != "undefined") {
-//                         if (arrNodes[i].tagName.toLowerCase() == _sTagName.toLowerCase()) {
-//                             result = arrNodes[i];
-//                         } else {
-//                             if (result != null) {
-//                                 break;
-//                             } else {
-//                                 _gfnFindTag(arrNodes[i], _sTagName);
-//                             }
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//         return result;
-//     }
-//     return inner_func;
-// }
-
-// function gfnFindTag_callback(target, callback) {
-//     var lfnInnerCall = function () {
-//         if (target.nodeType === 1) {
-//             callback(target);
-//             var arrNodes = target.childNodes;
-//             for (var i = 0; i < arrNodes.length; i++) {
-//                 gfnFindTag_callback(arrNodes[i], callback);
-//             }
-//         }
-//     }
-//     lfnInnerCall();
-// }
+function fnUpAndDownTrigger(param1, param2, param3){
+    for (var i = 0; i < 4; i++) {
+        (function (x) {
+            setTimeout(function () {
+                if(param2){
+                    param1[x].classList.add('active')
+                }else{
+                    param1[x].classList.remove('active')
+                }
+            }, x * param3)
+        })(i)
+    }
+}

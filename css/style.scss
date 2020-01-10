@@ -483,185 +483,6 @@ h1 {
     }
 }
 
-
-    
-
-
-@media (min-width:320px) and (max-width:768px) {
-    .swiper-project {
-        position: relative;
-        height: 90%;
-        width: 100%;
-        top: 0vh;
-    }
-
-    .swiper-project .swiper-slide {
-
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-        height: 100%;
-        width: 100%;
-    }
-
-    .Project-text {
-        position: absolute;
-        top: 305vh;
-        font-family: "gadugi";
-        color: #fff;
-        font-size: 12vw;
-    }
-
-    #project-title1 {
-        position: absolute;
-        top: 13vh;
-        font-family: "NotoSansRegular";
-        color: #fff;
-        font-size: 4vw;
-    }
-
-    #project-title2 {
-        position: absolute;
-        top: 17vh;
-        width: 70%;
-        font-family: "gadugi";
-        color: #fff;
-        font-size: 6vw;
-        word-break: keep-all;
-        text-align: center;
-        line-height: 6vw;
-    }
-
-    .maps iframe {
-        position: absolute;
-        top: 25vh;
-        width: 80vw;
-        height: 40vh;
-    }
-
-    #Project-des {
-        position: absolute;
-        top: 385vh;
-        width: 100%;
-        font-family: "NotoSansDemiLight";
-        color: #fff;
-        text-align: center;
-        font-size: 0vw;
-        letter-spacing: -0.25vw;
-        line-height: 6.5vw;
-        word-break: keep-all;
-    }
-
-
-    .Project-logo1 {
-        position: absolute;
-        width: 50%;
-        height: 50%;
-        top: 52vh;
-        background: url("../images/project-lotte.png");
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .Project-logo2 {
-        position: absolute;
-        width: 25%;
-        height: 25%;
-        top: 62vh;
-        background: url("../images/project-nike.png");
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .Project-logo3 {
-        position: absolute;
-        width: 50%;
-        height: 50%;
-        top: 52vh;
-        background: url("../images/project-glowloudy.png");
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .Project-logo4 {
-        position: absolute;
-        width: 50%;
-        height: 50%;
-        top: 52vh;
-        background: url("../images/project-nongrim.png");
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .Project-logo5 {
-        position: absolute;
-        width: 75%;
-        height: 75%;
-        top: 42vh;
-        background: url("../images/logo.png");
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .swiper-prj-prev {
-        background-image: url("../images/left-arrow.png");
-        position: absolute;
-        top: 317vh !important;
-        width: 0% !important;
-        height: 0% !important;
-        margin-left: 7% !important;
-    }
-
-    .swiper-prj-next {
-        background-image: url("../images/right-arrow.png");
-        position: absolute;
-        top: 317vh !important;
-        width: 0% !important;
-        height: 0% !important;
-        margin-right: 7% !important;
-    }
-
-    .swiper-prj-pagination {
-        top: 390vh !important;
-    }
-
-    .swiper-prj-pagination .swiper-pagination-bullet {
-        border-radius: 1;
-        color: #ffffff;
-        /*orange color*/
-        background-color: #ffffff;
-        /*orange color*/
-        opacity: 0.5;
-        margin: 0 2px !important;
-    }
-
-    .swiper-prj-pagination .swiper-pagination-bullet-active {
-        border-radius: 1;
-        color: #ffffff;
-        /*orange color*/
-        background-color: #ffffff;
-        /*orange color*/
-        opacity: 1;
-    }
-
-
-
-}
-
 // about
 
 .about {
@@ -709,8 +530,8 @@ h1 {
         .h-text {
             width: 100%;
             text-align: center;
-            margin-top: 6rem;
-            font-size: 0.9rem;
+            margin-top: 6.5rem;
+            font-size: 0.95rem;
         }
 
         .h-title {
@@ -725,9 +546,9 @@ h1 {
         .h-sub-text {
             width: 100%;
             text-align: center;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             font-family: 'NotoSansDemiLight', sans-serif;
-            margin-top: 4rem;
+            margin-top: 4.25rem;
         }
 
         .purple {
@@ -791,14 +612,14 @@ h1 {
             }
 
             .service {
-                font-size: 1.35rem;                
+                font-size: 1.35rem;
                 transform: translateY(2rem);
                 transition: transform 0.3s;
             }
 
             &:hover,
             &.active {
-                color: $black;                               
+                color: $black;
             }
 
             &.active {
@@ -809,10 +630,6 @@ h1 {
         }
     }
 
-    .tab-03 {
-        display: none;
-    }
-
     .tabs {
         margin-top: 8rem;
         position: relative;
@@ -820,6 +637,11 @@ h1 {
 
         .tab {
             position: absolute;
+            z-index: 1;
+
+            &.active {
+                z-index: 2;
+            }
         }
 
         ul {
@@ -832,14 +654,6 @@ h1 {
                 cursor: default;
                 overflow: hidden;
                 transition: all 0.6s;
-                opacity: 0;
-                transform: translateY(3rem);
-
-                &.active {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-
 
                 img {
                     width: 100%;
@@ -889,6 +703,17 @@ h1 {
                     }
                 }
             }
+        }
+    }
+
+    .card {
+        transform: translateY(4rem);
+        opacity: 0;
+        transition: all 0.4s;
+
+        &.active {
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 }
@@ -996,13 +821,114 @@ h1 {
     }
 }
 
-
 // footer
 
 .contactus {
     background-color: #1b1e23;
     position: relative;
     display: block;
+}
+
+.footer-head {
+    position: absolute;
+    display: flex;
+    padding: 2.25rem calc(17% + 3rem);
+    width: 100%;
+    background: rgba(10, 15, 25, 0.9);
+
+    .left {
+        color: #fff;
+        width: 57.5%;
+        height: 14rem;
+        position: relative;
+
+        h1 {
+            line-height: 1.4;
+            font-size: 2rem;
+            font-family: 'NotoSansRegular', sans-serif;
+        }
+
+        .phone-num {
+            font-size: 1.4rem;
+            font-family: 'gadugi', sans-serif;
+            margin-top: 2.5rem;
+
+            .first {
+                margin-right: 0.5rem;
+            }
+
+            .second {
+                margin-left: 0.5rem;
+            }
+        }
+
+        .footer-head-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-size: 1rem;
+            font-family: 'NotoSansDemiLight', sans-serif;
+
+            .address {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    form {
+        width: 42.5%;
+        height: 14rem;
+        position: relative;
+
+        iframe {
+            display: none;
+        }
+
+        input,
+        textarea {
+            font-family: 'NotoSansDemiLight', sans-serif;
+            padding: 0.6rem;
+            width: calc(50% - 3px);
+            font-size: 0.75rem;
+
+            &.right {
+                margin-left: 2px;
+            }
+
+            &.bottom {
+                margin-top: 8px;
+            }
+
+            &.submit {
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                background: none;
+                border: 2px solid #fff;
+                font-size: 0.85rem;
+                padding: 0.6rem;
+                transition: 0.3s all;
+                cursor: pointer;
+                color: #fff;
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.1);
+                }
+            }
+        }
+
+        textarea {
+            width: 100%;
+            resize: none;
+            height: 5.3rem;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #999;
+        }
+    }
 }
 
 .footer {
@@ -1068,104 +994,7 @@ h1 {
     }
 }
 
-.footer-head {
-    position: absolute;
-    display: flex;
-    padding: 2.25rem calc(17% + 3rem);
-    width: 100%;
-    background: rgba(10, 15, 25, 0.9);
-
-    .left {
-        color: #fff;
-        width: 57.5%;
-        height: 14rem;
-        position: relative;
-
-        h1 {
-            line-height: 1.4;
-            font-size: 2rem;
-            font-family: 'NotoSansRegular', sans-serif;
-        }
-
-        .phone-num {
-            font-size: 1.4rem;
-            font-family: 'gadugi', sans-serif;
-            margin-top: 2.5rem;
-
-            .first {
-                margin-right: 0.5rem;
-            }
-
-            .second {
-                margin-left: 0.5rem;
-            }
-        }
-
-        .footer-head-text {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            font-size: 1rem;
-            font-family: 'NotoSansDemiLight', sans-serif;
-
-            .address {
-                font-size: 0.8rem;
-            }
-        }
-    }
-
-    form {
-        width: 42.5%;
-        height: 14rem;
-        position: relative;
-
-        input,
-        textarea {
-            font-family: 'NotoSansDemiLight', sans-serif;
-            padding: 0.6rem;
-            width: calc(50% - 3px);
-            font-size: 0.75rem;
-
-            &.right {
-                margin-left: 2px;
-            }
-
-            &.bottom {
-                margin-top: 8px;
-            }
-
-            &.submit {
-                width: 100%;
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                background: none;
-                border: 2px solid #fff;
-                font-size: 0.85rem;
-                padding: 0.6rem;
-                transition: 0.3s all;
-                cursor: pointer;
-                color: #fff;
-
-                &:hover {
-                    background: rgba(255, 255, 255, 0.1);
-                }
-            }
-        }
-
-        textarea {
-            width: 100%;
-            resize: none;
-            height: 5.3rem;
-        }
-
-        input::placeholder,
-        textarea::placeholder {
-            color: #999;
-        }
-    }
-}
-
+// menu
 
 .menu {
     width: 27vw;
@@ -1180,6 +1009,14 @@ h1 {
     left: 0;
     transform: translateX(-100%);
     transition: all 0.4s;
+
+    li {
+        font-family: 'gadugi', sans-serif;
+        margin: 1.25rem;
+        font-size: 1.7rem;
+        overflow: visible;
+        position: relative;
+    }
 }
 
 .menu_active {
@@ -1200,23 +1037,11 @@ h1 {
     border: 0;
     cursor: pointer;
     transition: all 0.4s;
-}
 
-.menu .btn-close:hover {
-    opacity: 0.7;
-    transform: translateY(0.2rem);
-}
-
-.menu ul {
-    list-style-type: none;
-}
-
-.menu ul li {
-    font-family: 'gadugi', sans-serif;
-    margin: 1.25rem;
-    font-size: 1.7rem;
-    overflow: visible;
-    position: relative;
+    &:hover {
+        opacity: 0.7;
+        transform: translateY(0.2rem);
+    }
 }
 
 .menu ul li a {

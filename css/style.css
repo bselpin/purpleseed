@@ -504,157 +504,6 @@ h1 {
   margin-right: 15% !important;
 }
 
-@media (min-width: 320px) and (max-width: 768px) {
-  .swiper-project {
-    position: relative;
-    height: 90%;
-    width: 100%;
-    top: 0vh;
-  }
-  .swiper-project .swiper-slide {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-  }
-  .Project-text {
-    position: absolute;
-    top: 305vh;
-    font-family: "gadugi";
-    color: #fff;
-    font-size: 12vw;
-  }
-  #project-title1 {
-    position: absolute;
-    top: 13vh;
-    font-family: "NotoSansRegular";
-    color: #fff;
-    font-size: 4vw;
-  }
-  #project-title2 {
-    position: absolute;
-    top: 17vh;
-    width: 70%;
-    font-family: "gadugi";
-    color: #fff;
-    font-size: 6vw;
-    word-break: keep-all;
-    text-align: center;
-    line-height: 6vw;
-  }
-  .maps iframe {
-    position: absolute;
-    top: 25vh;
-    width: 80vw;
-    height: 40vh;
-  }
-  #Project-des {
-    position: absolute;
-    top: 385vh;
-    width: 100%;
-    font-family: "NotoSansDemiLight";
-    color: #fff;
-    text-align: center;
-    font-size: 0vw;
-    letter-spacing: -0.25vw;
-    line-height: 6.5vw;
-    word-break: keep-all;
-  }
-  .Project-logo1 {
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    top: 52vh;
-    background: url("../images/project-lotte.png");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .Project-logo2 {
-    position: absolute;
-    width: 25%;
-    height: 25%;
-    top: 62vh;
-    background: url("../images/project-nike.png");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .Project-logo3 {
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    top: 52vh;
-    background: url("../images/project-glowloudy.png");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .Project-logo4 {
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    top: 52vh;
-    background: url("../images/project-nongrim.png");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .Project-logo5 {
-    position: absolute;
-    width: 75%;
-    height: 75%;
-    top: 42vh;
-    background: url("../images/logo.png");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .swiper-prj-prev {
-    background-image: url("../images/left-arrow.png");
-    position: absolute;
-    top: 317vh !important;
-    width: 0% !important;
-    height: 0% !important;
-    margin-left: 7% !important;
-  }
-  .swiper-prj-next {
-    background-image: url("../images/right-arrow.png");
-    position: absolute;
-    top: 317vh !important;
-    width: 0% !important;
-    height: 0% !important;
-    margin-right: 7% !important;
-  }
-  .swiper-prj-pagination {
-    top: 390vh !important;
-  }
-  .swiper-prj-pagination .swiper-pagination-bullet {
-    border-radius: 1;
-    color: #ffffff;
-    /*orange color*/
-    background-color: #ffffff;
-    /*orange color*/
-    opacity: 0.5;
-    margin: 0 2px !important;
-  }
-  .swiper-prj-pagination .swiper-pagination-bullet-active {
-    border-radius: 1;
-    color: #ffffff;
-    /*orange color*/
-    background-color: #ffffff;
-    /*orange color*/
-    opacity: 1;
-  }
-}
-
 .about h1 {
   width: 100%;
   text-align: right;
@@ -705,8 +554,8 @@ h1 {
 .about .box .h-text {
   width: 100%;
   text-align: center;
-  margin-top: 6rem;
-  font-size: 0.9rem;
+  margin-top: 6.5rem;
+  font-size: 0.95rem;
 }
 
 .about .box .h-title {
@@ -721,9 +570,9 @@ h1 {
 .about .box .h-sub-text {
   width: 100%;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-family: 'NotoSansDemiLight', sans-serif;
-  margin-top: 4rem;
+  margin-top: 4.25rem;
 }
 
 .about .box .purple {
@@ -808,10 +657,6 @@ h1 {
           transform: translateY(0);
 }
 
-.service .tab-03 {
-  display: none;
-}
-
 .service .tabs {
   margin-top: 8rem;
   position: relative;
@@ -820,6 +665,11 @@ h1 {
 
 .service .tabs .tab {
   position: absolute;
+  z-index: 1;
+}
+
+.service .tabs .tab.active {
+  z-index: 2;
 }
 
 .service .tabs ul {
@@ -838,15 +688,6 @@ h1 {
   overflow: hidden;
   -webkit-transition: all 0.6s;
   transition: all 0.6s;
-  opacity: 0;
-  -webkit-transform: translateY(3rem);
-          transform: translateY(3rem);
-}
-
-.service .tabs ul li.active {
-  opacity: 1;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
 }
 
 .service .tabs ul li img {
@@ -903,6 +744,20 @@ h1 {
   -webkit-transform: translateY(-2rem);
           transform: translateY(-2rem);
   opacity: 1;
+}
+
+.service .card {
+  -webkit-transform: translateY(4rem);
+          transform: translateY(4rem);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.service .card.active {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .mission {
@@ -1017,70 +872,6 @@ h1 {
   display: block;
 }
 
-.footer {
-  width: 100%;
-  background: #1b1e23;
-  position: absolute;
-  bottom: 0;
-  padding-top: 0.5rem;
-  padding-bottom: 2rem;
-}
-
-.footer .externals {
-  position: absolute;
-  top: 2.25rem;
-  right: 1.5rem;
-}
-
-.footer .externals ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.footer .externals ul li {
-  width: 3rem;
-}
-
-.footer .company-info {
-  color: #afafaf;
-  font-size: 0.7rem;
-  letter-spacing: 0.5px;
-  line-height: 2;
-  margin-top: 1rem;
-}
-
-.footer .company-info .copy {
-  font-family: 'gadugir', sans-serif;
-  font-size: 0.625rem;
-}
-
-.footer .company-info .info-block {
-  display: inline-block;
-  margin-left: 2rem;
-}
-
-.footer .company-info .info-block:first-child {
-  margin: 0;
-}
-
-.footer .company-info .info-block span {
-  position: relative;
-  margin-left: 1.5rem;
-  font-family: 'gadugir', 'NosoSansDemiLight', sans-serif;
-}
-
-.footer .company-info .info-block span:after {
-  position: absolute;
-  content: '';
-  display: block;
-  width: 1px;
-  height: 0.75rem;
-  background: #afafaf;
-  top: 4px;
-  left: -14px;
-}
-
 .footer-head {
   position: absolute;
   display: -webkit-box;
@@ -1134,6 +925,10 @@ h1 {
   width: 42.5%;
   height: 14rem;
   position: relative;
+}
+
+.footer-head form iframe {
+  display: none;
 }
 
 .footer-head form input,
@@ -1201,6 +996,70 @@ h1 {
   color: #999;
 }
 
+.footer {
+  width: 100%;
+  background: #1b1e23;
+  position: absolute;
+  bottom: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 2rem;
+}
+
+.footer .externals {
+  position: absolute;
+  top: 2.25rem;
+  right: 1.5rem;
+}
+
+.footer .externals ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer .externals ul li {
+  width: 3rem;
+}
+
+.footer .company-info {
+  color: #afafaf;
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+  line-height: 2;
+  margin-top: 1rem;
+}
+
+.footer .company-info .copy {
+  font-family: 'gadugir', sans-serif;
+  font-size: 0.625rem;
+}
+
+.footer .company-info .info-block {
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+.footer .company-info .info-block:first-child {
+  margin: 0;
+}
+
+.footer .company-info .info-block span {
+  position: relative;
+  margin-left: 1.5rem;
+  font-family: 'gadugir', 'NosoSansDemiLight', sans-serif;
+}
+
+.footer .company-info .info-block span:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 1px;
+  height: 0.75rem;
+  background: #afafaf;
+  top: 4px;
+  left: -14px;
+}
+
 .menu {
   width: 27vw;
   height: 100vh;
@@ -1222,6 +1081,14 @@ h1 {
           transform: translateX(-100%);
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
+}
+
+.menu li {
+  font-family: 'gadugi', sans-serif;
+  margin: 1.25rem;
+  font-size: 1.7rem;
+  overflow: visible;
+  position: relative;
 }
 
 .menu_active {
@@ -1250,18 +1117,6 @@ h1 {
   opacity: 0.7;
   -webkit-transform: translateY(0.2rem);
           transform: translateY(0.2rem);
-}
-
-.menu ul {
-  list-style-type: none;
-}
-
-.menu ul li {
-  font-family: 'gadugi', sans-serif;
-  margin: 1.25rem;
-  font-size: 1.7rem;
-  overflow: visible;
-  position: relative;
 }
 
 .menu ul li a {
