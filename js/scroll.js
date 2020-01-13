@@ -2,9 +2,9 @@ var vw = window.innerWidth
 var vh = window.innerHeight
 var dw = document.documentElement.clientWidth
 var dh = document.documentElement.clientHeight
-var bg1 = '../images/img1.jpg'
-var bg2 = '../images/img2.jpg'
-var disp = '../images/clouds.jpg'
+var bg1 = './images/img1.jpg'
+var bg2 = './images/img2.jpg'
+var disp = './images/clouds.jpg'
 var main = document.getElementById('main')
 var keys = { 37: 1, 38: 1, 39: 1, 40: 1 }
 var mains = document.getElementsByClassName('m')
@@ -13,7 +13,7 @@ var canvases = document.getElementsByClassName('canvas')
 
 function displacementBg(img, id) {
     if(id === 2) {
-        vh = vh*1.6
+        vh = vh*1.5
     }
     const app = new PIXI.Application({
         width: vw,
@@ -45,11 +45,10 @@ function displacementBg(img, id) {
         flag.height = vh - 80
         flag.x = -70
         flag.y = -130
-    }
-    
+    }    
 
     const displacementSprite = PIXI.Sprite.from('../images/clouds.jpg');
-    // Make sure the sprite is wrapping.
+
     displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
     const displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
     displacementFilter.padding = 0;
@@ -63,10 +62,8 @@ function displacementBg(img, id) {
     displacementFilter.scale.x = 60;
     displacementFilter.scale.y = 120;
 
-    app.ticker.add(() => {
-        // Offset the sprite position to make vFilterCoord update to larger value. Repeat wrapping makes sure there's still pixels on the coordinates.
+    app.ticker.add(() => {        
         displacementSprite.x++;
-        // Reset x to 0 when it's over width to keep values from going to very huge numbers.
         if (displacementSprite.x > displacementSprite.width) {
             displacementSprite.x = 1
         }
@@ -122,6 +119,19 @@ function fullPage() {
             return false;
         }
     });
+}
+
+console.log(window.pageYOffset)
+
+if(window.pageYOffset >= 937) {
+    main.addEventListener('wheel', liquidSlide);
+    fullPage()
+    for (var j = 0; j < canvases.length; j++) {
+        canvases[j].style.display = 'none'
+    }
+    mains[0].style.display = 'none'
+} else {
+
 }
 
 main.addEventListener('wheel', preventDefault, {passive: false});
