@@ -69,10 +69,10 @@ function displacementBg(img, id) {
         }
     });
 }
+
 displacementBg(bg2, 2)
 
 displacementBg(bg1, 1)
-
 
 function preventDefault(e) {
   e = e || window.event;
@@ -122,17 +122,13 @@ function fullPage() {
     });
 }
 
-console.log(window.pageYOffset)
-
-if(window.pageYOffset >= 937) {
+if (window.pageYOffset >= 937) {
     main.addEventListener('wheel', liquidSlide);
     fullPage()
     for (var j = 0; j < canvases.length; j++) {
         canvases[j].style.display = 'none'
     }
     mains[0].style.display = 'none'
-} else {
-
 }
 
 main.addEventListener('wheel', preventDefault, {passive: false});
