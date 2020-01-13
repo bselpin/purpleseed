@@ -9,11 +9,6 @@ var serviceOnce = false
 
 liftCard("card01")
 
-for (var i = 0; i < content.length; i++) {
-    content[i].addEventListener('wheel', detectService)
-}
-
-
 for(var i = 0; i < btns.length; i++) {
     btns[i].addEventListener('click', function(e) {
         var id = e.target.id
