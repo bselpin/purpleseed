@@ -47,7 +47,7 @@ function displacementBg(img, id) {
         flag.y = -130
     }    
 
-    const displacementSprite = PIXI.Sprite.from('../images/clouds.jpg');
+    const displacementSprite = PIXI.Sprite.from(disp);
 
     displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
     const displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
