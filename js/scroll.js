@@ -118,6 +118,7 @@ function fullPage() {
             $("html,body").stop().animate({ scrollTop: sectionPos + win_h }, 500);
             return false;
         }
+        detectService()
     });
 }
 

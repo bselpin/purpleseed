@@ -7,17 +7,7 @@ var windowHeight = window.innerHeight
 var arrCards = ["card01", "card02", "card03"]
 var serviceOnce = false
 
-detectService()
-
-function detectService() {
-    windowScroll = window.scrollY
-    if(service => windowScroll && serviceOnce === false) {
-        serviceOnce = true
-        liftCard("card01")
-    } else {
-        // Do nothing
-    }
-}
+liftCard("card01")
 
 for (var i = 0; i < content.length; i++) {
     content[i].addEventListener('wheel', detectService)
