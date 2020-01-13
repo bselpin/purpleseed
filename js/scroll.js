@@ -2,14 +2,14 @@ var vw = window.innerWidth
 var vh = window.innerHeight
 var dw = document.documentElement.clientWidth
 var dh = document.documentElement.clientHeight
-var bg1 = 'img1.jpg'
-var bg2 = 'img2.jpg'
-var disp = 'clouds.jpg'
+var bg1 = '../images/img1.jpg'
+var bg2 = '../images/img2.jpg'
+var disp = '../images/clouds.jpg'
 var main = document.getElementById('main')
 var keys = { 37: 1, 38: 1, 39: 1, 40: 1 }
 var mains = document.getElementsByClassName('m')
-
-console.log(mains)
+var canScroll = false
+var canvases = document.getElementsByClassName('canvas')
 
 function displacementBg(img, id) {
     if(id === 2) {
@@ -48,7 +48,7 @@ function displacementBg(img, id) {
     }
     
 
-    const displacementSprite = PIXI.Sprite.from('clouds.jpg');
+    const displacementSprite = PIXI.Sprite.from('../images/clouds.jpg');
     // Make sure the sprite is wrapping.
     displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
     const displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
@@ -111,12 +111,21 @@ function enableScroll() {
     document.onkeydown = null;
 }
 
-function detectDevice() {
-
+function fullPage() {
+    $('.content').on("mousewheel", function (e) {
+        var sectionPos = parseInt($(this).attr("data-index"));
+        if (e.originalEvent.wheelDelta >= 0) {
+            $("html,body").stop().animate({ scrollTop: sectionPos - win_h }, 500);
+            return false;
+        } else if (e.originalEvent.wheelDelta < 0) {
+            $("html,body").stop().animate({ scrollTop: sectionPos + win_h }, 500);
+            return false;
+        }
+    });
 }
 
-document.addEventListener('wheel', preventDefault, {passive: false});
-document.addEventListener('wheel', liquidSlide);
+main.addEventListener('wheel', preventDefault, {passive: false});
+main.addEventListener('wheel', liquidSlide);
 
 function liquidSlide() {
     for(var i = 0; i < mains.length; i++) {
@@ -125,9 +134,15 @@ function liquidSlide() {
                 mains[x].classList.add('active')
             }, x+100);
         })(i)
+        canScroll = true
     }
 
     setTimeout(() => {
+        for(var j = 0; j < canvases.length; j++) {
+            canvases[j].style.display = 'none'
+        }
+        fullPage()
         document.removeEventListener('wheel', preventDefault, { passive: false });
-    }, 3000);
+    }, 2000);
 }
+
