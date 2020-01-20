@@ -57,47 +57,43 @@
 				<p id=main3>퍼플시드의 보랏빛 싹이 자라나<br>여러분의 든든한 숲이 되어 드립니다.</p>
 			</div>
 		</div>
-		<div class="section section01 m">
-
-		</div>
-		<div class="section section02">
-
-		</div>
+		<div class="section section01 m"></div>
+		<div class="section section02"></div>
 	</div>
 
 	<div class="content news" id="vision">
 		<div class="square left"></div>
 		<div class="square right"></div>
+		<div class="news-inner">
+				<div class="vision-title wow fadeInUp" data-wow-duration="1s">
+					<h1>Purpleseed: <br>Vision</h1>
+				</div>
+				<p class="wow fadeInUp business-partner" data-wow-duration="1s">Business Partner</p>
+			
+				<div class="wow fadeInUp circles" data-wow-delay="0.4s" data-wow-duration="1s">
+					<ul>
+						<li class="circle">
+							<p class="circle-inner white">고객 이해</p>
+							<p class="circle-inner black">니즈 핵심 파악<br>실전적 최적화<br>솔루션</p>
+						</li>
+						<li class="circle">
+							<p class="circle-inner white">강력한<br>퍼포먼스</p>
+							<p class="circle-inner black">경험과 실력을<br>갖춘<br>전문가 그룹</p>
+						</li>
+						<li class="circle">
+							<p class="circle-inner white">크리에이티브, <br>그 이상</p>
+							<p class="circle-inner black">트렌드에 맞춘<br>새로운 솔루션</p>
+						</li>
+					</ul>
+				</div>
+				<p class="wow fadeInUp text" data-wow-delay="0.6s" data-wow-duration="1.5s">
+					트렌드에 맞추어 고객의 다양한 요구와
+					<br>소비자의 니즈를 반영하여
+					<br>최적화된 마케팅 및 컨설팅 서비스를 제공합니다.
+				</p>
+		</div>		
 
-		<div class="wrapper-p">
-			<div class="vision-title wow fadeInUp" data-wow-duration="1s">
-				<h1>Purpleseed: <br>Vision</h1>
-			</div>
-			<p class="wow fadeInUp business-partner" data-wow-duration="1s">Business Partner</p>
-
-			<div class="wow fadeInUp circles" data-wow-delay="0.4s" data-wow-duration="1s">
-				<ul>
-					<li class="circle">
-						<p class="circle-inner white">고객 이해</p>
-						<p class="circle-inner black">니즈 핵심 파악<br>실전적 최적화<br>솔루션</p>
-					</li>
-					<li class="circle">
-						<p class="circle-inner white">강력한<br>퍼포먼스</p>
-						<p class="circle-inner black">경험과 실력을<br>갖춘<br>전문가 그룹</p>
-					</li>
-					<li class="circle">
-						<p class="circle-inner white">크리에이티브, <br>그 이상</p>
-						<p class="circle-inner black">트렌드에 맞춘<br>새로운 솔루션</p>
-					</li>
-				</ul>
-			</div>
-		</div>
-
-		<p class="wow fadeInUp text" data-wow-delay="0.6s" data-wow-duration="1.5s">
-			트렌드에 맞추어 고객의 다양한 요구와
-			<br>소비자의 니즈를 반영하여
-			<br>최적화된 마케팅 및 컨설팅 서비스를 제공합니다.
-		</p>
+		
 	</div>
 
 
@@ -539,11 +535,11 @@
 		</div>
 	</div>
 
-	<div class="content contactus">
+	<div class="content contactus" id="contactus">
 		<div class="footer-head wrapper-p">
 			<div class="left">
 				<h1>퍼플시드와<br>함께 시작해볼까요?</h1>
-				<p class="phone-num"><span class="first">02.0680.0920</span> / <span class="second">010.7740.1485</span>
+				<p class="phone-num"><span class="first">02.6080.0920</span> / <span class="second">010.7740.1485</span>
 				</p>
 				<div class="footer-head-text">
 					<p>purpleseed@purpleseed.co.kr</p>
@@ -586,7 +582,7 @@
 					<div class="blocks">
 						<p class="info-block">회사명<span>㈜뉴플러스기획</span></p>
 						<p class="info-block">대표자명<span>임세란</span></p>
-						<p class="info-block">Tel<span>02.6080.0920 or 070.7740.1485</span></p>
+						<p class="info-block">Tel<span>02.6080.0920 or 010.7740.1485</span></p>
 						<p class="info-block">E-mail<span>purpleseed@purpleseed.co.kr</span></p>
 					</div>
 					<div class="blocks">
@@ -610,16 +606,16 @@
 	<div class="menu">
 		<span class="btn btn-close">&times;</span>
 		<ul>
-			<li><a href="#main">Main</a></li>
-			<li><a href="#vision">Vision</a></li>
+			<li><a href="#main" onclick="reverseSlide()">Main</a></li>
+			<li><a href="#vision" onclick="liquidSlide()">Vision</a></li>
 			<li>
-				<a href="#reference">Reference<span>Project</span></a>
+				<a href="#reference" onclick="liquidSlide()">Reference<span>Project</span></a>
 			</li>
 			<li>
-				<a href="#contacts">About<span>Service</span></a>
+				<a href="#about" onclick="liquidSlide()">About<span>Service</span></a>
 			</li>
-			<li><a href="#client">Client</a></li>
-			<li><a href="#contactus">Contact Us</a></li>
+			<li><a href="#client" onclick="liquidSlide()">Client</a></li>
+			<li><a href="#contactus" onclick="liquidSlide()">Contact Us</a></li>
 		</ul>
 	</div>
 
@@ -672,18 +668,16 @@
 
 		// WOW
 
-		var wow = new WOW({
+		new WOW({
 			boxClass: 'wow',
 			offset: 0,
 			mobile: true,
 			live: true,
-		});
-
-		wow.init();
+		}).init();
 
 		// Swipers
 
-		var swiperservice = new Swiper('.swiper-service', {
+		new Swiper('.swiper-service', {
 			centeredSlides: true,
 			slidesPerView: 3.5,
 			spaceBetween: 30,
@@ -694,7 +688,7 @@
 			}
 		});
 
-		var swiperclient = new Swiper('.swiper-client', {
+		new Swiper('.swiper-client', {
 			centeredSlides: true,
 			slidesPerView: 1,
 			loop: true,
@@ -704,7 +698,7 @@
 			},
 		});
 
-		var swiperRef = new Swiper('.swiper-reference', {
+		new Swiper('.swiper-reference', {
 			slidesPerView: 1.6,
 			navigation: {
 				nextEl: '.swiper-ref-next',
@@ -716,7 +710,7 @@
 			initialSlide: 0,
 		});
 
-		var swiperPro = new Swiper('.swiper-project', {
+		new Swiper('.swiper-project', {
 			slidesPerView: 1,
 			navigation: {
 				nextEl: '.swiper-prj-next',
@@ -730,7 +724,7 @@
 			simulateTouch: false
 		});
 
-		var swiperProTitle = new Swiper('.swiper-project-title', {
+		new Swiper('.swiper-project-title', {
 			direction: 'vertical',
 			slidesPerView: 1,
 			navigation: {

@@ -21,18 +21,6 @@ navLink.on('click', function(event) {
     menu.toggleClass('menu_active');
 });
 
-var max = 300; //100% 투명할때의 스크롤 값
-$(window).scroll(function(){
-    var scrollPX = $(this).scrollTop();
-    if( scrollPX < max ) {
-        $("#bg").css({"opacity": (max-scrollPX)/max });
-    }
-    else{
-        $("#bg").css({"opacity": 0});
-    }	
-});
-
-
 var win_h = $(window).height() ;
 
 $('.content').each(function(index){

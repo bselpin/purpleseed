@@ -35,10 +35,11 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  z-index: 999;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-left: 7px;
+  z-index: 9990;
   cursor: pointer;
   -webkit-box-shadow: 0px 0px 18px rgba(30, 20, 60, 0.2);
           box-shadow: 0px 0px 18px rgba(30, 20, 60, 0.2);
@@ -46,10 +47,31 @@
 
 .burger span {
   height: 2px;
-  width: 20px;
-  background: #282f39;
-  margin: 2px;
+  width: 25px;
+  background: #000000;
+  margin: 3px;
   cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.burger span:nth-child(2) {
+  width: 18px;
+}
+
+.burger span:last-child {
+  width: 28px;
+}
+
+.burger:hover {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+}
+
+.burger:hover span {
+  margin: 2px;
 }
 
 .burger:hover span:first-child {
@@ -77,13 +99,15 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #282f39;
+  color: #000000;
+  position: relative;
+  z-index: 999;
 }
 
 h1 {
   font-family: "gadugi";
-  font-size: 3.8rem;
   line-height: 1.2;
+  font-size: 3.2rem;
 }
 
 .main .main-message {
@@ -109,8 +133,8 @@ h1 {
 .main .section {
   width: 100%;
   height: 100vh;
-  background: url("../images/img2.jpg") center no-repeat;
-  background-size: cover;
+  background: url("../images/img02.jpg") center -300px no-repeat;
+  background-size: 140%;
   top: 0;
   left: 0;
   opacity: 1;
@@ -121,37 +145,39 @@ h1 {
 .main .section01 {
   position: absolute;
   z-index: 10;
+  height: calc(160vh - 250px);
 }
 
 .main .section02 {
   position: absolute;
   z-index: 1 !important;
   height: 160vh;
-  background: url("../images/img1.jpg") center center no-repeat;
-  top: -200px;
+  background: url("../images/img01.jpg") center no-repeat;
+  background-size: 125%;
+  top: -250px;
 }
 
 .main #main1 {
-  font-family: "gadugi";
-  font-size: 3.6rem;
-  color: #282f39;
+  font-family: "gadugi", sans-serif;
+  font-size: 3.4rem;
+  color: #000000;
   text-align: center;
   margin-bottom: 1.6rem;
 }
 
 .main #main2 {
   margin-top: 1.3rem;
-  font-family: "NotoSansBold";
+  font-family: "NotoSansRegular", sans-serif;
   font-size: 2.3rem;
-  color: #282f39;
+  color: #000000;
   text-align: center;
   word-break: keep-all;
 }
 
 .main #main3 {
-  font-family: "NotoSansRegular";
+  font-family: "NotoSansRegular", sans-serif;
   font-size: 1.15rem;
-  color: #282f39;
+  color: #000000;
   text-align: center;
   margin-top: 1.35rem;
   letter-spacing: -1px;
@@ -165,6 +191,10 @@ h1 {
   opacity: 1;
   -webkit-transition: all 1.5s;
   transition: all 1.5s;
+  width: 100%;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+  top: -150px;
 }
 
 .main .canvas01 {
@@ -176,15 +206,15 @@ h1 {
 }
 
 .main .m.active {
-  -webkit-transform: scale(1.03);
-          transform: scale(1.03);
+  -webkit-transform: scale(1.16);
+          transform: scale(1.16);
   opacity: 0;
 }
 
 .bg {
   width: 160%;
   height: 160%;
-  background: url("../images/img2.jpg");
+  background: url("../images/img02.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -196,7 +226,7 @@ h1 {
   padding: 0.5px;
   height: 5.5%;
   border: 5px;
-  background-color: #282f39;
+  background-color: #000000;
 }
 
 .image-cover {
@@ -214,7 +244,7 @@ h1 {
   width: 100%;
   z-index: 1;
   overflow: hidden;
-  background: url("../images/img1.jpg");
+  background: url("../images/img01.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -228,16 +258,34 @@ h1 {
   font-family: 'NotoSansMedium', sans-serif;
   font-size: 1rem;
   position: absolute;
-  bottom: 5rem;
-  left: calc(17% + 3rem);
+  bottom: 4rem;
+  left: 3rem;
+}
+
+#vision h1 {
+  margin-top: 3rem;
+}
+
+.news-inner {
+  width: 100%;
+  height: calc(40vh + 260px);
+  position: absolute;
+  bottom: 0;
+  background: #fff;
+  z-index: 999;
+  width: 66%;
+  margin: 0 auto;
+  padding-right: 3rem;
+  padding-left: 3rem;
 }
 
 .circles {
   position: absolute;
   width: 43%;
   right: 16%;
-  font-size: 1rem;
-  font-family: 'NotoSansMedium', sans-serif;
+  font-size: 0.9rem;
+  font-family: 'NotoSansRegular', sans-serif;
+  top: 12.5rem;
 }
 
 .circles ul {
@@ -297,9 +345,9 @@ h1 {
   position: absolute;
   top: 0;
   background: #fff;
-  height: 40%;
+  height: 60%;
   width: 18%;
-  z-index: 5;
+  z-index: 999;
 }
 
 .square.right {
@@ -312,10 +360,10 @@ h1 {
 
 .business-partner {
   position: absolute;
-  top: 1.75rem;
+  top: 4.5rem;
   right: 3rem;
   font-family: "gadugi";
-  font-size: 1.35rem;
+  font-size: 1.2rem;
 }
 
 .feedback {
@@ -339,7 +387,6 @@ h1 {
 
 .ref-title h1 {
   margin-bottom: 0.5rem;
-  font-size: 3rem;
 }
 
 .swiper-reference {
@@ -393,7 +440,7 @@ h1 {
 
 .reftext1 {
   position: absolute;
-  font-family: "NotoSansBold";
+  font-family: "NotoSansBold", sans-serif;
   left: 2%;
   top: 40.5%;
   color: #fff;
@@ -557,7 +604,6 @@ h1 {
   width: 100%;
   text-align: right;
   padding-right: 2rem;
-  font-size: 3rem;
 }
 
 .about .about-box {
@@ -644,7 +690,7 @@ h1 {
 
 .about .box-02 {
   margin-top: 4.5rem;
-  background: #1b1e23;
+  background: #000000;
 }
 
 .about .box-02 .hidden {
@@ -698,7 +744,7 @@ h1 {
 }
 
 .service .tab-btns .tab-btn:hover, .service .tab-btns .tab-btn.active {
-  color: #282f39;
+  color: #000000;
 }
 
 .service .tab-btns .tab-btn.active .service {
@@ -839,6 +885,7 @@ h1 {
   color: #fff;
   font-family: 'gadugir';
   font-size: 1.15rem;
+  letter-spacing: 0.5px;
 }
 
 .client {
@@ -1047,7 +1094,7 @@ h1 {
 
 .footer {
   width: 100%;
-  background: #1b1e23;
+  background: #000000;
   position: absolute;
   bottom: 0;
   padding-top: 0.5rem;
