@@ -77,10 +77,10 @@ function fullPage() {
     $('.content').on("mousewheel", function (e) {
         var sectionPos = parseInt($(this).attr("data-index"));
         if (e.originalEvent.wheelDelta >= 0) {
-            $("html,body").stop().animate({ scrollTop: sectionPos - win_h }, 500);
+            $("html,body").stop().animate({ scrollTop: sectionPos - win_h }, 850, 'easeInOutCubic');
             return false;
         } else if (e.originalEvent.wheelDelta < 0) {
-            $("html,body").stop().animate({ scrollTop: sectionPos + win_h }, 500);
+            $("html,body").stop().animate({ scrollTop: sectionPos + win_h }, 850, 'easeInOutCubic');
             return false;
         }
         detectService()
@@ -133,7 +133,7 @@ function reverseSlide() {
         for (var l = 0; l < canvases.length; l++) {
             canvases[l].style.display = 'block'
         }
-    }, 1500);
+    }, 1000);
 
     // for (var i = canvases.length - 1; i > -1; i--) {            
     //     (function (_i) {

@@ -4,6 +4,44 @@
 $black: #000000;
 $black2: #000000;
 
+@mixin size($size) {
+    @if $size==phone {
+        @media (max-width: 599px) {
+            @content;
+        }
+    }
+
+    @else if $size==tablet {
+        @media (min-width: 600px) {
+            @content;
+        }
+    }
+
+    @else if $size==tablet-up {
+        @media (min-width: 1000px) {
+            @content;
+        }
+    }
+
+    @else if $size==laptop {
+        @media (max-width: 1366px) {
+            @content;
+        }
+    }
+
+    @else if $size==laptop-up {
+        @media (max-width: 1440px) {
+            @content;
+        }
+    }
+}
+
+html {
+    @include size(laptop) {
+        font-size: calc(13px + 0.25vw);
+    }
+}
+
 .wrapper-p {
     width: 66%;
     margin: 0 auto;
@@ -60,7 +98,7 @@ $black2: #000000;
         align-items: center;
         padding: 0;
 
-        span { 
+        span {
             margin: 2px;
         }
 
@@ -202,27 +240,6 @@ h1 {
     background-color: $black;
 }
 
-.image-cover {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0);
-    z-index: 3;
-}
-
-.first-img {
-    position: absolute;
-    top: -40%;
-    height: 175vh;
-    width: 100%;
-    z-index: 1;
-    overflow: hidden;
-    background: url("../images/img01.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
 // Vision
 
 #vision {
@@ -252,6 +269,14 @@ h1 {
     margin: 0 auto;
     padding-right: 3rem;
     padding-left: 3rem;
+
+    @include size(laptop-up) {
+        height: calc(40vh + 290px);
+    }
+
+    @include size(laptop) {
+        height: calc(40vh + 250px);
+    }
 }
 
 .circles {
@@ -261,6 +286,12 @@ h1 {
     font-size: 0.9rem;
     font-family: 'NotoSansRegular', sans-serif;
     top: 12.5rem;
+
+    @include size(laptop-up) {
+        top: 13.5rem;
+        width: 45%;
+        font-size: 0.95rem;
+    }
 
     ul {
         display: flex;
@@ -282,6 +313,11 @@ h1 {
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @include size(laptop-up) {
+            width: calc(7.5vw + 3rem);
+            height: calc(7.5vw + 3rem);
+        }
 
         &:hover {
             &.black {
@@ -330,7 +366,6 @@ h1 {
     font-size: 1.2rem;
 }
 
-
 // ref
 
 .feedback {
@@ -342,6 +377,88 @@ h1 {
 
 #reference {
     position: relative;
+
+    .swiper-ref-next {
+        background: url('../images/ref-next.png') !important;
+        background-position: center !important;
+        background-size: 100% !important;
+        background-repeat: no-repeat !important;
+        position: absolute;
+        top: auto;
+        bottom: 18.9%;
+        right: 25.3%;
+        width: 2.5rem;
+        height: 2.5rem;
+
+        @include size(laptop-up) {
+            bottom: 17.2%;
+            right: 24.9%;
+            width: 2.25rem;
+            height: 2.25rem;
+        }
+
+        @include size(laptop) {
+            bottom: 18.8%;
+            right: 25.3%;
+            width: 2rem;
+            height: 2rem;
+        }        
+    }
+
+    .swiper-ref-prev {
+        background: url('../images/ref-prev.png') !important;
+        background-position: center !important;
+        background-size: 100% !important;
+        background-repeat: no-repeat !important;
+        position: absolute;
+        top: auto;
+        bottom: 18.9%;
+        right: 28.1%;
+        width: 2.5rem;
+        height: 2.5rem;
+        left: auto;
+
+        @include size(laptop-up) {
+            bottom: 17.2%;
+            left: auto;
+            right: 28.2%;
+            width: 2.25rem;
+            height: 2.25rem;
+        }
+
+        @include size(laptop) {
+            bottom: 18.8%;
+            left: auto;
+            right: 28.2%;
+            width: 2rem;
+            height: 2rem;
+        }        
+    }
+
+    .swiper-reference-text {
+        width: 17rem;
+        height: 17rem;
+        position: absolute;
+        z-index: 50;
+        background: none;
+        left: 20%;
+
+        @include size(laptop-up) {
+            margin-top: 1rem;
+        }
+
+        @include size(laptop) {
+            margin-top: 0rem;
+        }
+
+        .single {
+            margin-top: 2rem;
+        }
+
+        .dual {
+            margin-top: 1rem;
+        }
+    }
 }
 
 .ref-title {
@@ -351,8 +468,20 @@ h1 {
     text-align: center;
     color: #fff;
 
+    @include size(laptop-up) {
+        top: 4.5rem;
+    }
+
+    @include size(laptop) {
+        top: 3.5rem;
+    }    
+
     h1 {
         margin-bottom: 0.5rem;
+
+        @include size(laptop) {
+            margin-bottom: 0.2rem;
+        }
     }
 }
 
@@ -379,6 +508,14 @@ h1 {
     align-items: center;
     height: 100%;
     width: 100%;
+
+    @include size(laptop-up) {
+        margin-top: 3rem;
+    }
+
+    @include size(laptop) {
+        margin-top: 2rem;
+    }
 }
 
 .swiper-reference .photo {
@@ -443,37 +580,15 @@ h1 {
     color: #fff;
     font-size: 1.1rem;
     text-align: right;
+
+    @include size(laptop-up) {
+        left: 15rem;
+    }
+
+    @include size(laptop) {
+        left: 14.5rem;
+    }
 }
-
-
-
-.swiper-ref-next {
-    background: url('../images/ref-next.png') !important;
-    background-position: center !important;
-    background-size: 100% !important;
-    background-repeat: no-repeat !important;
-    position: absolute;
-    top: auto !important;
-    bottom: 18.9% !important;
-    right: 24.5% !important;
-    width: 3rem !important;
-    height: 3rem !important;
-}
-
-.swiper-ref-prev {
-    background: url('../images/ref-prev.png') !important;
-    background-position: center !important;
-    background-size: 100% !important;
-    background-repeat: no-repeat !important;
-    position: absolute;
-    top: auto !important;
-    bottom: 18.9% !important;
-    left: 68.9% !important;
-    width: 3rem !important;
-    height: 3rem !important;
-}
-
-
 // project
 
 .project {
@@ -486,13 +601,24 @@ h1 {
         position: absolute;
         top: 3rem;
         left: 3rem;
-        font-size: 4rem;
+
+        @include size(laptop-up) {
+            top: 3.5rem;
+        }
     }
 
     .sub {
         position: absolute;
         bottom: 5.5rem;
-        left: calc(17% + 3rem)
+        left: calc(17% + 3rem);
+
+        @include size(laptop-up) {
+            bottom: 7rem;
+        }
+
+        @include size(laptop) {
+            bottom: 4rem;
+        }
     }
 
     .swiper-project-title {
@@ -510,12 +636,18 @@ h1 {
         .client-name {
             font-family: 'gadugir', 'NotoSansRegular', sans-serif;
             font-size: 1rem;
+            @include size(laptop) {
+                font-size: 0.85rem;
+            }
         }
 
         .project-name {
             font-family: 'gadugi', 'NotoSansBold', sans-serif;
             font-size: 1.7rem;
             margin-top: -0.3rem;
+            @include size(laptop) {
+                font-size: 1.4rem;
+            }
         }
     }
 
@@ -523,6 +655,7 @@ h1 {
         width: 100%;
         height: 90%;
         position: relative;
+        overflow: visible;
 
         .swiper-wrapper {
             width: 100%;
@@ -532,6 +665,7 @@ h1 {
                 justify-content: center;
                 padding: 0 calc(17% + 3rem);
                 align-items: center;
+                
             }
         }
 
@@ -539,6 +673,10 @@ h1 {
             width: 100%;
             text-align: right;
             margin-top: 1.5rem;
+            
+            @include size(laptop) {
+                margin-top: 0.9rem;
+            }
         }
     }
 
@@ -548,6 +686,10 @@ h1 {
         position: relative;
         height: 0;
         padding-bottom: 48%;
+
+        @include size(laptop) {
+            margin-top: 8.5rem;
+        }
 
         iframe {
             position: absolute;
@@ -578,10 +720,18 @@ h1 {
         width: 100%;
         text-align: right;
         padding-right: 2rem;
+
+        @include size(laptop) {
+            margin-top: 1rem;
+        }
     }
 
     .about-box {
         display: flex;
+
+        @include size(laptop) {
+            margin-top: -1.5rem;
+        }
     }
 
     .box {
@@ -619,6 +769,14 @@ h1 {
             text-align: center;
             margin-top: 6.5rem;
             font-size: 0.95rem;
+
+            @include size(laptop-up) {
+                margin-top: 5rem;
+            }
+
+            @include size(laptop) {
+                margin-top: 3.5rem;
+            }
         }
 
         .h-title {
@@ -628,6 +786,11 @@ h1 {
             font-size: 2.3rem;
             letter-spacing: -4px;
             margin-top: 1rem;
+
+            @include size(laptop) {
+                font-size: 2rem;
+                letter-spacing: -2px;
+            }
         }
 
         .h-sub-text {
@@ -636,6 +799,9 @@ h1 {
             font-size: 0.8rem;
             font-family: 'NotoSansDemiLight', sans-serif;
             margin-top: 4.25rem;
+            @include size(laptop) {
+                font-size: 0.87rem;
+            }
         }
 
         .purple {
@@ -675,6 +841,10 @@ h1 {
     .wrapper-np {
         display: block;
         padding-top: 7rem;
+
+        @include size(laptop) {
+            padding-top: 5rem;
+        }
     }
 
     .tab-btns {
@@ -722,6 +892,10 @@ h1 {
         position: relative;
         width: 100%;
 
+        @include size(laptop) {
+            margin-top: 6rem;
+        }
+
         .tab {
             position: absolute;
             z-index: 1;
@@ -755,6 +929,14 @@ h1 {
                     top: 10rem;
                     text-align: center;
                     transition: all 0.4s;
+
+                    @include size(laptop-up) {
+                        top: 7.5rem;
+                    }
+
+                    @include size(laptop) {
+                        top: 8rem;
+                    }
                 }
 
                 .text {
@@ -766,6 +948,14 @@ h1 {
                     font-size: 0.95rem;
                     transition: all 0.4s;
                     opacity: 0;
+
+                    @include size(laptop-up) {
+                        top: 10rem;
+                    }
+
+                    @include size(laptop) {
+                        top: 10rem;
+                    }
 
                     span {
                         font-size: 0.5rem;
@@ -823,7 +1013,15 @@ h1 {
         font-size: 1.2rem;
         width: 51%;
         word-break: keep-all;
-        font-family: 'NotoSansRegular', sans-serif;
+        font-family: 'NotoSansDemiLight', sans-serif;
+
+        @include size(laptop-up) {
+            width: 65%;
+        }
+
+        @include size(laptop) {
+            width: 65%;
+        }
     }
 
     .line {
@@ -846,10 +1044,28 @@ h1 {
     flex-direction: column;
     padding-top: 3rem;
 
+    @include size(laptop-up) {
+        padding-top: 0rem;
+    }
+
+    @include size(laptop) {
+        padding-top: 1.5rem;
+    }
+
     h1 {
         font-size: 1.5rem;
         margin-bottom: 6rem;
         margin-top: 3rem;
+
+        @include size(laptop-up) {
+            margin-top: 1rem;
+            margin-bottom: 6rem;
+        }
+
+        @include size(laptop) {
+            margin-top: 0rem;
+            margin-bottom: 4rem;
+        }
     }
 
     .client-box {
@@ -864,6 +1080,11 @@ h1 {
         margin-top: 0;
         top: 38%;
         right: -30px;
+
+        @include size(laptop) {
+            top: 40.5%;
+            right: -10px;
+        }
     }
 
     .swiper-client-prev {
@@ -872,6 +1093,11 @@ h1 {
         margin-top: 0;
         top: 38%;
         left: -30px;
+        
+        @include size(laptop) {
+            top: 40.5%;
+            left: -10px;
+        }
     }
 
     .swiper-client {
@@ -883,6 +1109,18 @@ h1 {
         width: 16%;
         height: 17rem;
         margin: 0 2rem;
+
+        @include size(laptop-up) {
+            width: 18%;
+            height: 13.5rem;
+            margin: 0 1.5rem;
+        }
+
+        @include size(laptop) {
+            width: 19.5%;
+            height: 13rem;
+            margin: 0 1rem;
+        }
 
         img {
             display: inline-block;
@@ -924,11 +1162,18 @@ h1 {
     width: 100%;
     background: rgba(10, 15, 25, 0.9);
 
+    @include size(laptop-up) {
+        padding: 1.75rem calc(17% + 3rem) 1.35rem;
+    }
+
     .left {
         color: #fff;
         width: 57.5%;
         height: 14rem;
         position: relative;
+        @include size(laptop) {
+            width: 53%;
+        }
 
         h1 {
             line-height: 1.4;
@@ -967,6 +1212,10 @@ h1 {
         width: 42.5%;
         height: 14rem;
         position: relative;
+
+        @include size(laptop) {
+            width: 47%;
+        }
 
         iframe {
             display: none;
