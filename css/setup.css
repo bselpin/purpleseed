@@ -1,22 +1,4 @@
-@font-face {
-    font-family: NotoSansBold;
-    src: url("../font/NotoSansCJKkr-Bold.otf") format("opentype");
-}
-
-@font-face {
-    font-family: NotoSansDemiLight;
-    src: url("../font/NotoSansCJKkr-DemiLight.otf") format("opentype");
-}
-
-@font-face {
-    font-family: NotoSansMedium;
-    src: url("../font/NotoSansCJKkr-Medium.otf") format("opentype");
-}
-
-@font-face {
-    font-family: NotoSansRegular;
-    src: url("../font/NotoSansCJKkr-Regular.otf") format("opentype");
-}
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&display=swap&subset=korean');
 
 @font-face {
     font-family: gadugi;
@@ -41,7 +23,7 @@
 }
 
 html {
-    font-family: 'NotoSansRegular', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     font-size: calc(14px + 0.25vw);
     width: 100%;
     height: 100vh;
