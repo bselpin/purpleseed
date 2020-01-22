@@ -11,20 +11,20 @@ $black2: #000000;
 }
 
 @mixin size($size) {
-    @if $size==phone {
-        @media (max-width: 599px) {
+    @if $size==mobile {
+        @media (max-width: 600px) {
             @content;
         }
     }
 
     @else if $size==tablet {
-        @media (min-width: 600px) {
+        @media (max-width: 736px) {
             @content;
         }
     }
 
     @else if $size==tablet-up {
-        @media (min-width: 1000px) {
+        @media (max-width: 1024px) {
             @content;
         }
     }
@@ -136,6 +136,10 @@ h1 {
     font-family: "gadugi", sans-serif;
     line-height: 1.2;
     font-size: 3.2rem;
+    
+    @include size(mobile) {
+        font-size: 2.8rem;
+    }
 }
 
 .main {
@@ -165,6 +169,12 @@ h1 {
         position: absolute;
         z-index: 10;
         height: calc(160vh - 250px);
+
+        @include size(tablet-up) {
+            height: 100vh;
+            background: url('../images/img02.jpg') center center no-repeat;
+            background-size: cover;
+        }
     }
 
     .section02 {
@@ -174,6 +184,13 @@ h1 {
         background: url('../images/img01.jpg') center no-repeat;
         background-size: 125%;
         top: -250px;
+
+        @include size(tablet-up) {
+            top: 0;
+            height: 100vh;
+            background: url('../images/img01.jpg') center center no-repeat;
+            background-size: cover;
+        }
     }
 
     #main1 {
@@ -192,6 +209,12 @@ h1 {
         color: $black;
         text-align: center;
         word-break: keep-all;
+
+        @include size(mobile) {
+            font-size: 1.8rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
     }
 
     #main3 {
@@ -202,6 +225,11 @@ h1 {
         text-align: center;
         margin-top: 1.35rem;
         letter-spacing: -1px;
+
+        @include size(mobile) {
+            font-size: 1.25rem;
+            margin-top: 3rem;
+        }
     }
 
     .canvas {
@@ -214,6 +242,9 @@ h1 {
         width: 100%;
         transform: scale(1.15);
         top: -150px;
+        @include size(mobile) {
+            display: none !important;
+        }
     }
 
     .canvas01 {
@@ -227,6 +258,9 @@ h1 {
     .m.active {
         transform: scale(1.16);
         opacity: 0;
+        @include size(mobile) {
+            transform: scale(1);
+        }
     }
 }
 
@@ -246,6 +280,10 @@ h1 {
     height: 5.5%;
     border: 5px;
     background-color: $black;
+
+    @include size(mobile) {
+        height: 3.5%;
+    }
 }
 
 // Vision
@@ -255,20 +293,29 @@ h1 {
 
     .text {
         font-family: 'Noto Sans KR', sans-serif;
-        font-weight: 500;
+        font-weight: 400;
         font-size: 1rem;
         position: absolute;
         bottom: 4rem;
         left: 3rem;
+
+        @include size(mobile) {
+            left: 0;
+            bottom: 10vh;
+            font-size: 1.3rem;
+            word-break: keep-all;
+        }
     }
 
     h1 {
         margin-top: 3rem;
+        @include size(mobile) {
+            margin-top: 14vh;
+        }
     }
 }
 
 .news-inner {
-    width: 100%;
     height: calc(40vh + 260px);
     position: absolute;
     bottom: 0;
@@ -286,6 +333,13 @@ h1 {
     @include size(laptop) {
         height: calc(40vh + 250px);
     }
+
+    @include size(mobile) {
+        height: 100vh;
+        width: 76%;
+        padding: 0;
+        background: none;
+    }
 }
 
 .circles {
@@ -297,6 +351,40 @@ h1 {
     font-weight: 400;
     top: 12.5rem;
 
+    .circle-pc {
+        @include size(mobile) {
+            display: none;
+        }
+    }
+
+    .circle-mobile {
+        position: absolute;
+        display: none;
+        width: 76%;
+        left: 12%;
+
+        .circle {
+            position: absolute;
+
+            .circle-inner {
+                width: 33vw;
+                height: 33vw;
+            }
+        }
+
+        .circle-02 {
+            left: 25.3vw;
+        }
+
+        .circle-03 {
+            left: 50.6vw;
+        }
+
+        @include size(mobile) {
+            display: block;
+        }
+    }
+
     @include size(laptop-up) {
         top: 13.5rem;
         width: 45%;
@@ -305,6 +393,11 @@ h1 {
 
     @include size(laptop) {
         top: 12rem;
+    }
+
+    @include size(mobile) {
+        width: 100%;
+        top: calc(50% - 16.5vw);
     }
 
     ul {
@@ -333,7 +426,7 @@ h1 {
             height: calc(7.5vw + 3rem);
         }
 
-        &:hover {
+        &:hover, &:active {
             &.black {
                 opacity: 1;
             }
@@ -349,6 +442,7 @@ h1 {
         }
 
         &.white {
+            background: #fff;
             text-align: left;
             z-index: 1;
         }
@@ -370,6 +464,10 @@ h1 {
     &.left {
         left: 0%;
     }
+
+    @include size(mobile) {
+        display: none;
+    }
 }
 
 .business-partner {
@@ -378,15 +476,25 @@ h1 {
     right: 3rem;
     font-family: "gadugi", sans-serif;
     font-size: 1.2rem;
+
+    @include size(mobile) {
+        top: 10vh;
+        right: auto;
+        left: 0;
+        font-size: 1.4rem;
+    }
 }
 
 // ref
 
 .feedback {
-    background: url(../images/ref-bg.jpg);
+    background: url('../images/ref-bg.jpg') center no-repeat;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+
+    @include size(mobile) {
+        background: url('../images/ref-bg-m.jpg') right top no-repeat;
+        background-size: cover;
+    }
 }
 
 #reference {
@@ -416,6 +524,10 @@ h1 {
             right: 25.3%;
             width: 2rem;
             height: 2rem;
+        }
+
+        @include size(tablet-up) {
+            display: none;
         }
     }
 
@@ -447,6 +559,10 @@ h1 {
             width: 2rem;
             height: 2rem;
         }
+
+        @include size(tablet-up) {
+            display: none;
+        }
     }
 
     .swiper-reference-text {
@@ -465,12 +581,34 @@ h1 {
             margin-top: 0rem;
         }
 
+        @include size(tablet-up) {
+            display: none;
+        }
+
         .single {
             margin-top: 2rem;
         }
 
         .dual {
             margin-top: 1rem;
+        }
+        .reftext1 {
+            position: absolute;
+            font-family: "Noto Sans KR", sans-serif;
+            font-weight: 700;
+            left: 2%;
+            top: 40.5%;
+            color: #fff;
+            font-size: 2vw;
+            line-height: 1.5;
+
+            &.single {
+                top: 46%;
+            }
+
+            &.dual {
+                top: 44%;
+            }
         }
     }
 }
@@ -490,11 +628,28 @@ h1 {
         top: 3.5rem;
     }
 
+    @include size(tablet-up) {
+        top: 8vh;
+    }
+
     h1 {
         margin-bottom: 0.5rem;
 
         @include size(laptop) {
             margin-bottom: 0.2rem;
+        }
+    }
+
+    .ref-des {
+        @include size(mobile) {
+            word-break: keep-all;
+            font-size: 1.15rem;
+            margin-top: 2vh;
+            width: 66%;
+            text-align: center;
+            font-weight: 400;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 }
@@ -504,21 +659,97 @@ h1 {
     height: 90%;
     width: 100%;
     overflow-x: visible;
+
+    @include size(tablet-up) {
+        display: none;
+    }
+
+    .reftext2 {
+        position: absolute;
+        font-family: "gadugir", sans-serif;
+        left: 15%;
+        top: 80%;
+        color: #fff;
+        font-size: 1.1rem;
+    }
+
+    .reftext3 {
+        position: absolute;
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 400;
+        top: 80%;
+        left: 18rem;
+        color: #fff;
+        font-size: 1.1rem;
+        text-align: right;
+
+        @include size(laptop-up) {
+            left: 15rem;
+        }
+
+        @include size(laptop) {
+            left: 14.5rem;
+        }
+    }
+}
+
+.swiper-reference-mobile {
+    display: none;
+    width: 100%;
+    height: 70vh;
+    overflow: visible;
+    color: #fff;
+    position: absolute !important;
+    top: 30vh;
+    padding-bottom: 15vh;
+
+    @include size(tablet-up) {
+        display: block;
+    }
+
+    .swiper-slide {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        position: relative;
+    }
+    .photo {
+        height: 70%;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .reftext1 {
+        font-size: 1.35rem;
+        font-weight: 600;
+        word-break: keep-all;
+        line-height: 1.4;
+        margin-top: 2.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .ref-div {
+        display: flex;
+
+        .reftext2 {
+            font-weight: 300;
+            width: 5rem;
+        }
+
+        .reftext3 {
+            width: calc(90% - 5rem);
+            word-break: keep-all;
+        }
+    }
+
+    
 }
 
 .swiper-reference .swiper-slide {
     margin-top: 2.5rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
     align-items: center;
     height: 100%;
     width: 100%;
@@ -539,71 +770,24 @@ h1 {
     background-position: center;
 }
 
-.swiper-reference .photo1 {
-    background-image: url(../images/ref-wingwing.jpg);
+.photo1 {
+    background-image: url('../images/ref-wingwing.jpg');
 }
 
-.swiper-reference .photo2 {
-    background-image: url(../images/ref-glowroudi.jpg);
+.photo2 {
+    background-image: url('../images/ref-glowroudi.jpg');
 }
 
-.swiper-reference .photo3 {
-    background-image: url(../images/ref-nongrim.jpg);
+.photo3 {
+    background-image: url('../images/ref-nongrim.jpg');
 }
 
-.swiper-reference .photo4 {
-    background-image: url(../images/ref-wonderful.jpg);
+.photo4 {
+    background-image: url('../images/ref-wonderful.jpg');
 }
 
-.swiper-reference .photo5 {
-    background-image: url(../images/ref-samsung.jpg);
-}
-
-.reftext1 {
-    position: absolute;
-    font-family: "Noto Sans KR", sans-serif;
-    font-weight: 700;
-    left: 2%;
-    top: 40.5%;
-    color: #fff;
-    font-size: 2vw;
-    line-height: 1.5;
-
-    &.single {
-        top: 46%;
-    }
-
-    &.dual {
-        top: 44%;
-    }
-}
-
-.reftext2 {
-    position: absolute;
-    font-family: "gadugir", sans-serif;
-    left: 15%;
-    top: 80%;
-    color: #fff;
-    font-size: 1.1rem;
-}
-
-.reftext3 {
-    position: absolute;
-    font-family: "Noto Sans KR", sans-serif;
-    font-weight: 400;
-    top: 80%;
-    left: 18rem;
-    color: #fff;
-    font-size: 1.1rem;
-    text-align: right;
-
-    @include size(laptop-up) {
-        left: 15rem;
-    }
-
-    @include size(laptop) {
-        left: 14.5rem;
-    }
+.photo5 {
+    background-image: url('../images/ref-samsung.jpg');
 }
 
 // project
@@ -736,6 +920,18 @@ h1 {
 // about
 
 .about {
+    &.content {
+        @include size(tablet-up) {
+            height: auto;
+        }
+    }
+    .wrapper-np {
+        @include size(tablet-up) {
+            width: 76%;
+            top: 0;
+            padding-top: 6vh;
+        }
+    }
     h1 {
         width: 100%;
         text-align: right;
@@ -744,6 +940,13 @@ h1 {
         @include size(laptop) {
             margin-top: 1rem;
         }
+
+        @include size(mobile) {
+            text-align: right;
+            padding: 0;
+            width: 55vw;
+            margin: 0 auto;
+        }
     }
 
     .about-box {
@@ -751,6 +954,11 @@ h1 {
 
         @include size(laptop) {
             margin-top: -1.5rem;
+        }
+
+        @include size(mobile) {
+            display: block;
+            margin-top: 8vh;
         }
     }
 
@@ -763,6 +971,12 @@ h1 {
         color: #fff;
         position: relative;
         cursor: default;
+        margin: 0 auto;
+
+        @include size(mobile) {
+            width: 76vw;
+            height: 81vw;
+        }
 
         &:hover {
             .hidden {
@@ -797,6 +1011,11 @@ h1 {
             @include size(laptop) {
                 margin-top: 3.5rem;
             }
+
+            @include size(tablet-up) {
+                margin-top: 3.5rem;
+                font-weight: 300;
+            }
         }
 
         .h-title {
@@ -811,6 +1030,11 @@ h1 {
                 font-size: 2rem;
                 letter-spacing: -2px;
             }
+
+            @include size(tablet-up) {
+                font-size: 1.7rem;
+                font-weight: 500;
+            }
         }
 
         .h-sub-text {
@@ -823,6 +1047,10 @@ h1 {
 
             @include size(laptop) {
                 font-size: 0.87rem;
+            }
+
+            @include size(tablet-up) {
+                margin-top: 3.5rem;
             }
         }
 
@@ -1375,6 +1603,10 @@ h1 {
     transform: translateX(-100%);
     transition: all 0.4s;
 
+    @include size(mobile) {
+        width: 100vw;
+    }
+
     li {
         font-family: 'gadugi', sans-serif;
         margin: 1.25rem;
@@ -1406,6 +1638,14 @@ h1 {
     &:hover {
         opacity: 0.7;
         transform: translateY(0.2rem);
+    }
+}
+
+.menu {
+    ul {
+        @include size(mobile) {
+            margin-left: -30vw;
+        }
     }
 }
 
