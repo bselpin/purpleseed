@@ -1,9 +1,14 @@
 @charset "utf-8";
 @import url("setup.css");
 
-
 $black: #000000;
 $black2: #000000;
+
+::selection {
+    color: #fff;
+    background: #4f21a5;
+    opacity: 1;
+}
 
 @mixin size($size) {
     @if $size==phone {
@@ -611,7 +616,7 @@ h1 {
 
     .title {
         position: absolute;
-        top: 3rem;
+        top: 4rem;
         left: 3rem;
 
         @include size(laptop-up) {
@@ -621,7 +626,7 @@ h1 {
 
     .sub {
         position: absolute;
-        bottom: 5.5rem;
+        bottom: 6rem;
         left: calc(17% + 3rem);
 
         @include size(laptop-up) {

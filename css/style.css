@@ -1,4 +1,15 @@
 @import url("setup.css");
+::-moz-selection {
+  color: #fff;
+  background: #4f21a5;
+  opacity: 1;
+}
+::selection {
+  color: #fff;
+  background: #4f21a5;
+  opacity: 1;
+}
+
 @media (max-width: 1366px) {
   html {
     font-size: calc(13px + 0.25vw);
@@ -644,7 +655,7 @@ h1 {
 
 .project .title {
   position: absolute;
-  top: 3rem;
+  top: 4rem;
   left: 3rem;
 }
 
@@ -656,7 +667,7 @@ h1 {
 
 .project .sub {
   position: absolute;
-  bottom: 5.5rem;
+  bottom: 6rem;
   left: calc(17% + 3rem);
 }
 
