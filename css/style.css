@@ -1,4 +1,5 @@
 @import url("setup.css");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&display=swap&subset=korean");
 @media (max-width: 1366px) {
   html {
     font-size: calc(13px + 0.25vw);
@@ -111,7 +112,7 @@
 }
 
 h1 {
-  font-family: "gadugi";
+  font-family: "gadugi", sans-serif;
   line-height: 1.2;
   font-size: 3.2rem;
 }
@@ -173,7 +174,8 @@ h1 {
 
 .main #main2 {
   margin-top: 1.3rem;
-  font-family: "NotoSansRegular", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 500;
   font-size: 2.3rem;
   color: #000000;
   text-align: center;
@@ -181,7 +183,8 @@ h1 {
 }
 
 .main #main3 {
-  font-family: "NotoSansRegular", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
   font-size: 1.15rem;
   color: #000000;
   text-align: center;
@@ -240,7 +243,8 @@ h1 {
 }
 
 #vision .text {
-  font-family: 'NotoSansMedium', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
   font-size: 1rem;
   position: absolute;
   bottom: 4rem;
@@ -281,7 +285,8 @@ h1 {
   width: 43%;
   right: 16%;
   font-size: 0.9rem;
-  font-family: 'NotoSansRegular', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
   top: 12.5rem;
 }
 
@@ -290,6 +295,12 @@ h1 {
     top: 13.5rem;
     width: 45%;
     font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 1366px) {
+  .circles {
+    top: 12rem;
   }
 }
 
@@ -374,7 +385,7 @@ h1 {
   position: absolute;
   top: 4.5rem;
   right: 3rem;
-  font-family: "gadugi";
+  font-family: "gadugi", sans-serif;
   font-size: 1.2rem;
 }
 
@@ -576,7 +587,8 @@ h1 {
 
 .reftext1 {
   position: absolute;
-  font-family: "NotoSansBold", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
   left: 2%;
   top: 40.5%;
   color: #fff;
@@ -603,7 +615,8 @@ h1 {
 
 .reftext3 {
   position: absolute;
-  font-family: "NotoSansRegular", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
   top: 80%;
   left: 18rem;
   color: #fff;
@@ -674,7 +687,7 @@ h1 {
 }
 
 .project .swiper-project-title .client-name {
-  font-family: 'gadugir', 'NotoSansRegular', sans-serif;
+  font-family: 'gadugir', 'Noto Sans KR', sans-serif;
   font-size: 1rem;
 }
 
@@ -685,7 +698,8 @@ h1 {
 }
 
 .project .swiper-project-title .project-name {
-  font-family: 'gadugi', 'NotoSansBold', sans-serif;
+  font-family: 'gadugi', 'Noto Sans KR', sans-serif;
+  font-weight: 500;
   font-size: 1.7rem;
   margin-top: -0.3rem;
 }
@@ -861,7 +875,8 @@ h1 {
   width: 100%;
   text-align: center;
   font-size: 0.8rem;
-  font-family: 'NotoSansDemiLight', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 300;
   margin-top: 4.25rem;
 }
 
@@ -1109,7 +1124,8 @@ h1 {
   font-size: 1.2rem;
   width: 51%;
   word-break: keep-all;
-  font-family: 'NotoSansDemiLight', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 300;
 }
 
 @media (max-width: 1440px) {
@@ -1305,7 +1321,8 @@ h1 {
 .footer-head .left h1 {
   line-height: 1.4;
   font-size: 2rem;
-  font-family: 'NotoSansRegular', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
 }
 
 .footer-head .left .phone-num {
@@ -1327,7 +1344,8 @@ h1 {
   bottom: 0;
   left: 0;
   font-size: 1rem;
-  font-family: 'NotoSansDemiLight', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 300;
 }
 
 .footer-head .left .footer-head-text .address {
@@ -1352,15 +1370,16 @@ h1 {
 
 .footer-head form input,
 .footer-head form textarea {
-  font-family: 'NotoSansDemiLight', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 300;
   padding: 0.6rem;
-  width: calc(50% - 3px);
+  width: calc(50% - 4px);
   font-size: 0.75rem;
 }
 
 .footer-head form input.right,
 .footer-head form textarea.right {
-  margin-left: 2px;
+  margin-left: 1px;
 }
 
 .footer-head form input.bottom,
@@ -1426,7 +1445,7 @@ h1 {
 
 .footer .externals {
   position: absolute;
-  top: 2.25rem;
+  top: 1.8rem;
   right: 1.5rem;
 }
 
@@ -1465,7 +1484,8 @@ h1 {
 .footer .company-info .info-block span {
   position: relative;
   margin-left: 1.5rem;
-  font-family: 'gadugir', 'NosoSansDemiLight', sans-serif;
+  font-family: 'gadugir', 'Noto Sans KR', sans-serif;
+  font-weight: 300;
 }
 
 .footer .company-info .info-block span:after {
@@ -1473,9 +1493,9 @@ h1 {
   content: '';
   display: block;
   width: 1px;
-  height: 0.75rem;
+  height: 0.7rem;
   background: #afafaf;
-  top: 4px;
+  top: 3px;
   left: -14px;
 }
 
