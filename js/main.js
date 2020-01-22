@@ -1,4 +1,3 @@
-
 var menuLink = $('.burger');
 var menu = $('.menu');
 var close = $('.btn-close');

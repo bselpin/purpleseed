@@ -1,6 +1,5 @@
 var vw = window.innerWidth
 var vh = window.innerHeight*1.6 - 150
-var dw = document.documentElement.clientWidth
 var dh = document.documentElement.clientHeight
 var bg1 = './images/img01.jpg'
 var bg2 = './images/img02.jpg'
@@ -10,10 +9,32 @@ var mains = document.getElementsByClassName('m')
 var canvases = document.getElementsByClassName('canvas')
 var yOffset
 
-console.log(dh)
+function init() {
+    fullPage()
+
+    displacementBg(bg2, 2)
+
+    displacementBg(bg1, 1)
+
+    window.addEventListener("scroll", function () {
+        yOffset = window.pageYOffset
+        windowTop()
+    })
+
+    if (window.pageYOffset >= 937) {
+        liquidSlide()
+    }
+}
+
+function windowTop() {
+    if (yOffset <= dh/4) {
+        reverseSlide()
+    } else if (yOffset >= 1) {
+        liquidSlide()
+    }
+}
 
 function displacementBg(img, id) {
-
     const app = new PIXI.Application({
         width: vw,
         height: vh,
@@ -69,10 +90,6 @@ function displacementBg(img, id) {
     });
 }
 
-displacementBg(bg2, 2)
-
-displacementBg(bg1, 1)
-
 function fullPage() {
     $('.content').on("mousewheel", function (e) {
         var sectionPos = parseInt($(this).attr("data-index"));
@@ -83,30 +100,8 @@ function fullPage() {
             $("html,body").stop().animate({ scrollTop: sectionPos + win_h }, 850, 'easeInOutCubic');
             return false;
         }
-        detectService()
-
-        if(yOffset === 0) {
-            reverseSlide()
-        }
     });
 }
-
-fullPage()
-
-if (window.pageYOffset >= 937) {
-    liquidSlide()
-}
-
-content[0].addEventListener('wheel', function(e) {
-    if(e.wheelDelta < 0) {
-        liquidSlide()
-    }
-})
-content[1].addEventListener('wheel', function(e) {
-    if (e.wheelDelta > 0) {
-        reverseSlide()
-    }
-})
 
 function liquidSlide() {
     for(var i = 0; i < mains.length; i++) {
@@ -135,15 +130,6 @@ function reverseSlide() {
         }
     }, 1000);
 
-    // for (var i = canvases.length - 1; i > -1; i--) {            
-    //     (function (_i) {
-    //         if(_i > -1){
-    //             setTimeout(function () {
-    //                 canvases[_i].classList.remove('active')
-    //             }, _i + 100);
-    //         }                
-    //     })(i)
-    // }
     mains[0].classList.remove('active')
 
     setTimeout(function() {
@@ -159,3 +145,4 @@ function reverseSlide() {
     },200)
 }
 
+init()
