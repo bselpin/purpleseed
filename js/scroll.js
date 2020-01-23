@@ -21,15 +21,15 @@ function init() {
         windowTop()
     })
 
-    if (window.pageYOffset >= 937) {
+    if (window.pageYOffset >= dh/2) {
         liquidSlide()
     }
 }
 
 function windowTop() {
-    if (yOffset <= dh/4) {
+    if (yOffset <= 51) {
         reverseSlide()
-    } else if (yOffset >= 1) {
+    } else if (yOffset >= 50) {
         liquidSlide()
     }
 }
@@ -91,13 +91,13 @@ function displacementBg(img, id) {
 }
 
 function fullPage() {
-    $('.content').on("mousewheel", function (e) {
+    $('.content').on("wheel", function (e) {
         var sectionPos = parseInt($(this).attr("data-index"));
         if (e.originalEvent.wheelDelta >= 0) {
-            $("html,body").stop().animate({ scrollTop: sectionPos - win_h }, 850, 'easeInOutCubic');
+            $("html,body").stop().animate({ scrollTop: sectionPos - win_h }, 900, 'easeInOutCubic');
             return false;
         } else if (e.originalEvent.wheelDelta < 0) {
-            $("html,body").stop().animate({ scrollTop: sectionPos + win_h }, 850, 'easeInOutCubic');
+            $("html,body").stop().animate({ scrollTop: sectionPos + win_h }, 900, 'easeInOutCubic');
             return false;
         }
     });
@@ -116,7 +116,7 @@ function liquidSlide() {
         for(var j = 0; j < canvases.length; j++) {
             canvases[j].style.display = 'none'
         }
-    }, 1500);
+    }, 1400);
 }
 
 function reverseSlide() {
@@ -128,21 +128,15 @@ function reverseSlide() {
         for (var l = 0; l < canvases.length; l++) {
             canvases[l].style.display = 'block'
         }
-    }, 1000);
+    }, 1300);
 
     mains[0].classList.remove('active')
 
     setTimeout(function() {
         for (var k = mains.length - 1; k > -1; k--) {
-            (function (_k) {
-                if (_k > -1) {
-                    setTimeout(function () {
-                        mains[_k].classList.remove('active')
-                    }, _k + 100);
-                }
-            })(k)
+            mains[k].classList.remove('active')
         }
-    },200)
+    },500)
 }
 
 init()

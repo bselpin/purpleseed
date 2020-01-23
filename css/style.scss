@@ -4,21 +4,15 @@
 $black: #000000;
 $black2: #000000;
 
-::selection {
-    color: #fff;
-    background: #4f21a5;
-    opacity: 1;
-}
-
 @mixin size($size) {
     @if $size==mobile {
-        @media (max-width: 600px) {
+        @media (max-width: 500px) {
             @content;
         }
     }
 
     @else if $size==tablet {
-        @media (max-width: 736px) {
+        @media (max-width: 767px) {
             @content;
         }
     }
@@ -137,8 +131,8 @@ h1 {
     line-height: 1.2;
     font-size: 3.2rem;
     
-    @include size(mobile) {
-        font-size: 2.8rem;
+    @include size(tablet) {
+        font-size: 2.5rem;
     }
 }
 
@@ -209,6 +203,9 @@ h1 {
         color: $black;
         text-align: center;
         word-break: keep-all;
+        letter-spacing: -2px;
+        width: 100%;
+        padding: 0 3rem;
 
         @include size(mobile) {
             font-size: 1.8rem;
@@ -242,6 +239,7 @@ h1 {
         width: 100%;
         transform: scale(1.15);
         top: -150px;
+
         @include size(mobile) {
             display: none !important;
         }
@@ -258,6 +256,7 @@ h1 {
     .m.active {
         transform: scale(1.16);
         opacity: 0;
+
         @include size(mobile) {
             transform: scale(1);
         }
@@ -302,13 +301,14 @@ h1 {
         @include size(mobile) {
             left: 0;
             bottom: 10vh;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             word-break: keep-all;
         }
     }
 
     h1 {
         margin-top: 3rem;
+
         @include size(mobile) {
             margin-top: 14vh;
         }
@@ -336,7 +336,7 @@ h1 {
 
     @include size(mobile) {
         height: 100vh;
-        width: 76%;
+        width: 78%;
         padding: 0;
         background: none;
     }
@@ -360,7 +360,7 @@ h1 {
     .circle-mobile {
         position: absolute;
         display: none;
-        width: 76%;
+        width: 78%;
         left: 12%;
 
         .circle {
@@ -373,11 +373,11 @@ h1 {
         }
 
         .circle-02 {
-            left: 25.3vw;
+            left: 26vw;
         }
 
         .circle-03 {
-            left: 50.6vw;
+            left: 52vw;
         }
 
         @include size(mobile) {
@@ -927,11 +927,12 @@ h1 {
     }
     .wrapper-np {
         @include size(tablet-up) {
-            width: 76%;
+            width: 78%;
             top: 0;
             padding-top: 6vh;
         }
     }
+
     h1 {
         width: 100%;
         text-align: right;
@@ -941,12 +942,17 @@ h1 {
             margin-top: 1rem;
         }
 
-        @include size(mobile) {
-            text-align: right;
-            padding: 0;
-            width: 55vw;
-            margin: 0 auto;
-        }
+        &.about-title {
+            @include size(mobile) {
+                top: 5vh;
+                padding-right: 0;
+                text-align: right;
+                width: auto;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }        
     }
 
     .about-box {
@@ -958,7 +964,7 @@ h1 {
 
         @include size(mobile) {
             display: block;
-            margin-top: 8vh;
+            margin-top: 10rem;
         }
     }
 
@@ -1077,6 +1083,10 @@ h1 {
         margin-top: 4.5rem;
         background: $black2;
 
+        @include size(mobile) {
+            margin-top: 3.2rem;
+        }
+
         .hidden {
             background: url('../images/about02.jpg');
         }
@@ -1095,6 +1105,10 @@ h1 {
         @include size(laptop) {
             padding-top: 5rem;
         }
+
+        @include size(mobile) {
+            width: 78%;
+        }
     }
 
     .tab-btns {
@@ -1105,6 +1119,10 @@ h1 {
         justify-content: space-around;
         color: #dcdcdc;
 
+        @include size(mobile) {
+            font-size: 1.3rem;
+        }
+
         .tab-btn {
             cursor: pointer;
             transition: all 0.3s;
@@ -1114,14 +1132,23 @@ h1 {
                 height: 2rem;
                 overflow: hidden;
                 position: absolute;
+                width: 5rem;
                 top: -1rem;
                 left: 0;
+
+                @include size(mobile) {
+                    top: -1.5rem;
+                }
             }
 
             .service {
                 font-size: 1.35rem;
                 transform: translateY(2rem);
                 transition: transform 0.3s;
+
+                @include size(mobile) {
+                    font-size: 1.15rem;
+                }
             }
 
             &:hover,
@@ -1248,14 +1275,43 @@ h1 {
 // mission
 
 .mission {
-    background: url("../images/mission.jpg");
+    background: url("../images/mission.jpg") center no-repeat;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+
+    @include size(mobile) {
+         background: url("../images/mission.jpg") 80% 70% no-repeat;
+    }
+
+    .wrapper-p {
+        @include size(mobile) {
+            width: 78%;
+            padding: 0;
+        }
+    }
 
     h1 {
         color: #fff;
         margin-bottom: 2.5rem;
+
+        @include size(mobile) {
+            margin-bottom: 4rem;
+        }
+    }
+
+    .mission-text-pc {
+        display: block;
+
+        @include size(mobile) {
+            display: none;
+        }
+    }
+
+    .mission-text-mobile {
+        display: none;
+
+        @include size(mobile) {
+            display: block;
+        }
     }
 
     .text {
@@ -1270,15 +1326,21 @@ h1 {
             width: 65%;
         }
 
-        @include size(laptop) {
-            width: 65%;
-        }
+        @include size(mobile) {
+            width: 90%;
+            font-size: 1.1rem;
+        }        
     }
 
     .line {
         margin: 2.5rem 0;
         height: 5rem;
         border-left: 1px solid #fff;
+
+        @include size(mobile) {
+            height: 4rem;
+            border-left: 1px solid #fff;
+        }
     }
 
     .ps {
@@ -1286,6 +1348,10 @@ h1 {
         font-family: 'gadugir';
         font-size: 1.15rem;
         letter-spacing: 0.5px;
+
+        @include size(mobile) {
+            font-size: 1rem;
+        }
     }
 }
 
@@ -1301,6 +1367,13 @@ h1 {
 
     @include size(laptop) {
         padding-top: 1.5rem;
+    }
+
+    .wrapper-p {
+        @include size(mobile) {
+            width: 78%;
+            padding: 0;
+        }
     }
 
     h1 {
@@ -1336,6 +1409,10 @@ h1 {
             top: 40.5%;
             right: -10px;
         }
+
+        @include size(mobile) {
+            display: none;
+        }
     }
 
     .swiper-client-prev {
@@ -1349,10 +1426,18 @@ h1 {
             top: 40.5%;
             left: -10px;
         }
+
+        @include size(mobile) {
+            display: none;
+        }
     }
 
-    .swiper-client {
+    .swiper-client-pc {
         overflow: hidden;
+
+        @include size(mobile) {
+            display: none;
+        }
     }
 
     .client-list {
@@ -1404,6 +1489,24 @@ h1 {
     background-color: #1b1e23;
     position: relative;
     display: block;
+
+    @include size(mobile) {
+        height: auto;
+    }
+
+    .wrapper-p {
+        @include size(mobile) {
+            width: 100%;
+            padding: 4rem 12%;
+            margin: 0 auto;
+        }
+    }
+
+    .google-maps {
+        @include size(mobile) {
+            height: 30vh;
+        }
+    }
 }
 
 .footer-head {
@@ -1417,6 +1520,11 @@ h1 {
         padding: 1.75rem calc(17% + 3rem) 1.35rem;
     }
 
+    @include size(mobile) {
+        position: static;
+        display: block;
+    }    
+
     .left {
         color: #fff;
         width: 57.5%;
@@ -1425,6 +1533,10 @@ h1 {
 
         @include size(laptop) {
             width: 53%;
+        }
+
+        @include size(mobile) {
+            width: 100%;
         }
 
         h1 {
@@ -1446,6 +1558,10 @@ h1 {
             .second {
                 margin-left: 0.5rem;
             }
+
+            @include size(mobile) {
+                margin-top: 1.5rem;
+            }
         }
 
         .footer-head-text {
@@ -1459,6 +1575,13 @@ h1 {
             .address {
                 font-size: 0.8rem;
             }
+
+            @include size(mobile) {
+                position: static;
+                margin-top: 1rem;
+                letter-spacing: 0.25px;
+                line-height: 2;
+            }
         }
     }
 
@@ -1469,6 +1592,11 @@ h1 {
 
         @include size(laptop) {
             width: 47%;
+        }
+
+        @include size(mobile) {
+            width: 100%;
+            margin-top: 1rem;
         }
 
         iframe {
@@ -1483,8 +1611,16 @@ h1 {
             width: calc(50% - 3px);
             font-size: 0.75rem;
 
+            @include size(mobile) {
+                font-size: 0.95rem;
+            }
+
             &.right {
                 margin-left: 1px;
+
+                @include size(mobile) {
+                    margin-left: 3px;
+                }
             }
 
             &.bottom {
@@ -1504,7 +1640,17 @@ h1 {
                 cursor: pointer;
                 color: #fff;
 
-                &:hover {
+                @include size(mobile) {
+                    width: 100%;
+                    font-size: 0.95rem;
+                }
+
+                @include size(mobile) {
+                    position: static;
+                    margin-top: 0.2rem;
+                }
+
+                &:hover, &:focus {
                     background: rgba(255, 255, 255, 0.1);
                 }
             }
@@ -1514,6 +1660,10 @@ h1 {
             width: calc(100% - 2px);
             resize: none;
             height: 5.3rem;
+
+            @include size(mobile) {
+                width: 100%;
+            }
         }
 
         input::placeholder,
@@ -1523,13 +1673,19 @@ h1 {
     }
 }
 
-.footer {
+.footer-pc {
     width: 100%;
     background: $black2;
     position: absolute;
     bottom: 0;
     padding-top: 0.5rem;
     padding-bottom: 2rem;
+    display: block;
+
+    @include size(mobile) {
+        position: static;
+        display: none;
+    }
 
     .externals {
         position: absolute;
@@ -1582,6 +1738,84 @@ h1 {
                     top: 3px;
                     left: -14px;
                 }
+            }
+        }
+    }
+}
+
+.footer-mobile {
+    display: none;
+    color: #a8aaae;
+    font-size: 0.75rem;
+
+    .copy {
+        margin-top: 1rem;
+        font-size: 0.5rem;
+    }
+
+    .wrapper-p {
+        padding: 2.5rem 12%;
+    }
+
+    @include size(mobile) {
+        display: block;
+    }
+
+    .footer-logo {
+        width: 40%;
+        img {
+            width: 100%;
+        }
+        margin-bottom: 1.25rem;
+    }
+
+    .company-info {
+        display: flex;
+
+        li {
+            margin-top: 0.5rem;
+        }
+
+        .tags {
+            width: 18%;
+        }
+
+        .info {
+            width: 82%;
+        }
+    }
+
+    .externals {
+        ul {
+            display: flex;
+            margin-top: 1rem;
+
+            li {
+                width: 2.75rem;
+                height: 2.75rem;
+                margin: 0.6rem;
+                border: 1px solid #a8aaae;
+                border-radius: 50%;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                a {
+                    width: 2.75rem;
+                    height: 2.75rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                img {
+                    width: 1.1rem;
+                    display: block;
+                    margin-top: -1px;
+                    margin-left: -1px;
+                }
+                
             }
         }
     }
