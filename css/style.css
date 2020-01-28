@@ -51,6 +51,13 @@
           box-shadow: 0px 0px 18px rgba(30, 20, 60, 0.2);
 }
 
+@media (max-width: 500px) {
+  .burger {
+    top: 1rem;
+    left: 1rem;
+  }
+}
+
 .burger span {
   height: 2px;
   width: 25px;
@@ -108,6 +115,22 @@
   color: #000000;
   position: relative;
   z-index: 999;
+}
+
+@media (max-width: 1024px) {
+  .content.client {
+    min-height: auto;
+    height: auto;
+    padding: 3.5rem 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .content.about {
+    min-height: auto;
+    height: auto;
+    padding: 2.5rem 0;
+  }
 }
 
 h1 {
@@ -192,6 +215,12 @@ h1 {
   color: #000000;
   text-align: center;
   margin-bottom: 1.6rem;
+}
+
+@media (max-width: 500px) {
+  .main #main1 {
+    font-size: 2.5rem;
+  }
 }
 
 .main #main2 {
@@ -881,44 +910,50 @@ h1 {
   background-image: url("../images/ref-samsung.jpg");
 }
 
-.project {
+.project-pc {
   background: #1b1e23;
   display: block;
   position: relative;
   color: #fff;
 }
 
-.project .title {
+@media (max-width: 1440px) {
+  .project-pc {
+    display: none;
+  }
+}
+
+.project-pc .title {
   position: absolute;
   top: 4rem;
   left: 3rem;
 }
 
 @media (max-width: 1440px) {
-  .project .title {
+  .project-pc .title {
     top: 3.5rem;
   }
 }
 
-.project .sub {
+.project-pc .sub {
   position: absolute;
   bottom: 6rem;
   left: calc(17% + 3rem);
 }
 
 @media (max-width: 1440px) {
-  .project .sub {
+  .project-pc .sub {
     bottom: 7rem;
   }
 }
 
 @media (max-width: 1366px) {
-  .project .sub {
+  .project-pc .sub {
     bottom: 4rem;
   }
 }
 
-.project .swiper-project-title {
+.project-pc .swiper-project-title {
   position: absolute;
   right: calc(17% + 3rem);
   text-align: right;
@@ -927,22 +962,22 @@ h1 {
   overflow: hidden;
 }
 
-.project .swiper-project-title .swiper-wrapper {
+.project-pc .swiper-project-title .swiper-wrapper {
   top: 0;
 }
 
-.project .swiper-project-title .client-name {
+.project-pc .swiper-project-title .client-name {
   font-family: 'gadugir', 'Noto Sans KR', sans-serif;
   font-size: 1rem;
 }
 
 @media (max-width: 1366px) {
-  .project .swiper-project-title .client-name {
+  .project-pc .swiper-project-title .client-name {
     font-size: 0.85rem;
   }
 }
 
-.project .swiper-project-title .project-name {
+.project-pc .swiper-project-title .project-name {
   font-family: 'gadugi', 'Noto Sans KR', sans-serif;
   font-weight: 500;
   font-size: 1.7rem;
@@ -950,23 +985,23 @@ h1 {
 }
 
 @media (max-width: 1366px) {
-  .project .swiper-project-title .project-name {
+  .project-pc .swiper-project-title .project-name {
     font-size: 1.4rem;
   }
 }
 
-.project .swiper-project {
+.project-pc .swiper-project-pc {
   width: 100%;
   height: 90%;
   position: relative;
   overflow: visible;
 }
 
-.project .swiper-project .swiper-wrapper {
+.project-pc .swiper-project-pc .swiper-wrapper {
   width: 100%;
 }
 
-.project .swiper-project .swiper-wrapper .swiper-slide {
+.project-pc .swiper-project-pc .swiper-wrapper .swiper-slide {
   display: block;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -977,19 +1012,19 @@ h1 {
           align-items: center;
 }
 
-.project .swiper-project .project-logo {
+.project-pc .swiper-project-pc .project-logo {
   width: 100%;
   text-align: right;
   margin-top: 1.5rem;
 }
 
 @media (max-width: 1366px) {
-  .project .swiper-project .project-logo {
+  .project-pc .swiper-project-pc .project-logo {
     margin-top: 0.9rem;
   }
 }
 
-.project .video-wrapper {
+.project-pc .video-wrapper {
   margin-top: 10rem;
   width: 100%;
   position: relative;
@@ -998,12 +1033,12 @@ h1 {
 }
 
 @media (max-width: 1366px) {
-  .project .video-wrapper {
+  .project-pc .video-wrapper {
     margin-top: 8.5rem;
   }
 }
 
-.project .video-wrapper iframe {
+.project-pc .video-wrapper iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -1011,16 +1046,111 @@ h1 {
   height: 100%;
 }
 
-.project .swiper-prj-prev {
+.project-pc .swiper-prj-prev {
   background-image: url("../images/left-arrow.png");
   position: absolute;
   margin-left: 15% !important;
 }
 
-.project .swiper-prj-next {
+.project-pc .swiper-prj-next {
   background-image: url("../images/right-arrow.png");
   position: absolute;
   margin-right: 15% !important;
+}
+
+.project-mobile {
+  display: none;
+  background: #1b1e23;
+  position: relative;
+  color: #fff;
+  min-height: auto;
+  height: auto;
+  padding-bottom: 5rem;
+}
+
+.project-mobile .wrapper-p {
+  width: 78vw;
+  padding: 3.5rem 0 2.5rem;
+  text-align: center;
+}
+
+.project-mobile .project-title-container {
+  text-align: center;
+}
+
+.project-mobile .project-title-container .client-name {
+  font-weight: 300;
+}
+
+.project-mobile .project-title-container .project-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1440px) {
+  .project-mobile {
+    display: block;
+  }
+}
+
+.project-mobile .video-wrapper {
+  margin-top: 2rem;
+  width: 78vw;
+  position: relative;
+  height: 35vh;
+  padding-bottom: 48%;
+  margin-left: 11vw;
+}
+
+.project-mobile .video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.project-mobile .project-logo {
+  width: 100%;
+  text-align: center;
+  margin: 2.8rem 0;
+}
+
+.project-mobile .project-logo img {
+  width: 30%;
+  max-width: 10rem;
+}
+
+.project-mobile .project-logo img.sm {
+  width: 17.5%;
+  max-width: 6rem;
+}
+
+.project-mobile .project-logo img.lg {
+  width: 55%;
+  max-width: 15rem;
+}
+
+.project-mobile .project-logo img.md {
+  width: 37.5%;
+  max-width: 10rem;
+}
+
+.project-mobile .swiper-pagination-bullets {
+  text-align: center;
+}
+
+.project-mobile .swiper-pagination-bullet {
+  background: #757677;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: 0 0.45rem !important;
+  border-radius: 50%;
+}
+
+.project-mobile .swiper-pagination-bullet-active {
+  background: #fff;
 }
 
 @media (max-width: 1024px) {
@@ -1051,7 +1181,7 @@ h1 {
 
 @media (max-width: 500px) {
   .about h1.about-title {
-    top: 1vh;
+    top: 3vh;
     padding-right: 0;
     text-align: right;
     width: auto;
@@ -1077,7 +1207,7 @@ h1 {
 @media (max-width: 500px) {
   .about .about-box {
     display: block;
-    margin-top: 7rem;
+    margin-top: 9rem;
   }
 }
 
@@ -1224,6 +1354,13 @@ h1 {
 
 .about .box-02 .hidden {
   background: url("../images/about02.jpg");
+}
+
+@media (max-width: 1024px) {
+  .about .box-02 .h-text {
+    margin-top: 2.5rem;
+    font-weight: 300;
+  }
 }
 
 .service {
@@ -1685,7 +1822,7 @@ h1 {
 @media (max-width: 500px) {
   .client .client-list {
     width: 19.5%;
-    height: 25vh;
+    height: 21vh;
     margin: 0 1rem;
   }
 }

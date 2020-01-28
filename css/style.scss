@@ -77,6 +77,11 @@ html {
     cursor: pointer;
     box-shadow: 0px 0px 18px rgba(30, 20, 60, 0.2);
 
+    @include size(mobile) {
+        top: 1rem;
+        left: 1rem;
+    }
+
     span {
         height: 2px;
         width: 25px;
@@ -124,6 +129,22 @@ html {
     color: $black;
     position: relative;
     z-index: 999;
+
+    &.client {
+        @include size(tablet-up) {
+            min-height: auto;
+            height: auto;
+            padding: 3.5rem 0;
+        }
+    }
+
+    &.about {
+        @include size(tablet-up) {
+            min-height: auto;
+            height: auto;
+            padding: 2.5rem 0;
+        }
+    }
 }
 
 h1 {
@@ -193,6 +214,10 @@ h1 {
         color: $black;
         text-align: center;
         margin-bottom: 1.6rem;
+
+        @include size(mobile) {
+            font-size: 2.5rem;
+        }
     }
 
     #main2 {
@@ -795,11 +820,15 @@ h1 {
 
 // project
 
-.project {
+.project-pc {
     background: #1b1e23;
     display: block;
     position: relative;
     color: #fff;
+
+    @include size(laptop-up) {
+        display: none;
+    }
 
     .title {
         position: absolute;
@@ -858,7 +887,7 @@ h1 {
         }
     }
 
-    .swiper-project {
+    .swiper-project-pc {
         width: 100%;
         height: 90%;
         position: relative;
@@ -920,6 +949,99 @@ h1 {
     }
 }
 
+.project-mobile {
+    display: none;
+    background: #1b1e23;
+    position: relative;
+    color: #fff;
+    min-height: auto;
+    height: auto;
+    padding-bottom: 5rem;
+
+    .wrapper-p {
+        width: 78vw;
+        padding: 3.5rem 0 2.5rem;
+        text-align: center;
+    }
+
+    .project-title-container {
+        text-align: center;
+
+        .client-name {
+            font-weight: 300;
+        }
+
+        .project-name {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+    }
+
+    @include size(laptop-up) {
+        display: block;
+    }
+
+    .video-wrapper {
+        margin-top: 2rem;
+        width: 78vw;
+        position: relative;
+        height: 35vh;
+        padding-bottom: 48%;
+        margin-left: 11vw;
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .project-logo {
+        width: 100%;
+        text-align: center;
+        margin: 2.8rem 0;
+
+        img {
+            width: 30%;
+            max-width: 10rem;
+
+            &.sm {
+                width: 17.5%;
+                max-width: 6rem;
+            }
+
+            &.lg {
+                width: 55%;
+                max-width: 15rem;
+            }
+
+            &.md {
+                width: 37.5%;
+                max-width: 10rem;
+            }
+        }
+    }
+
+    .swiper-pagination-bullets {
+        text-align: center;
+    }
+
+    .swiper-pagination-bullet {
+        background: #757677;
+        width: 0.5rem;
+        height: 0.5rem;
+        margin: 0 0.45rem !important;
+        border-radius: 50%;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: #fff;
+    }
+}
+
 // about
 
 .about {
@@ -948,7 +1070,7 @@ h1 {
 
         &.about-title {
             @include size(mobile) {
-                top: 1vh;
+                top: 3vh;
                 padding-right: 0;
                 text-align: right;
                 width: auto;
@@ -968,7 +1090,7 @@ h1 {
 
         @include size(mobile) {
             display: block;
-            margin-top: 7rem;
+            margin-top: 9rem;
         }
     }
 
@@ -1093,6 +1215,13 @@ h1 {
 
         .hidden {
             background: url('../images/about02.jpg');
+        }
+
+        .h-text {
+            @include size(tablet-up) {
+                margin-top: 2.5rem;
+                font-weight: 300;
+            }
         }
     }
 }
@@ -1469,7 +1598,7 @@ h1 {
 
         @include size(mobile) {
             width: 19.5%;
-            height: 25vh;
+            height: 21vh;
             margin: 0 1rem;
         }
 

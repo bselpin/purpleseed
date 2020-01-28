@@ -240,7 +240,7 @@
 		<div class="swiper-button-prev swiper-ref-prev"></div>
 	</div>
 
-	<div class="content project">
+	<div class="content project-pc">
 		<div class="wrapper-p">
 			<h1 class="title wow fadeInUp">Project</h1>
 		</div>
@@ -278,7 +278,7 @@
 			</div>
 		</div>
 
-		<div class="swiper-container swiper-project wow fadeInUp">
+		<div class="swiper-container swiper-project-pc wow fadeInUp">
 			<div class="swiper-wrapper main-slide">
 				<div class="swiper-slide">
 					<div class="video-wrapper">
@@ -351,6 +351,109 @@
 			마케팅 효과를 극대화합니다.</p>
 		<div class="swiper-button-next swiper-button-white swiper-prj-next wow fadeInUp"></div>
 		<div class="swiper-button-prev swiper-button-white swiper-prj-prev wow fadeInUp"></div>
+	</div>
+
+	<div class="content project-mobile">
+		<div class="wrapper-p">
+			<h1 class="title wow fadeInUp">Project</h1>
+		</div>
+	
+		<div class="swiper-container swiper-project-mobile wow fadeInUp">
+			<div class="swiper-wrapper main-slide">
+				<div class="swiper-slide">
+					<div class="project-title-container">
+						<p class="client-name">롯데그룹</p>
+						<p class="project-name">플레저박스 캠페인</p>
+					</div>
+					<div class="video-wrapper">
+						<iframe class="" src="https://www.youtube.com/embed/GDPx7q-Cy0Q"
+							frameborder="0"></iframe>
+					</div>
+					<div class="project-logo">
+						<img src="images/project-lotte.png" alt="">
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="project-title-container">
+						<p class="client-name">나이키</p>
+						<p class="project-name">타이거 우즈 인터뷰(미국현지촬영)</p>
+					</div>
+					<div class="video-wrapper">
+						<iframe class="" src="https://www.youtube.com/embed/wh2SyMOW7n0"
+							frameborder="0"></iframe>
+					</div>
+					<div class="project-logo">
+						<img class="sm" src="images/project-nike.png" alt="">
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="project-title-container">
+						<p class="client-name">글로우라우디</p>
+						<p class="project-name">화장품 광고 촬영(중국어 자막 추가)</p>
+					</div>
+					<div class="video-wrapper">
+						<iframe class="" src="https://www.youtube.com/embed/lnkxsjJ3OmY"
+							frameborder="0"></iframe>
+					</div>
+					<div class="project-logo">
+						<img class="md" src="images/project-glowloudy.png" alt="">
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="project-title-container">
+						<p class="client-name">밥캠핑</p>
+						<p class="project-name">비디오 커머스 제품 영상 촬영</p>
+					</div>
+					<div class="video-wrapper">
+						<iframe class="" src="https://www.youtube.com/embed/2YVisSXCIFM"
+							frameborder="0"></iframe>
+					</div>
+					<div class="project-logo">
+						<img src="" alt="">
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="project-title-container">
+						<p class="client-name">2019 농림축산식품부</p>
+						<p class="project-name">플레저박스 캠페인</p>
+					</div>
+					<div class="video-wrapper">
+						<iframe class="" src="https://www.youtube.com/embed/apnzOvrCHq8"
+							frameborder="0"></iframe>
+					</div>
+					<div class="project-logo">
+						<img class="md" src="images/project-nongrim.png" alt="">
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="project-title-container">
+						<p class="client-name">2019_ wingwingfair</p>
+						<p class="project-name">media tunnel</p>
+					</div>
+					<div class="video-wrapper">
+						<iframe class="" src="https://www.youtube.com/embed/y08iJ00IVak"
+							frameborder="0"></iframe>
+					</div>
+					<div class="project-logo">
+						<img class="lg" src="images/project-inchon.png" alt="">
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="project-title-container">
+						<p class="client-name">2019_ wingwingfair</p>
+						<p class="project-name">윙윙페어 애니메이션</p>
+					</div>
+					<div class="video-wrapper">
+						<iframe class="" src="https://www.youtube.com/embed/lJEPMmqNvaA"
+							frameborder="0"></iframe>
+					</div>
+					<div class="project-logo">
+						<img class="lg" src="images/project-inchon.png" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="swiper-pagination-project"></div>
+		</div>
 	</div>
 
 	<div class="content about" id="about">
@@ -971,7 +1074,6 @@
 			pagination: {
 				el: '.swiper-pagination-client',
 				type: 'bullets',
-				draggable: true,
 			},
 		});
 
@@ -1010,18 +1112,27 @@
 			loopAdditionalSlides: 1
 		});
 
-		new Swiper('.swiper-project', {
+		new Swiper('.swiper-project-pc', {
 			slidesPerView: 1,
 			navigation: {
 				nextEl: '.swiper-prj-next',
 				prevEl: '.swiper-prj-prev',
 			},
-			observer: true,
-			observeParents: true,
 			loop: true,
 			centeredSlides: true,
 			speed: 500,
 			simulateTouch: false
+		});
+
+		new Swiper('.swiper-project-mobile', {
+			slidesPerView: 1,
+			loop: true,
+			centeredSlides: true,
+			speed: 500,
+			pagination: {
+				el: '.swiper-pagination-project',
+				type: 'bullets',
+			},
 		});
 
 		new Swiper('.swiper-project-title', {
