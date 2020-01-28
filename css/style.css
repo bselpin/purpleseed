@@ -1033,7 +1033,7 @@ h1 {
   .about .wrapper-np {
     width: 78%;
     top: 0;
-    padding-top: 6vh;
+    padding-top: 4vh;
   }
 }
 
@@ -1045,13 +1045,13 @@ h1 {
 
 @media (max-width: 1366px) {
   .about h1 {
-    margin-top: 1rem;
+    margin-top: 0rem;
   }
 }
 
 @media (max-width: 500px) {
   .about h1.about-title {
-    top: 5vh;
+    top: 1vh;
     padding-right: 0;
     text-align: right;
     width: auto;
@@ -1077,7 +1077,7 @@ h1 {
 @media (max-width: 500px) {
   .about .about-box {
     display: block;
-    margin-top: 10rem;
+    margin-top: 7rem;
   }
 }
 
@@ -1098,7 +1098,7 @@ h1 {
 @media (max-width: 500px) {
   .about .box {
     width: 76vw;
-    height: 81vw;
+    height: 76vw;
   }
 }
 
@@ -1119,8 +1119,8 @@ h1 {
   opacity: 0;
   -webkit-transition: all 0.45s;
   transition: all 0.45s;
-  -webkit-transform: translateY(2rem);
-          transform: translateY(2rem);
+  -webkit-transform: translateY(1.5rem);
+          transform: translateY(1.5rem);
 }
 
 .about .box .h-text {
@@ -1144,7 +1144,7 @@ h1 {
 
 @media (max-width: 1024px) {
   .about .box .h-text {
-    margin-top: 3.5rem;
+    margin-top: 3rem;
     font-weight: 300;
   }
 }
@@ -1189,7 +1189,7 @@ h1 {
 
 @media (max-width: 1024px) {
   .about .box .h-sub-text {
-    margin-top: 3.5rem;
+    margin-top: 3rem;
   }
 }
 
@@ -1218,7 +1218,7 @@ h1 {
 
 @media (max-width: 500px) {
   .about .box-02 {
-    margin-top: 3.2rem;
+    margin-top: 2.75rem;
   }
 }
 
@@ -1589,6 +1589,13 @@ h1 {
   }
 }
 
+@media (max-width: 500px) {
+  .client h1 {
+    margin-top: 0rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
 .client .client-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1675,6 +1682,14 @@ h1 {
   }
 }
 
+@media (max-width: 500px) {
+  .client .client-list {
+    width: 19.5%;
+    height: 25vh;
+    margin: 0 1rem;
+  }
+}
+
 .client .client-list img {
   display: inline-block;
   position: absolute;
@@ -1695,6 +1710,39 @@ h1 {
 
 .client .client-list:hover .upper {
   opacity: 0;
+}
+
+.swiper-client-mobile {
+  display: none;
+  width: 78vw;
+  overflow: hidden;
+}
+
+@media (max-width: 500px) {
+  .swiper-client-mobile {
+    display: block;
+  }
+}
+
+.swiper-client-mobile .client-list {
+  width: 45%;
+  margin: 0.25rem 0;
+}
+
+.swiper-client-mobile .swiper-pagination-bullets {
+  text-align: center;
+}
+
+.swiper-client-mobile .swiper-pagination-bullet {
+  background: #b4b4b4;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: 0 0.75rem !important;
+  border-radius: 50%;
+}
+
+.swiper-client-mobile .swiper-pagination-bullet-active {
+  background: #1b1e23;
 }
 
 .contactus {
