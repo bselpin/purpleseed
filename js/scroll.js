@@ -10,6 +10,7 @@ var canvases = document.getElementsByClassName('canvas')
 var yOffset
 
 function init() {
+    swipers()
     fullPage()
 
     displacementBg(bg2, 2)
@@ -137,6 +138,143 @@ function reverseSlide() {
             mains[k].classList.remove('active')
         }
     },500)
+}
+
+function swipers() {
+    new WOW({
+        boxClass: 'wow',
+        offset: 0,
+        mobile: true,
+        live: true,
+    }).init();
+    // Swipers
+
+    new Swiper('.swiper-tabs-mobile01', {
+        slidesPerView: 1.2,
+        speed: 500,
+        spaceBetween: 20,
+        initialSlide: 0,
+        scrollbar: {
+            el: '.swiper-scrollbar-01',
+            draggable: true,
+        },
+    });
+
+    new Swiper('.swiper-tabs-mobile02', {
+        slidesPerView: 1.2,
+        speed: 500,
+        spaceBetween: 20,
+        initialSlide: 0,
+        scrollbar: {
+            el: '.swiper-scrollbar-02',
+            draggable: true,
+        },
+    });
+
+    new Swiper('.swiper-tabs-mobile03', {
+        slidesPerView: 1.2,
+        speed: 500,
+        spaceBetween: 20,
+        initialSlide: 0,
+        scrollbar: {
+            el: '.swiper-scrollbar-03',
+            draggable: true,
+        },
+    });
+
+    new Swiper('.swiper-client-pc', {
+        centeredSlides: true,
+        slidesPerView: 1,
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-client-next',
+            prevEl: '.swiper-client-prev',
+        },
+    });
+
+    new Swiper('.swiper-client-mobile', {
+        centeredSlides: true,
+        slidesPerView: 1,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination-client',
+            type: 'bullets',
+        },
+    });
+
+    new Swiper('.swiper-reference', {
+        slidesPerView: 1.6,
+        navigation: {
+            nextEl: '.swiper-ref-next',
+            prevEl: '.swiper-ref-prev',
+        },
+        loop: true,
+        centeredSlides: true,
+        watchOverflow: true,
+        initialSlide: 0,
+        loopAdditionalSlides: 1
+    });
+
+    new Swiper('.swiper-reference-mobile', {
+        slidesPerView: 1.5,
+        spaceBetween: 40,
+        loop: true,
+        centeredSlides: true,
+        initialSlide: 0,
+        loopAdditionalSlides: 1,
+    });
+
+    new Swiper('.swiper-reference-text', {
+        slidesPerView: 1,
+        navigation: {
+            nextEl: '.swiper-ref-next',
+            prevEl: '.swiper-ref-prev',
+        },
+        loop: true,
+        centeredSlides: true,
+        watchOverflow: true,
+        initialSlide: 0,
+        loopAdditionalSlides: 1
+    });
+
+    new Swiper('.swiper-project-pc', {
+        slidesPerView: 1,
+        navigation: {
+            nextEl: '.swiper-prj-next',
+            prevEl: '.swiper-prj-prev',
+        },
+        loop: true,
+        centeredSlides: true,
+        speed: 500,
+        simulateTouch: false
+    });
+
+    new Swiper('.swiper-project-mobile', {
+        slidesPerView: 1,
+        loop: true,
+        centeredSlides: true,
+        speed: 500,
+        pagination: {
+            el: '.swiper-pagination-project',
+            type: 'bullets',
+        },
+    });
+
+
+
+    new Swiper('.swiper-project-title', {
+        direction: 'vertical',
+        slidesPerView: 1,
+        navigation: {
+            nextEl: '.swiper-prj-next',
+            prevEl: '.swiper-prj-prev',
+        },
+        observer: true,
+        observeParents: true,
+        loop: true,
+        speed: 500,
+        simulateTouch: false
+    });
 }
 
 init()

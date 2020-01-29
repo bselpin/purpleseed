@@ -925,7 +925,7 @@ h1 {
   color: #fff;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1024px) {
   .project-pc {
     display: none;
   }
@@ -1096,7 +1096,7 @@ h1 {
   margin-bottom: 2rem;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1024px) {
   .project-mobile {
     display: block;
   }
@@ -1614,6 +1614,11 @@ h1 {
 .service .tabs-mobile .swiper-container {
   overflow: visible;
   position: absolute;
+  width: 100%;
+}
+
+.service .tabs-mobile .swiper-container .swiper-wrapper {
+  width: 100%;
 }
 
 .service .tabs-mobile .swiper-slide {
@@ -1655,8 +1660,8 @@ h1 {
 .swiper-tabs-mobile {
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: 0.5s all;
-  transition: 0.5s all;
+  -webkit-transition: 0.8s all;
+  transition: 0.8s all;
   -webkit-transform: translateY(1rem);
           transform: translateY(1rem);
 }

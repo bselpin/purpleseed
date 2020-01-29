@@ -834,7 +834,7 @@ h1 {
     position: relative;
     color: #fff;
 
-    @include size(laptop-up) {
+    @include size(tablet-up) {
         display: none;
     }
 
@@ -986,7 +986,7 @@ h1 {
         }
     }
 
-    @include size(laptop-up) {
+    @include size(tablet-up) {
         display: block;
     }
 
@@ -1429,7 +1429,13 @@ h1 {
         .swiper-container {
             overflow: visible;
             position: absolute;
+            width: 100%;
+
+            .swiper-wrapper {
+                width: 100%;
+            }
         }
+
         .swiper-slide {
             text-align: center;
             position: relative;
@@ -1471,7 +1477,7 @@ h1 {
 .swiper-tabs-mobile {
     opacity: 0;
     visibility: hidden;
-    transition: 0.5s all;
+    transition: 0.8s all;
     transform: translateY(1rem);
 
     &.active {

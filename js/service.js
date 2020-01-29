@@ -26,10 +26,6 @@ for(var i = 0; i < btns.length; i++) {
     })
 }
 
-function mobileTabsControl() {
-
-}
-
 function addControl(num) {
     btns[num].classList.add('active')
     tabs[num].classList.add('active')
