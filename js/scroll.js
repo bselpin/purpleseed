@@ -9,8 +9,17 @@ var mains = document.getElementsByClassName('m')
 var canvases = document.getElementsByClassName('canvas')
 var yOffset
 
+function isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+};
+
 function init() {
+    var isMobile = isMobileDevice()
+    console.log(isMobile);
+    
+
     swipers()
+
     fullPage()
 
     displacementBg(bg2, 2)

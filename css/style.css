@@ -138,6 +138,7 @@
     min-height: auto;
     height: auto;
     padding: 2.5rem 0 35rem;
+    overflow: hidden;
   }
 }
 
