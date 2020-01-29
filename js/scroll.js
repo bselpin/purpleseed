@@ -291,7 +291,7 @@ function swipers() {
 init()
 
 window.addEventListener('load', function () {
-    console.log('jobs done');
-    
+    console.log('jobs done');  
+    alert('done')  
 })
 
