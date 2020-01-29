@@ -142,6 +142,14 @@
   }
 }
 
+@media (max-width: 500px) {
+  .content.reference {
+    min-height: auto;
+    height: auto;
+    padding: 2.5rem 0 calc(20rem + 60vh);
+  }
+}
+
 h1 {
   font-family: "gadugi", sans-serif;
   line-height: 1.2;
@@ -196,7 +204,7 @@ h1 {
   .main .section01 {
     height: 100vh;
     background: url("../images/img02.jpg") center center no-repeat;
-    background-size: cover;
+    background-size: 325%;
   }
 }
 
@@ -213,8 +221,8 @@ h1 {
   .main .section02 {
     top: 0;
     height: 100vh;
-    background: url("../images/img01.jpg") center center no-repeat;
-    background-size: cover;
+    background: url("../images/img01.jpg") 45% center no-repeat;
+    background-size: 325%;
   }
 }
 
@@ -568,13 +576,13 @@ h1 {
   }
 }
 
-.feedback {
+.reference {
   background: url("../images/ref-bg.jpg") center no-repeat;
   background-size: cover;
 }
 
 @media (max-width: 500px) {
-  .feedback {
+  .reference {
     background: url("../images/ref-bg-m.jpg") right top no-repeat;
     background-size: cover;
   }
@@ -1260,30 +1268,29 @@ h1 {
   transition: all 0.45s;
   -webkit-transform: translateY(1.5rem);
           transform: translateY(1.5rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .about .box .h-text {
   width: 100%;
   text-align: center;
-  margin-top: 6.5rem;
   font-size: 0.95rem;
-}
-
-@media (max-width: 1440px) {
-  .about .box .h-text {
-    margin-top: 5rem;
-  }
-}
-
-@media (max-width: 1366px) {
-  .about .box .h-text {
-    margin-top: 3.5rem;
-  }
 }
 
 @media (max-width: 1024px) {
   .about .box .h-text {
-    margin-top: 3rem;
     font-weight: 300;
   }
 }
@@ -1328,7 +1335,7 @@ h1 {
 
 @media (max-width: 1024px) {
   .about .box .h-sub-text {
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
 }
 
@@ -1351,8 +1358,8 @@ h1 {
 }
 
 .about .box-02 {
-  margin-top: 4.5rem;
   background: #000000;
+  margin-top: 4.5rem;
 }
 
 @media (max-width: 500px) {
@@ -1367,7 +1374,6 @@ h1 {
 
 @media (max-width: 1024px) {
   .about .box-02 .h-text {
-    margin-top: 2.5rem;
     font-weight: 300;
   }
 }

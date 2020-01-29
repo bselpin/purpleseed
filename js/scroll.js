@@ -15,12 +15,12 @@ function isMobileDevice() {
 
 function init() {
     var isMobile = isMobileDevice()
-    console.log(isMobile);
     
+    if(!isMobile) {
+        fullPage()
+    }    
 
-    swipers()
-
-    fullPage()
+    swipers()    
 
     displacementBg(bg2, 2)
 
@@ -34,12 +34,14 @@ function init() {
     if (window.pageYOffset >= dh/2) {
         liquidSlide()
     }
+
+    tabsController()
 }
 
 function windowTop() {
-    if (yOffset <= 51) {
+    if (yOffset <= 11) {
         reverseSlide()
-    } else if (yOffset >= 50) {
+    } else if (yOffset >= 10) {
         liquidSlide()
     }
 }
@@ -286,4 +288,7 @@ function swipers() {
     });
 }
 
-init()
+window.addEventListener('load', function () {
+    init()
+})
+

@@ -154,6 +154,14 @@ html {
             overflow: hidden;
         }
     }
+    
+    &.reference {
+        @include size(mobile) {
+            min-height: auto;
+            height: auto;
+            padding: 2.5rem 0 calc(20rem + 60vh);
+        }
+    }
 }
 
 h1 {
@@ -197,7 +205,7 @@ h1 {
         @include size(tablet-up) {
             height: 100vh;
             background: url('../images/img02.jpg') center center no-repeat;
-            background-size: cover;
+            background-size: 325%;
         }
     }
 
@@ -212,8 +220,8 @@ h1 {
         @include size(tablet-up) {
             top: 0;
             height: 100vh;
-            background: url('../images/img01.jpg') center center no-repeat;
-            background-size: cover;
+            background: url('../images/img01.jpg') 45% center no-repeat;
+            background-size: 325%;
         }
     }
 
@@ -522,7 +530,7 @@ h1 {
 
 // ref
 
-.feedback {
+.reference {
     background: url('../images/ref-bg.jpg') center no-repeat;
     background-size: cover;
 
@@ -1137,24 +1145,18 @@ h1 {
             opacity: 0;
             transition: all 0.45s;
             transform: translateY(1.5rem);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
 
         .h-text {
             width: 100%;
             text-align: center;
-            margin-top: 6.5rem;
             font-size: 0.95rem;
 
-            @include size(laptop-up) {
-                margin-top: 5rem;
-            }
-
-            @include size(laptop) {
-                margin-top: 3.5rem;
-            }
-
             @include size(tablet-up) {
-                margin-top: 3rem;
                 font-weight: 300;
             }
         }
@@ -1191,7 +1193,7 @@ h1 {
             }
 
             @include size(tablet-up) {
-                margin-top: 3rem;
+                margin-top: 2rem;
             }
         }
 
@@ -1215,8 +1217,8 @@ h1 {
     }
 
     .box-02 {
-        margin-top: 4.5rem;
         background: $black2;
+        margin-top: 4.5rem;
 
         @include size(mobile) {
             margin-top: 2.75rem;
@@ -1228,7 +1230,6 @@ h1 {
 
         .h-text {
             @include size(tablet-up) {
-                margin-top: 2.5rem;
                 font-weight: 300;
             }
         }

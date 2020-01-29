@@ -4,26 +4,27 @@ var tabs = document.getElementsByClassName('tab')
 var moTabs = document.getElementsByClassName('swiper-tabs-mobile')
 var arrCards = ["card01", "card02", "card03"]
 
-liftCard("card01")
+function tabsController() {
+    liftCard("card01")
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener('click', function (e) {
+            var id = e.target.id
+            var containActive = e.target.classList.contains('active')
 
-for(var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener('click', function(e) {
-        var id = e.target.id
-        var containActive = e.target.classList.contains('active')
-        
-        if(containActive)  {
-            // Do nothing
-        } else {
-            for(var j = 0; j < btns.length; j++){
-               removeControl(j)
+            if (containActive) {
+                // Do nothing
+            } else {
+                for (var j = 0; j < btns.length; j++) {
+                    removeControl(j)
 
-                if(id == j){
-                    addControl(j)
-                    cardControl(tabs[j].firstElementChild.children)
+                    if (id == j) {
+                        addControl(j)
+                        cardControl(tabs[j].firstElementChild.children)
+                    }
                 }
             }
-        }
-    })
+        })
+    }
 }
 
 function addControl(num) {
