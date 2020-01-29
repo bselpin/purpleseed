@@ -674,6 +674,7 @@ h1 {
 
     @include size(tablet-up) {
         top: 8vh;
+        margin: 1rem 0;
     }
 
     h1 {
@@ -744,7 +745,7 @@ h1 {
     overflow: visible;
     color: #fff;
     position: absolute !important;
-    top: 30vh;
+    top: 33vh;
     padding-bottom: 15vh;
 
     @include size(tablet-up) {

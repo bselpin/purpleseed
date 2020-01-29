@@ -746,6 +746,7 @@ h1 {
 @media (max-width: 1024px) {
   .ref-title {
     top: 8vh;
+    margin: 1rem 0;
   }
 }
 
@@ -824,7 +825,7 @@ h1 {
   overflow: visible;
   color: #fff;
   position: absolute !important;
-  top: 30vh;
+  top: 33vh;
   padding-bottom: 15vh;
 }
 
