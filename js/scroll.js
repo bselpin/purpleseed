@@ -9,6 +9,7 @@ var mains = document.getElementsByClassName('m')
 var canvases = document.getElementsByClassName('canvas')
 var loading = document.getElementsByClassName('loading')
 var yOffset
+var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
 
 function isMobileDevice() {
     return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
@@ -20,6 +21,7 @@ function init() {
     if(!isMobile) {
         fullPage()
     }
+    disableScroll()
 
     swipers()
 
@@ -287,9 +289,44 @@ function swipers() {
     });
 }
 
+function preventDefault(e) {
+    e = e || window.event;
+    if (e.preventDefault)
+        e.preventDefault();
+    e.returnValue = false;
+}
+
+function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+    }
+}
+
+function disableScroll() {
+    if (window.addEventListener) 
+        window.addEventListener('DOMMouseScroll', preventDefault, false);
+    document.addEventListener('wheel', preventDefault, { passive: false });
+    window.onwheel = preventDefault;
+    window.onmousewheel = document.onmousewheel = preventDefault;
+    window.ontouchmove = preventDefault;
+    document.onkeydown = preventDefaultForScrollKeys;
+}
+
+function enableScroll() {
+    if (window.removeEventListener)
+        window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    document.removeEventListener('wheel', preventDefault, { passive: false });
+    window.onmousewheel = document.onmousewheel = null;
+    window.onwheel = null;
+    window.ontouchmove = null;
+    document.onkeydown = null;
+}
+
 init()
 
 window.addEventListener('load', function () {
     loading[0].classList.add('hidden')
+    enableScroll()
 })
 
