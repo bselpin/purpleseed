@@ -17,10 +17,12 @@
 	<link rel="icon" href="favicon.ico">
 	<link rel="stylesheet" href="css/swiper.min.css">
 	<link rel="stylesheet" href="css/animate.css">
-	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="js/jquery-migrate-1.4.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/jquery-migrate-1.4.1.min.js"></script>
+	<script src="js/jquery.mousewheel.min.js"></script>
+	<script src="/pace/pace.js"></script>
+	<link href="/pace/themes/pace-theme-fill-left.css" rel="stylesheet" />
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153557120-1">
 	</script>
@@ -42,6 +44,9 @@
 </head>
 
 <body>
+	<div class="loading">
+		<img src="images/loading-logo.png" alt="" class="logo">
+	</div>
 	<div class="burger" id="burger">
 		<span></span>
 		<span></span>
@@ -50,7 +55,7 @@
 
 	<div class="content main" id="main">
 		<div class="section section-text">
-			<div class="wow fadeInUp main-message" data-wow-delay="0.5s" data-wow-duration="0.9s">
+			<div class="wow fadeInUp main-message" data-wow-delay="0.5s" data-wow-duration="0.8s">
 				<h1 id=main1>PURPLESEED</h1>
 				<div class="line-black"></div>
 				<h2 id=main2>성공을 위한 비지니스 파트너, 퍼플시드</h2>
@@ -65,12 +70,12 @@
 		<div class="square left"></div>
 		<div class="square right"></div>
 		<div class="news-inner">
-			<div class="vision-title wow fadeInUp" data-wow-duration="0.9s">
+			<div class="vision-title wow fadeInUp" data-wow-duration="0.8s">
 				<h1>Purpleseed: <br>Vision</h1>
 			</div>
 			<p class="wow fadeInUp business-partner" data-wow-duration="0.8s">Business Partner</p>
 
-			<div class="wow fadeInUp circles" data-wow-delay="0.2s" data-wow-duration="0.8s">
+			<div class="wow fadeInUp circles" data-wow-duration="0.8s">
 				<ul class="circle-pc">
 					<li class="circle">
 						<p class="circle-inner white">고객 이해</p>
@@ -100,7 +105,7 @@
 					</li>
 				</ul>
 			</div>
-			<p class="wow fadeInUp text" data-wow-delay="0.4s" data-wow-duration="1s">
+			<p class="wow fadeInUp text" data-wow-duration="0.8s">
 				트렌드에 맞추어 고객의 다양한 요구와
 				<br>소비자의 니즈를 반영하여
 				<br>최적화된 마케팅 및 컨설팅 서비스를 제공합니다.
@@ -109,7 +114,7 @@
 	</div>
 
 	<div class="content reference" id="reference">
-		<div class="wow fadeInUp ref-title" data-wow-duration="1s">
+		<div class="wow fadeInUp ref-title" data-wow-duration="0.8s">
 			<h1 class="title">Reference</h1>
 			<p class="ref-des">다양한 경험과 노하우로 퍼플시드만의 견고한 나이테를 만들어갑니다.</p>
 		</div>
@@ -117,23 +122,23 @@
 		<div class="swiper-container swiper-reference-text">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
-					<p class="wow fadeInUp reftext1" data-wow-delay="0.2s" data-wow-duration="1s">인천공항 상생<br>
+					<p class="wow fadeInUp reftext1" data-wow-duration="0.8s">인천공항 상생<br>
 						플리마켓<br>윙윙페어
 					</p>
 				</div>
 				<div class="swiper-slide">
-					<p class="wow fadeInUp reftext1 single" data-wow-delay="0.52" data-wow-duration="1s">글로우라우디</p>
+					<p class="wow fadeInUp reftext1 single" data-wow-duration="0.8s">글로우라우디</p>
 				</div>
 				<div class="swiper-slide">
-					<p class="wow fadeInUp reftext1" data-wow-delay="0.2s" data-wow-duration="1s">2019<br>농림축산식품<br>일자리
+					<p class="wow fadeInUp reftext1" data-wow-duration="0.8s">2019<br>농림축산식품<br>일자리
 						박람회</p>
 				</div>
 				<div class="swiper-slide">
-					<p class="wow fadeInUp reftext1 dual" data-wow-delay="0.2s" data-wow-duration="1s">원더풀플랫폼<br>다솜이
+					<p class="wow fadeInUp reftext1 dual" data-wow-duration="0.8s">원더풀플랫폼<br>다솜이
 					</p>
 				</div>
 				<div class="swiper-slide">
-					<p class="wow fadeInUp reftext1" data-wow-delay="0.2s" data-wow-duration="1s">삼성전자<br>디지털프라자<br>부산본점
+					<p class="wow fadeInUp reftext1" data-wow-duration="0.8s">삼성전자<br>디지털프라자<br>부산본점
 					</p>
 				</div>
 			</div>
@@ -143,32 +148,32 @@
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
 					<div class="photo photo1"></div>
-					<p class="wow fadeInUp reftext2" data-wow-delay="0.2s" data-wow-duration="1s">2019.04</p>
-					<p class="wow fadeInUp reftext3" data-wow-delay="0.2s" data-wow-duration="1s">윙윙페어 행사 진행 및 마케팅
+					<p class="wow fadeInUp reftext2" data-wow-duration="0.8s">2019.04</p>
+					<p class="wow fadeInUp reftext3" data-wow-duration="0.8s">윙윙페어 행사 진행 및 마케팅
 						총괄</p>
 				</div>
 				<div class="swiper-slide">
 					<div class="photo photo2"></div>
-					<p class="wow fadeInUp reftext2" data-wow-delay="0.2s" data-wow-duration="1s">2019.08</p>
-					<p class="wow fadeInUp reftext3" data-wow-delay="0.2s" data-wow-duration="1s">신상품 브랜드 런칭/온오프라인
+					<p class="wow fadeInUp reftext2" data-wow-duration="0.8s">2019.08</p>
+					<p class="wow fadeInUp reftext3" data-wow-duration="0.8s">신상품 브랜드 런칭/온오프라인
 						영상 제작/상세 페이지 촬영</p>
 				</div>
 				<div class="swiper-slide">
 					<div class="photo photo3"></div>
-					<p class="wow fadeInUp reftext2" data-wow-delay="0.2s" data-wow-duration="1s">2019.06</p>
-					<p class="wow fadeInUp reftext3" data-wow-delay="0.2s" data-wow-duration="1s">SNS&유튜브 채널 운영/블로그
+					<p class="wow fadeInUp reftext2" data-wow-duration="0.8s">2019.06</p>
+					<p class="wow fadeInUp reftext3" data-wow-duration="0.8s">SNS&유튜브 채널 운영/블로그
 						기자단/카페 바이럴 마케팅</p>
 				</div>
 				<div class="swiper-slide">
 					<div class="photo photo4"></div>
-					<p class="wow fadeInUp reftext2" data-wow-delay="0.2s" data-wow-duration="1s">2019.08</p>
-					<p class="wow fadeInUp reftext3" data-wow-delay="0.2s" data-wow-duration="1s">제품 런칭 및 마케팅 전반적
+					<p class="wow fadeInUp reftext2" data-wow-duration="0.8s">2019.08</p>
+					<p class="wow fadeInUp reftext3" data-wow-duration="0.8s">제품 런칭 및 마케팅 전반적
 						운영/영상 및 웹 콘텐츠 제작</p>
 				</div>
 				<div class="swiper-slide">
 					<div class="photo photo5"></div>
-					<p class="wow fadeInUp reftext2" data-wow-delay="0.2s" data-wow-duration="1s">2019.08</p>
-					<p class="wow fadeInUp reftext3" data-wow-delay="0.2s" data-wow-duration="1s">블로그 기자단/PR</p>
+					<p class="wow fadeInUp reftext2" data-wow-duration="0.8s">2019.08</p>
+					<p class="wow fadeInUp reftext3" data-wow-duration="0.8s">블로그 기자단/PR</p>
 				</div>
 			</div>
 			<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
@@ -178,53 +183,53 @@
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
 					<div class="photo photo1"></div>
-					<p class="wow fadeInUp reftext1" data-wow-delay="0.2s" data-wow-duration="1s">인천공항 상생 플리마켓<br>윙윙페어
+					<p class="wow fadeInUp reftext1" data-wow-duration="0.8s">인천공항 상생 플리마켓<br>윙윙페어
 					</p>
 					<div class="ref-div">
-						<p class="wow fadeInUp reftext2" data-wow-delay="0.2s" data-wow-duration="1s">2019.04</p>
-						<p class="wow fadeInUp reftext3" data-wow-delay="0.2s" data-wow-duration="1s">윙윙페어 행사 진행 및 마케팅
+						<p class="wow fadeInUp reftext2" data-wow-duration="0.8s">2019.04</p>
+						<p class="wow fadeInUp reftext3" data-wow-duration="0.8s">윙윙페어 행사 진행 및 마케팅
 							총괄</p>
 					</div>
 
 				</div>
 				<div class="swiper-slide">
 					<div class="photo photo2"></div>
-					<p class="wow fadeInUp reftext1" data-wow-delay="0.2s" data-wow-duration="1s">글로우라우디</p>
+					<p class="wow fadeInUp reftext1" data-wow-duration="0.8s">글로우라우디</p>
 					<div class="ref-div">
-						<p class="wow fadeInUp reftext2" data-wow-delay="0.2s" data-wow-duration="1s">2019.08</p>
-						<p class="wow fadeInUp reftext3" data-wow-delay="0.2s" data-wow-duration="1s">신상품 브랜드 런칭/온오프라인
+						<p class="wow fadeInUp reftext2" data-wow-duration="0.8s">2019.08</p>
+						<p class="wow fadeInUp reftext3" data-wow-duration="0.8s">신상품 브랜드 런칭/온오프라인
 							영상 제작/상세 페이지 촬영</p>
 					</div>
 
 				</div>
 				<div class="swiper-slide">
 					<div class="photo photo3"></div>
-					<p class="wow fadeInUp reftext1" data-wow-delay="0.2s" data-wow-duration="1s">2019 농림축산식품<br>일자리박람회
+					<p class="wow fadeInUp reftext1" data-wow-duration="0.8s">2019 농림축산식품<br>일자리박람회
 					</p>
 					<div class="ref-div">
-						<p class="wow fadeInUp reftext2" data-wow-delay="0.2s" data-wow-duration="1s">2019.06</p>
-						<p class="wow fadeInUp reftext3" data-wow-delay="0.2s" data-wow-duration="1s">SNS&유튜브 채널 운영/블로그
+						<p class="wow fadeInUp reftext2" data-wow-duration="0.8s">2019.06</p>
+						<p class="wow fadeInUp reftext3" data-wow-duration="0.8s">SNS&유튜브 채널 운영/블로그
 							기자단/카페 바이럴 마케팅</p>
 					</div>
 
 				</div>
 				<div class="swiper-slide">
 					<div class="photo photo4"></div>
-					<p class="wow fadeInUp reftext1" data-wow-delay="0.2s" data-wow-duration="1s">원더풀플랫폼<br>다솜이</p>
+					<p class="wow fadeInUp reftext1" data-wow-duration="0.8s">원더풀플랫폼<br>다솜이</p>
 					<div class="ref-div">
-						<p class="wow fadeInUp reftext2" data-wow-delay="0.2s" data-wow-duration="1s">2019.08</p>
-						<p class="wow fadeInUp reftext3" data-wow-delay="0.2s" data-wow-duration="1s">제품 런칭 및 마케팅 전반적
+						<p class="wow fadeInUp reftext2" data-wow-duration="0.8s">2019.08</p>
+						<p class="wow fadeInUp reftext3" data-wow-duration="0.8s">제품 런칭 및 마케팅 전반적
 							운영/영상 및 웹 콘텐츠 제작</p>
 					</div>
 
 				</div>
 				<div class="swiper-slide">
 					<div class="photo photo5"></div>
-					<p class="wow fadeInUp reftext1" data-wow-delay="0.2s" data-wow-duration="1s">삼성전자 디지털프라자<br>부산본점
+					<p class="wow fadeInUp reftext1" data-wow-duration="0.8s">삼성전자 디지털프라자<br>부산본점
 					</p>
 					<div class="ref-div">
-						<p class="wow fadeInUp reftext2" data-wow-delay="0.2s" data-wow-duration="1s">2019.08</p>
-						<p class="wow fadeInUp reftext3" data-wow-delay="0.2s" data-wow-duration="1s">블로그 기자단/PR</p>
+						<p class="wow fadeInUp reftext2" data-wow-duration="0.8s">2019.08</p>
+						<p class="wow fadeInUp reftext3" data-wow-duration="0.8s">블로그 기자단/PR</p>
 					</div>
 
 				</div>
@@ -446,7 +451,7 @@
 
 	<div class="content about" id="about">
 		<div class="wrapper-np">
-			<h1 class="about-title">
+			<h1 class="about-title wow fadeIn">
 				<p>Purpleseed:</p>
 				<p>About</p>
 			</h1>
@@ -714,14 +719,14 @@
 
 	<div class="content mission" id="mission">
 		<div class="wrapper-p">
-			<h1 class="wow fadeInUp" data-wow-duration="1s">Purpleseed:<br>Mission</h1>
-			<div class="wow fadeInUp mission-text-pc" data-wow-delay="0.2s" data-wow-duration="1s">
+			<h1 class="wow fadeInUp" data-wow-duration="0.8s">Purpleseed:<br>Mission</h1>
+			<div class="wow fadeInUp mission-text-pc" data-wow-duration="0.8s">
 				<p class="text">우리의 미션은, 우리가 만드는 콘텐츠와 서비스를
 					통해 사용자에게 차별화된 마케팅 솔루션 제시와 진심 어린 소통으로 새로운 경험을 제공하는 것입니다.</p>
 				<div class="line line"></div>
 				<p class="ps">Global Business Partner, PURPLESEED</p>
 			</div>
-			<div class="wow fadeInUp mission-text-mobile" data-wow-delay="0.2s" data-wow-duration="1s">
+			<div class="wow fadeInUp mission-text-mobile" data-wow-duration="0.8s">
 				<p class="text">우리의 미션은,<br> 우리가 만드는 콘텐츠와 서비스를
 					통해<br> 사용자에게 차별화된 마케팅 솔루션 제시와<br> 진심 어린 소통으로<br> 새로운 경험을 제공하는 것입니다.</p>
 				<div class="line line"></div>
@@ -1003,7 +1008,7 @@
 		</div>
 
 		<iframe
-			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.494934522014!2d127.01997311473465!3d37.51982873456042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3eba4c7bb09%3A0x726e84dc1e36e9f2!2z7ISc7Jq47Yq567OE7IucIOqwleuCqOq1rCDsi6Dsgqzrj5kgNTE4LTg!5e0!3m2!1sko!2skr!4v1574621541934!5m2!1sko!2skr"
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.494934522014!2d127.01997311473465!3d37.51982873456042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!0.8s0x357ca3eba4c7bb09%3A0x726e84dc1e36e9f2!2z7ISc7Jq47Yq567OE7IucIOqwleuCqOq1rCDsi6Dsgqzrj5kgNTE4LTg!5e0!3m2!0.8sko!2skr!4v1574621541934!5m2!0.8sko!2skr"
 			width="100%" height="100%" frameborder="0" class="google-maps">
 		</iframe>
 
@@ -1097,6 +1102,7 @@
 
 
 	<script>
+		pace.start()
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-36251023-1']);
 		_gaq.push(['_setDomainName', 'jqueryscript.net']);

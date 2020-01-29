@@ -4,6 +4,19 @@
 $black: #000000;
 $black2: #000000;
 
+@keyframes loading {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.35;
+    }
+
+    100% {
+        opacity: 1;   
+    }
+}
+
 @mixin size($size) {
     @if $size==mobile {
         @media (max-width: 500px) {
@@ -39,6 +52,32 @@ $black2: #000000;
 html {
     @include size(laptop) {
         font-size: calc(13px + 0.25vw);
+    }
+}
+
+.loading {
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    transition: all 0.7s;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        margin-top: -7rem;
+        width: 10rem;
+        animation: loading 2s infinite;
+    }
+
+    &.hidden {
+        opacity: 0;
+        visibility: hidden;
     }
 }
 

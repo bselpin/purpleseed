@@ -1,8 +1,65 @@
 @import url("setup.css");
+@-webkit-keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 1366px) {
   html {
     font-size: calc(13px + 0.25vw);
   }
+}
+
+.loading {
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+  opacity: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loading img {
+  margin-top: -7rem;
+  width: 10rem;
+  -webkit-animation: loading 2s infinite;
+          animation: loading 2s infinite;
+}
+
+.loading.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .wrapper-p {
