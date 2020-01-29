@@ -1,11 +1,8 @@
 var content = document.getElementsByClassName('content')
 var btns = document.getElementsByClassName('tab-btn')
 var tabs = document.getElementsByClassName('tab')
-var service = document.getElementById('service').offsetTop - 100
-var windowScroll = window.scrollY
-var windowHeight = window.innerHeight
+var moTabs = document.getElementsByClassName('swiper-tabs-mobile')
 var arrCards = ["card01", "card02", "card03"]
-var serviceOnce = false
 
 liftCard("card01")
 
@@ -29,14 +26,20 @@ for(var i = 0; i < btns.length; i++) {
     })
 }
 
+function mobileTabsControl() {
+
+}
+
 function addControl(num) {
     btns[num].classList.add('active')
     tabs[num].classList.add('active')
+    moTabs[num].classList.add('active')
 }
 
 function removeControl(num) {
     btns[num].classList.remove('active')
     tabs[num].classList.remove('active')
+    moTabs[num].classList.remove('active')
 }
 
 function cardControl(tabNum) {

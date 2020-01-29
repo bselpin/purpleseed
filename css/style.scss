@@ -1468,12 +1468,17 @@ h1 {
     }
 }
 
-.swiper-tabs-mobile01 {
-    display: none;
-}
+.swiper-tabs-mobile {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s all;
+    transform: translateY(1rem);
 
-.swiper-tabs-mobile02 {
-    display: none;
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
 }
 
 // mission

@@ -1652,12 +1652,20 @@ h1 {
   margin-bottom: 5rem;
 }
 
-.swiper-tabs-mobile01 {
-  display: none;
+.swiper-tabs-mobile {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  -webkit-transform: translateY(1rem);
+          transform: translateY(1rem);
 }
 
-.swiper-tabs-mobile02 {
-  display: none;
+.swiper-tabs-mobile.active {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .mission {
