@@ -18,9 +18,9 @@ function init() {
     
     if(!isMobile) {
         fullPage()
-    }    
+    }
 
-    swipers()    
+    swipers()
 
     displacementBg(bg2, 2)
 
@@ -288,7 +288,9 @@ function swipers() {
     });
 }
 
+init()
+
 window.addEventListener('load', function () {
-    init()
+    
 })
 
