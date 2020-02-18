@@ -52,6 +52,185 @@ html {
     }
 }
 
+
+.header {
+    position: fixed;
+    width: 100%;
+    padding: 0 17%;
+    height: 95px;
+    background: rgba(255,255,255,0.9);
+    z-index: 9999;
+    transition: transform 0.7s;
+    transform: translateY(-95px);
+
+    @include size(laptop) {
+        padding: 0 20px;
+    }
+
+    @include size(tablet-up) {
+        height: 70px;
+        padding: 0 20px;
+    }
+
+    @include size(mobile) {
+        height: 60px;
+        padding: 0 20px;
+    }
+
+    &.active {
+        transform: translateY(0);
+    }
+
+    .logo {
+        position: absolute;
+        top: 35px;
+
+        &.pc {
+            @include size(tablet-up) {
+                display: none;
+                width: 30px;
+            }            
+        }     
+        
+        &.mobile {
+            display: none;
+            top: 20px;
+
+            @include size(tablet-up) {
+                display: block;
+            }
+
+            @include size(mobile) {
+                top: 17px;
+                left: 15px;
+            }
+        }
+
+        img {
+            @include size(tablet-up) {
+                width: 30px;
+            }
+
+            @include size(mobile) {
+                width: 25px;
+            }
+        }
+    }
+
+    ul {
+        top: 0;
+        right: 17%;
+        position: absolute;
+        display: flex;
+        height: 95px;
+        justify-content: center;
+        align-items: center;
+        font-family: 'gadugi';
+        margin-right: 4rem;
+        font-size: 0.9rem;
+
+        @include size(laptop) {
+            right: 60px;
+        }
+
+        @include size(tablet-up) {
+            right: 40px;
+            height: 60px;
+        }
+
+        @include size(tablet) {
+            display: none;
+        }
+
+        li {
+            position: relative;
+            padding: 15px 1.35rem 0;
+
+            &:first-child:after {
+                display: none;
+            }
+
+            &:after {
+                position: absolute;
+                content: '';
+                display: block;
+                width: 1px;
+                height: 0.7rem;
+                background: #b1b2b3;
+                top: 23px;
+                left: 0rem;
+            }
+        }
+
+        a {
+            letter-spacing: -0.25px;
+            color: #b1b2b3;
+
+            &.active {
+                color: #000;
+            }
+
+            &:hover {
+                color: #000;
+            }
+        }
+    }
+}
+
+.burger {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 28px;
+    right: 17%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 7px;
+    z-index: 9999;
+    cursor: pointer;
+
+    @include size(laptop) {
+        right: 30px;
+    }
+
+    @include size(tablet-up) {
+        right: 20px;
+        top: 10px;
+    }
+
+    @include size(mobile) {
+        top: 4px;
+        right: 0;
+    }
+
+    span {
+        height: 3px;
+        width: 25px;
+        background: $black;
+        margin: 3px;
+        cursor: pointer;
+        transition: all 0.2s;
+        transform-origin: right;
+
+        @include size(mobile) {
+            height: 2px;
+            width: 22px;
+        }
+    }
+
+    &:hover {
+        span:first-child {
+            transform: scaleX(0.5);
+        }
+
+        span:last-child {
+            transform: scaleX(0.75);
+        }
+    }
+}
+
 .loading {
     width: 100%;
     height: 100vh;
@@ -80,7 +259,7 @@ html {
         width: 8px;
         height: 8px;
         border-radius: 50%;
-        background: #6224d6;
+        background: #40214b;
         animation-timing-function: cubic-bezier(0, 1, 1, 0);
     }
 
@@ -163,64 +342,7 @@ html {
     position: relative;
 }
 
-.burger {
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    background: #FFFFFF;
-    position: fixed;
-    top: 25px;
-    left: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 7px;
-    z-index: 9990;
-    cursor: pointer;
-    box-shadow: 0px 0px 18px rgba(30, 20, 60, 0.2);
 
-    @include size(mobile) {
-        top: 1rem;
-        left: 1rem;
-    }
-
-    span {
-        height: 2px;
-        width: 25px;
-        background: $black;
-        margin: 3px;
-        cursor: pointer;
-        transition: all 0.2s;
-
-        &:nth-child(2) {
-            width: 18px
-        }
-
-        &:last-child {
-            width: 28px;
-        }
-    }
-
-    &:hover {
-        align-items: center;
-        padding: 0;
-
-        span {
-            margin: 2px;
-        }
-
-        span:first-child {
-            width: 10px;
-            transform: rotate(33deg) translate(6px, 0px);
-        }
-
-        span:last-child {
-            width: 10px;
-            transform: rotate(-33deg) translate(6px, 0px);
-        }
-    }
-}
 
 .content {
     width: 100%;
@@ -600,7 +722,7 @@ h1 {
     top: 0;
     background: #fff;
     height: 60%;
-    width: 18%;
+    width: 17%;
     z-index: 999;
 
     &.right {
@@ -1321,7 +1443,7 @@ h1 {
     }
 
     .box-02 {
-        background: $black2;
+        background: #1b1e23;
         margin-top: 4.5rem;
 
         @include size(mobile) {
@@ -1910,16 +2032,18 @@ h1 {
         }
 
         .phone-num {
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             font-family: 'gadugi', sans-serif;
-            margin-top: 2.5rem;
+            margin-top: 2.5rem;            
 
             .first {
                 margin-right: 0.5rem;
+                letter-spacing: 0px;
             }
 
             .second {
                 margin-left: 0.5rem;
+                letter-spacing: 0px;
             }
 
             @include size(mobile) {
@@ -1934,6 +2058,10 @@ h1 {
             font-size: 1rem;
             font-family: 'Noto Sans KR', sans-serif;
             font-weight: 300;
+            
+            p {
+                letter-spacing: 0px;
+            }
 
             .address {
                 font-size: 0.8rem;
@@ -2039,7 +2167,7 @@ h1 {
 
 .footer-pc {
     width: 100%;
-    background: $black2;
+    background: #1b1e23;
     position: absolute;
     bottom: 0;
     padding-top: 0.5rem;
@@ -2061,7 +2189,12 @@ h1 {
 
             li {
                 width: 3rem;
-
+                
+                a {
+                    width: 2.75rem;
+                    height: 2.75rem;
+                    display: block;
+                }
             }
         }
     }
@@ -2076,11 +2209,13 @@ h1 {
         .copy {
             font-family: 'gadugir', sans-serif;
             font-size: 0.625rem;
+            letter-spacing: 0;
         }
 
         .info-block {
             display: inline-block;
             margin-left: 2rem;
+            letter-spacing: 0px;
 
             &:first-child {
                 margin: 0;
@@ -2091,6 +2226,7 @@ h1 {
                 margin-left: 1.5rem;
                 font-family: 'gadugir', 'Noto Sans KR', sans-serif;
                 font-weight: 300;
+                letter-spacing: 0;
 
                 &:after {
                     position: absolute;
@@ -2111,10 +2247,12 @@ h1 {
     display: none;
     color: #a8aaae;
     font-size: 0.75rem;
+    background: #1b1e23;
 
     .copy {
         margin-top: 1rem;
         font-size: 0.5rem;
+        letter-spacing: 0px;
     }
 
     .wrapper-p {
@@ -2140,6 +2278,11 @@ h1 {
 
         li {
             margin-top: 0.5rem;
+            letter-spacing: 0;
+
+            &.short {
+                letter-spacing: -0.5px;
+            }
         }
 
         .tags {
@@ -2190,18 +2333,42 @@ h1 {
 // menu
 
 .menu {
-    width: 27vw;
+    width: 24vw;
     height: 100vh;
     background: #1b1e23;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     z-index: 9999;
     position: fixed;
     top: 0;
-    left: 0;
-    transform: translateX(-100%);
-    transition: all 0.4s;
+    right: 0;
+    transform: translateX(100%);
+    transition: all 0.3s;
+    padding-left: 4.5rem;
+
+    .mobile-lang {
+        color: #a1a1a9;
+        position: absolute;
+        bottom: 15vh;
+        width: 80%;
+        padding: 0 4.5rem;
+        left: 0;
+        justify-content: space-between;
+        display: none;
+
+        @include size(tablet) {
+            display: flex;
+        }
+
+        .active {
+            color: #fff;
+        }
+    }
+
+    @include size(tablet-up) {
+        width: 50vw;
+    }
 
     @include size(mobile) {
         width: 100vw;
@@ -2210,6 +2377,7 @@ h1 {
     li {
         font-family: 'gadugi', sans-serif;
         margin: 1.25rem;
+        margin-left: 0;
         font-size: 1.7rem;
         overflow: visible;
         position: relative;
@@ -2222,29 +2390,43 @@ h1 {
 
 .menu .btn-close {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 2rem;
+    right: 2rem;
     text-align: center;
-    font-size: 45px;
-    line-height: 45px;
-    height: 60px;
-    width: 60px;
+    height: 40px;
+    width: 40px;
     color: white;
     padding: 0;
     border: 0;
     cursor: pointer;
-    transition: all 0.4s;
+    transition: all 0.3s;
+
+    @include size(mobile) {
+        top: 12px;
+        right: 5px;
+    }
+
+    span {
+        position: absolute;
+        bottom: 50%;
+        left: 0;
+        display: block;
+        width: 2rem;
+        height: 2px;
+        background: #7d8183;
+        transform: rotate(45deg);
+        transition: all 0.3s;
+
+        &:last-child {
+            transform: rotate(-45deg);
+        }
+    }
 
     &:hover {
-        opacity: 0.7;
         transform: translateY(0.2rem);
-    }
-}
 
-.menu {
-    ul {
-        @include size(mobile) {
-            margin-left: -30vw;
+        span {
+            background: #fff;
         }
     }
 }

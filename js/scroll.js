@@ -8,8 +8,10 @@ var main = document.getElementById('main')
 var mains = document.getElementsByClassName('m')
 var canvases = document.getElementsByClassName('canvas')
 var loading = document.getElementsByClassName('loading')
+var header = document.getElementsByClassName('header')
 var yOffset
 var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
+var lastScrollTop = 0
 
 function isMobileDevice() {
     return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
@@ -323,10 +325,21 @@ function enableScroll() {
     document.onkeydown = null;
 }
 
-init()
-
 window.addEventListener('load', function () {
-    loading[0].classList.add('hidden')
+    // loading[0].classList.add('hidden')
+    header[0].classList.add('active')
     enableScroll()
 })
+
+window.addEventListener('scroll', function() {
+    var st = window.pageYOffset || document.documentElement.scrollTop
+    if(st > lastScrollTop) {
+        header[0].classList.remove('active')
+    } else {
+        header[0].classList.add('active')    
+    }
+    lastScrollTop = st <= 0 ? 0 : st
+})
+
+init()
 

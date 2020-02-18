@@ -1,7 +1,7 @@
 var menuLink = $('.burger');
 var menu = $('.menu');
 var close = $('.btn-close');
-var navLink = $('ul li a');
+var navLink = $('.nav-btn');
 var content = $('.content');
 
 menuLink.click(function() {

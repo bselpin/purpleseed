@@ -28,6 +28,12 @@
     border: none;
 }
 
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 html {
     font-family: 'Noto Sans KR', sans-serif;
     font-size: calc(14px + 0.25vw);
