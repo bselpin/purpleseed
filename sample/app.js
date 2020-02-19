@@ -111,10 +111,6 @@ function enableScroll() {
     document.onkeydown = null;
 }
 
-function detectDevice() {
-
-}
-
 document.addEventListener('wheel', preventDefault, {passive: false});
 document.addEventListener('wheel', liquidSlide);
 

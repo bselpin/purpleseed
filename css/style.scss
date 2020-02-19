@@ -1489,7 +1489,7 @@ h1 {
         justify-content: space-around;
         color: #dcdcdc;
 
-        @include size(mobile) {
+        @include size(tablet) {
             font-size: 1.3rem;
             justify-content: space-between;
         }
@@ -1517,7 +1517,7 @@ h1 {
                 transform: translateY(2rem);
                 transition: transform 0.3s;
 
-                @include size(mobile) {
+                @include size(tablet) {
                     font-size: 1.15rem;
                 }
             }
@@ -1544,7 +1544,7 @@ h1 {
             margin-top: 6rem;
         }
 
-        @include size(mobile) {
+        @include size(tablet) {
             display: none;
         }
 
@@ -1650,14 +1650,18 @@ h1 {
         margin-top: 3rem;
         display: none;
 
-        @include size(mobile) {
+        @include size(tablet) {
             display: block;
         }
 
         .swiper-container {
             overflow: visible;
             position: absolute;
-            width: 100%;
+            width: 70%;
+
+            @include size(mobile) {
+                width: 100%;
+            }
 
             .swiper-wrapper {
                 width: 100%;
@@ -1813,7 +1817,7 @@ h1 {
     }
 
     .wrapper-p {
-        @include size(mobile) {
+        @include size(tablet) {
             width: 78%;
             padding: 0;
         }
@@ -1834,7 +1838,7 @@ h1 {
             margin-bottom: 4rem;
         }
 
-        @include size(mobile) {
+        @include size(tablet) {
             margin-top: 0rem;
             margin-bottom: 2.5rem;
         }
@@ -1858,7 +1862,7 @@ h1 {
             right: -10px;
         }
 
-        @include size(mobile) {
+        @include size(tablet) {
             display: none;
         }
     }
@@ -1875,7 +1879,7 @@ h1 {
             left: -10px;
         }
 
-        @include size(mobile) {
+        @include size(tablet) {
             display: none;
         }
     }
@@ -1883,7 +1887,7 @@ h1 {
     .swiper-client-pc {
         overflow: hidden;
 
-        @include size(mobile) {
+        @include size(tablet) {
             display: none;
         }
     }
@@ -1906,7 +1910,7 @@ h1 {
             margin: 0 1rem;
         }
 
-        @include size(mobile) {
+        @include size(tablet) {
             width: 19.5%;
             height: calc(5rem + 30vw);
             margin: 0 1rem;
@@ -1942,13 +1946,20 @@ h1 {
     width: 78vw;
     overflow: hidden;
 
-    @include size(mobile) {
+    @include size(tablet) {
         display: block;
     }
 
     .client-list {
-        width: 47%;
-        margin: 0.25rem 0;
+        width: 23%;
+        margin: 0 1rem;
+        height: 10rem;
+
+        @include size(mobile) {
+            width: 47%;
+            margin: 0.25rem 0;
+            height: calc(5rem + 30vw);
+        }
     }
 
     .swiper-pagination-bullets {
@@ -1975,12 +1986,12 @@ h1 {
     position: relative;
     display: block;
 
-    @include size(mobile) {
+    @include size(tablet) {
         height: auto;
     }
 
     .wrapper-p {
-        @include size(mobile) {
+        @include size(tablet) {
             width: 100%;
             padding: 4rem 12%;
             margin: 0 auto;
@@ -1988,7 +1999,7 @@ h1 {
     }
 
     .google-maps {
-        @include size(mobile) {
+        @include size(tablet) {
             height: 30vh;
         }
     }
@@ -2005,7 +2016,7 @@ h1 {
         padding: 1.75rem calc(17% + 3rem) 1.35rem;
     }
 
-    @include size(mobile) {
+    @include size(tablet) {
         position: static;
         display: block;
     }
@@ -2020,7 +2031,7 @@ h1 {
             width: 53%;
         }
 
-        @include size(mobile) {
+        @include size(tablet) {
             width: 100%;
         }
 
@@ -2067,7 +2078,7 @@ h1 {
                 font-size: 0.8rem;
             }
 
-            @include size(mobile) {
+            @include size(tablet) {
                 position: static;
                 margin-top: 1rem;
                 letter-spacing: 0.25px;
@@ -2085,9 +2096,9 @@ h1 {
             width: 47%;
         }
 
-        @include size(mobile) {
+        @include size(tablet) {
             width: 100%;
-            margin-top: 1rem;
+            margin-top: 2rem;
         }
 
         iframe {
@@ -2174,7 +2185,7 @@ h1 {
     padding-bottom: 2rem;
     display: block;
 
-    @include size(mobile) {
+    @include size(tablet) {
         position: static;
         display: none;
     }
@@ -2251,15 +2262,19 @@ h1 {
 
     .copy {
         margin-top: 1rem;
-        font-size: 0.5rem;
+        font-size: 0.7rem;
         letter-spacing: 0px;
     }
 
     .wrapper-p {
-        padding: 2.5rem 12%;
+        padding: 2.5rem 5%;
+
+        @include size(mobile) {
+            padding: 2.5rem 12%;
+        }
     }
 
-    @include size(mobile) {
+    @include size(tablet) {
         display: block;
     }
 

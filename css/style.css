@@ -1728,7 +1728,7 @@ h1 {
   color: #dcdcdc;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
   .service .tab-btns {
     font-size: 1.3rem;
     -webkit-box-pack: justify;
@@ -1769,7 +1769,7 @@ h1 {
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
   .service .tab-btns .tab-btn .service {
     font-size: 1.15rem;
   }
@@ -1796,7 +1796,7 @@ h1 {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
   .service .tabs-pc {
     display: none;
   }
@@ -1928,7 +1928,7 @@ h1 {
   display: none;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
   .service .tabs-mobile {
     display: block;
   }
@@ -1937,7 +1937,13 @@ h1 {
 .service .tabs-mobile .swiper-container {
   overflow: visible;
   position: absolute;
-  width: 100%;
+  width: 70%;
+}
+
+@media (max-width: 500px) {
+  .service .tabs-mobile .swiper-container {
+    width: 100%;
+  }
 }
 
 .service .tabs-mobile .swiper-container .swiper-wrapper {
@@ -2113,7 +2119,7 @@ h1 {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
   .client .wrapper-p {
     width: 78%;
     padding: 0;
@@ -2140,7 +2146,7 @@ h1 {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
   .client h1 {
     margin-top: 0rem;
     margin-bottom: 2.5rem;
@@ -2173,7 +2179,7 @@ h1 {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
   .client .swiper-client-next {
     display: none;
   }
@@ -2194,7 +2200,7 @@ h1 {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
   .client .swiper-client-prev {
     display: none;
   }
@@ -2204,7 +2210,7 @@ h1 {
   overflow: hidden;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
   .client .swiper-client-pc {
     display: none;
   }
@@ -2233,7 +2239,7 @@ h1 {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
   .client .client-list {
     width: 19.5%;
     height: calc(5rem + 30vw);
@@ -2269,15 +2275,24 @@ h1 {
   overflow: hidden;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
   .swiper-client-mobile {
     display: block;
   }
 }
 
 .swiper-client-mobile .client-list {
-  width: 47%;
-  margin: 0.25rem 0;
+  width: 23%;
+  margin: 0 1rem;
+  height: 10rem;
+}
+
+@media (max-width: 500px) {
+  .swiper-client-mobile .client-list {
+    width: 47%;
+    margin: 0.25rem 0;
+    height: calc(5rem + 30vw);
+  }
 }
 
 .swiper-client-mobile .swiper-pagination-bullets {
@@ -2302,13 +2317,13 @@ h1 {
   display: block;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
   .contactus {
     height: auto;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
   .contactus .wrapper-p {
     width: 100%;
     padding: 4rem 12%;
@@ -2316,7 +2331,7 @@ h1 {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
   .contactus .google-maps {
     height: 30vh;
   }
@@ -2338,7 +2353,7 @@ h1 {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
   .footer-head {
     position: static;
     display: block;
@@ -2358,7 +2373,7 @@ h1 {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
   .footer-head .left {
     width: 100%;
   }
@@ -2410,7 +2425,7 @@ h1 {
   font-size: 0.8rem;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
   .footer-head .left .footer-head-text {
     position: static;
     margin-top: 1rem;
@@ -2431,10 +2446,10 @@ h1 {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
   .footer-head form {
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
 }
 
@@ -2555,7 +2570,7 @@ h1 {
   display: block;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
   .footer-pc {
     position: static;
     display: none;
@@ -2636,15 +2651,21 @@ h1 {
 
 .footer-mobile .copy {
   margin-top: 1rem;
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   letter-spacing: 0px;
 }
 
 .footer-mobile .wrapper-p {
-  padding: 2.5rem 12%;
+  padding: 2.5rem 5%;
 }
 
 @media (max-width: 500px) {
+  .footer-mobile .wrapper-p {
+    padding: 2.5rem 12%;
+  }
+}
+
+@media (max-width: 767px) {
   .footer-mobile {
     display: block;
   }

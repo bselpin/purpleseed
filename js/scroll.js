@@ -326,7 +326,7 @@ function enableScroll() {
 }
 
 window.addEventListener('load', function () {
-    // loading[0].classList.add('hidden')
+    loading[0].classList.add('hidden')
     header[0].classList.add('active')
     enableScroll()
 })
