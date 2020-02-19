@@ -173,6 +173,7 @@
 
 .header ul a.active {
   color: #000;
+  cursor: pointer;
 }
 
 .header ul a:hover {
