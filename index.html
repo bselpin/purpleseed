@@ -32,6 +32,8 @@
 		}
 		gtag('js', new Date());
 		gtag('config', 'UA-153557120-1');
+		document.cookie = 'same-site-cookie=foo; SameSite=Lax';
+		document.cookie = 'cross-site-cookie=bar; SameSite=None; Secure';
 	</script>
 
 	<meta property="og:type" content="website">
@@ -1007,25 +1009,25 @@
 				</div>
 
 			</div>
-			<form method="post" action="sendmail.php" name="frm">
+			<form method="post" name="frm" id="contact-form">
 				<iframe name="ifrm" width="0" height="0" frameborder="0"></iframe>
 
-				<input type="text" name="name" placeholder="이름" required
-					onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
+				<input id="form-name" type="text" name="name" placeholder="이름" required
+				>
 
-				<input class="right" type="text" name="corporation" maxlength="35" size="50" placeholder="기업/기관명"
-					required onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
+				<input id="form-corp" class="right" type="text" name="corporation" maxlength="35" size="50" placeholder="기업/기관명"
+					required>
 
-				<input class="bottom" type="text" name="hp" maxlength="35" placeholder="연락처" required
-					onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
+				<input id="form-hp" class="bottom" type="number" name="hp" maxlength="35" placeholder="연락처" required
+				>
 
-				<input class="bottom right" type="email" name="frommail" placeholder="E-mail" required
-					onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
+				<input id="form-mail" class="bottom right" type="email" name="frommail" placeholder="E-mail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+				>
 
-				<textarea class="bottom" type="text" name="subject" maxlength="300" placeholder="어떻게 도와드릴까요?" required
-					onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;"></textarea>
+				<textarea id="form-text" class="bottom" type="text" name="subject" maxlength="300" placeholder="어떻게 도와드릴까요?" required
+				></textarea>
 
-				<input class="submit" type="submit" value="퍼플시드에 문의하기">
+				<input id="form-submit" class="submit" type="submit" value="퍼플시드에 문의하기">
 
 			</form>
 		</div>
@@ -1127,7 +1129,6 @@
 	<script src="js/main.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
 	<script src="js/service.js"></script>
-	<script src="js/imagesloaded.min.js"></script>
 	<script src="js/wow.min.js"></script>
 	<script src="js/pixi.min.js"></script>
 	<script src="js/scroll.js"></script>
@@ -1149,11 +1150,35 @@
 			s.parentNode.insertBefore(ga, s);
 		})();
 
-		function save() {
-			document.frm.target = "ifrm";
-			document.frm.action = "sendmail.php";
-			document.frm.submit();
-		}
+		$('#form-submit').click(function(e) {
+			var name = document.getElementById('form-name')
+			var corporation = document.getElementById('form-corp')
+			var hp = document.getElementById('form-hp')
+			var frommail = document.getElementById('form-mail')
+			var subject = document.getElementById('form-text')
+			var text = document.getElementById('form-text')
+			var dataString = {"name" : `성함 : ${name.value}`, "corporation": `회사명 : ${corporation.value}`, "hp": `연락처 : ${hp.value}`, "frommail": `e-mail : ${frommail.value}`, "subject": `[문의]${subject.value}`, "text": text.value}		
+
+			if(name.value && corporation.value && hp.value && frommail.value && subject.value && dataString) {
+				$.ajax({
+				type: "post",
+				url:"sendmail.php",
+				data: dataString,
+				success: function() {
+					name.value = ''
+					corporation.value = ''
+					hp.value = ''
+					frommail.value = ''
+					subject.value = ''
+					alert('메일이 성공적으로 발송되었습니다.')
+				}
+			})
+			} else {
+				alert("입력란을 다시 확인해 주세요.")
+			}
+			
+			e.preventDefault()
+		})
 	</script>
 </body>
 
