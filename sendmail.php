@@ -35,6 +35,8 @@ $subject=stripslashes($subject);
  
 mail($tomail, $subject, $subject2);
  
-echo "편지가 발송되었습니다.";
+echo '<script language="javascript">';
+echo 'alert("메일이 발송되었습니다.")';
+echo '</script>';
  
 ?>
