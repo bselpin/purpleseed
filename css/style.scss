@@ -350,6 +350,7 @@ html {
     min-height: 100vh;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: $black;
@@ -587,6 +588,7 @@ h1 {
     height: calc(40vh + 260px);
     position: absolute;
     bottom: 0;
+    left: 17%;
     background: #fff;
     z-index: 999;
     width: 66%;
@@ -596,13 +598,16 @@ h1 {
 
     @include size(laptop-up) {
         height: calc(40vh + 290px);
+        left: 14%;
     }
 
     @include size(laptop) {
         height: calc(40vh + 250px);
+        left: 14%;
     }
 
     @include size(mobile) {
+        left: 11%;
         height: 100vh;
         width: 78%;
         padding: 0;
@@ -841,6 +846,7 @@ h1 {
         z-index: 50;
         background: none;
         left: 20%;
+        top: 16rem;
 
         @include size(laptop-up) {
             margin-top: 1rem;
@@ -886,20 +892,21 @@ h1 {
 .ref-title {
     position: absolute;
     width: 100%;
+    left: 0;
     top: 5rem;
     text-align: center;
     color: #fff;
 
     @include size(laptop-up) {
-        top: 4.5rem;
+        top: 4rem;
     }
 
     @include size(laptop) {
-        top: 3.5rem;
+        top: 3rem;
     }
 
     @include size(tablet-up) {
-        top: 8vh;
+        top: 5vh;
         margin: 1rem 0;
     }
 
@@ -2111,7 +2118,7 @@ h1 {
             font-family: 'Noto Sans KR', sans-serif;
             font-weight: 300;
             padding: 0.6rem;
-            width: calc(50% - 3px);
+            width: calc(50% - 4px);
             font-size: 0.75rem;
 
             @include size(mobile) {

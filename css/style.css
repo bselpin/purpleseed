@@ -422,6 +422,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -695,6 +699,7 @@ h1 {
   height: calc(40vh + 260px);
   position: absolute;
   bottom: 0;
+  left: 17%;
   background: #fff;
   z-index: 999;
   width: 66%;
@@ -706,17 +711,20 @@ h1 {
 @media (max-width: 1440px) {
   .news-inner {
     height: calc(40vh + 290px);
+    left: 14%;
   }
 }
 
 @media (max-width: 1366px) {
   .news-inner {
     height: calc(40vh + 250px);
+    left: 14%;
   }
 }
 
 @media (max-width: 500px) {
   .news-inner {
+    left: 11%;
     height: 100vh;
     width: 78%;
     padding: 0;
@@ -992,6 +1000,7 @@ h1 {
   z-index: 50;
   background: none;
   left: 20%;
+  top: 16rem;
 }
 
 @media (max-width: 1440px) {
@@ -1042,6 +1051,7 @@ h1 {
 .ref-title {
   position: absolute;
   width: 100%;
+  left: 0;
   top: 5rem;
   text-align: center;
   color: #fff;
@@ -1049,19 +1059,19 @@ h1 {
 
 @media (max-width: 1440px) {
   .ref-title {
-    top: 4.5rem;
+    top: 4rem;
   }
 }
 
 @media (max-width: 1366px) {
   .ref-title {
-    top: 3.5rem;
+    top: 3rem;
   }
 }
 
 @media (max-width: 1024px) {
   .ref-title {
-    top: 8vh;
+    top: 5vh;
     margin: 1rem 0;
   }
 }
@@ -2463,7 +2473,7 @@ h1 {
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 300;
   padding: 0.6rem;
-  width: calc(50% - 3px);
+  width: calc(50% - 4px);
   font-size: 0.75rem;
 }
 
